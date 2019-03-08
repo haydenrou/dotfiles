@@ -51,23 +51,6 @@ augroup vimrcEx
   autocmd BufRead,BufNewFile vimrc.local set filetype=vim
 augroup END
 
-" ALE linting events
-augroup ale
-  autocmd!
-
-  if g:has_async
-    autocmd VimEnter *
-      \ set updatetime=1000 |
-      \ let g:ale_lint_on_text_changed = 0
-    autocmd CursorHold * call ale#Queue(0)
-    autocmd CursorHoldI * call ale#Queue(0)
-    autocmd InsertEnter * call ale#Queue(0)
-    autocmd InsertLeave * call ale#Queue(0)
-  else
-    echoerr "The thoughtbot dotfiles require NeoVim or Vim 8"
-  endif
-augroup END
-
 " When the type of shell script is /bin/sh, assume a POSIX-compatible
 " shell for syntax highlighting purposes.
 let g:is_posix = 1
@@ -174,3 +157,15 @@ set diffopt+=vertical
 if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local
 endif
+
+set runtimepath+=~/.vim_runtime
+
+source ~/.vim_runtime/vimrcs/basic.vim
+source ~/.vim_runtime/vimrcs/filetypes.vim
+source ~/.vim_runtime/vimrcs/plugins_config.vim
+source ~/.vim_runtime/vimrcs/extended.vim
+ try
+     source ~/.vim_runtime/my_configs.vim
+ catch
+ endtry
+
