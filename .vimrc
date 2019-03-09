@@ -153,19 +153,14 @@ set complete+=kspell
 " Always use vertical diffs
 set diffopt+=vertical
 
-" Local config
-if filereadable($HOME . "/.vimrc.local")
-  source ~/.vimrc.local
-endif
+set runtimepath+=~/projects/dotfiles/.vim_runtime
 
-set runtimepath+=~/.vim_runtime
-
-source ~/.vim_runtime/vimrcs/basic.vim
-source ~/.vim_runtime/vimrcs/filetypes.vim
-source ~/.vim_runtime/vimrcs/plugins_config.vim
-source ~/.vim_runtime/vimrcs/extended.vim
+source ~/projects/dotfiles/.vim_runtime/vimrcs/basic.vim
+source ~/projects/dotfiles/.vim_runtime/vimrcs/filetypes.vim
+source ~/projects/dotfiles/.vim_runtime/vimrcs/plugins_config.vim
+source ~/projects/dotfiles/.vim_runtime/vimrcs/extended.vim
  try
-     source ~/.vim_runtime/my_configs.vim
+     source ~/projects/dotfiles/.vim_runtime/my_configs.vim
  catch
  endtry
 
