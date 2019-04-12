@@ -13,8 +13,9 @@ set showcmd       " display incomplete commands
 set incsearch     " do incremental searching
 set laststatus=2  " Always display the status line
 set autowrite     " Automatically :write before running commands
-set relativenumber
-set mouse=a
+set relativenumber " show the numbers above your line to relative of current line
+set mouse=a        " make vim clickable
+set spelllang=en   " spelling in english
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
@@ -63,6 +64,9 @@ set shiftwidth=2
 set shiftround
 set expandtab
 
+" To automatically unfold all of a file
+set foldlevelstart=99
+
 " Display extra whitespace
 set list listchars=tab:»·,trail:·,nbsp:·
 
@@ -87,8 +91,10 @@ if executable('ag')
 endif
 
 " Make it obvious where 80 characters is
-set textwidth=80
-set colorcolumn=+1
+" set textwidth=80
+" set colorcolumn=+1
+highlight ColorColumn ctermbg=red
+call matchadd('ColorColumn', '\%81v', 100)
 
 " Numbers
 set number
@@ -145,6 +151,10 @@ nnoremap <C-l> <C-w>l
 nnoremap ]r :ALENextWrap<CR>
 nnoremap [r :ALEPreviousWrap<CR>
 
+" for easyalign
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
+
 " Set spellfile to location that is guaranteed to exist, can be symlinked to
 " Dropbox or kept in Git and managed outside of thoughtbot/dotfiles using rcm.
 set spellfile=$HOME/.vim-spell-en.utf-8.add
@@ -166,3 +176,30 @@ source ~/.vim_runtime/vimrcs/extended.vim
  catch
  endtry
 
+" for big projects: https://github.com/kien/ctrlp.vim/issues/234
+let g:ctrlp_max_files=0
+let g:ctrlp_max_depth=40
+
+" to speed up ctrlp: https://stackoverflow.com/questions/21346068/slow-performance-on-ctrlp-it-doesnt-work-to-ignore-some-folders
+let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+
+" highlight when going to next searched word
+" this is slow
+" highlight WhiteOnRed ctermfg=White ctermbg=red
+" nnoremap <silent> n  n:call HLNext(0.4)<cr>
+" nnoremap <silent> N  N:call HLNext(0.4)<cr>
+
+" function! HLNext (blinktime)
+"     let [bufnum, lnum, col, off] = getpos('.')
+"     let matchlen = strlen(matchstr(strpart(getline('.'),col-1),@/))
+"     let target_pat = '\c\%#'.@/
+"     let blinks = 3
+"     for n in range(1,blinks)
+"         let red = matchadd('WhiteOnRed', target_pat, 101)
+"         redraw
+"         exec 'sleep ' . float2nr(a:blinktime / (2*blinks) * 1000) . 'm'
+"         call matchdelete(red)
+"         redraw
+"         exec 'sleep ' . float2nr(a:blinktime / (2*blinks) * 1000) . 'm'
+"     endfor
+" endfunction
