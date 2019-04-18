@@ -183,6 +183,9 @@ let g:ctrlp_max_depth=40
 " to speed up ctrlp: https://stackoverflow.com/questions/21346068/slow-performance-on-ctrlp-it-doesnt-work-to-ignore-some-folders
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 
+set hlsearch
+hi Search cterm=NONE ctermbg=LightYellow
+
 " highlight when going to next searched word
 " this is slow
 " highlight WhiteOnRed ctermfg=White ctermbg=red
