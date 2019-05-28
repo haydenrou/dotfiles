@@ -9,6 +9,9 @@
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="af-magic"
 
+autoload -U compinit
+compinit
+
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
 # cause zsh load theme from this variable instead of
@@ -62,10 +65,20 @@ ZSH_THEME="af-magic"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git
   rails
 )
 alias rdmd="rake db:migrate:data"
+alias gst="git status -u"
+alias gd="git diff"
+alias gaa="git add ."
+alias ga="git add"
+alias gc="git commit"
+alias gco="git checkout"
+alias gca="git add .; git commit"
+alias gp="git push"
+alias gb="git branch"
+alias gf="git fetch"
+alias tidybranches="git branch | grep -v 'develop\|master' | xargs git branch -D"
 
 source $ZSH/oh-my-zsh.sh
 
