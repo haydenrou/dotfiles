@@ -79,6 +79,7 @@ alias gp="git push"
 alias gb="git branch"
 alias gf="git fetch"
 alias tidybranches="git branch | grep -v 'develop\|master' | xargs git branch -D"
+alias killdev="pkill -9 -f 'ruby|rails|spring|puma|console|pry|webpack'"
 
 source $ZSH/oh-my-zsh.sh
 
