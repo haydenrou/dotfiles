@@ -214,8 +214,10 @@ hi Search cterm=NONE ctermbg=LightYellow
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 
 " ALE LINTERS
-let g:ale_linters = { 'javascript': ['eslint'] }
-let g:ale_fixers = { 'javascript': ['eslint'] }
+let g:ale_linters = { 'javascript': ['eslint'], 'ruby': ['rubocop'] }
+let g:ale_fixers = { 'javascript': ['eslint'], 'ruby': ['rubocop', 'trim_whitespace'] }
+let g:ale_linters_explicit = 1
+let g:ale_sign_column_always = 1
 let g:ale_fix_on_save = 1
 let g:ale_sign_error = '✘'
 let g:ale_sign_warning = '⚠'
