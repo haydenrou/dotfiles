@@ -1,0 +1,58 @@
+# Set to login shell
+set -g default-command "${SHELL}"
+
+# Set history limit
+set -g history-limit 20000
+
+# Set automatic renumbering of windows
+set -g renumber-windows on
+
+# Activity Monitoring
+setw -g monitor-activity on
+set -g visual-activity on
+
+# Instead of setting window size to the max size of the client connected to the *session*
+# constrain window size to the maximum of any client connected to *the specific window*
+setw -g aggressive-resize on
+
+# Make delay shorter
+set -sg escape-time 0
+
+# Make window index start with 1
+set -g base-index 1
+setw -g pane-base-index 1
+
+set-option -g set-titles on
+set-option -g set-titles-string "#T - #W"
+
+# Allow to swap panes using mouse
+setw -g mouse on
+
+### Key Bindings ###
+
+# add binding to reload source file
+bind r source-file ~/.tmux.conf \; display-message "Config reloaded..."
+
+# split windows
+bind | split-window -h -c "#{pane_current_path}"
+bind - split-window -v -c "#{pane_current_path}"
+
+# select panes using vim movement
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -R
+
+# Resize pane shortcuts
+bind -r H resize-pane -L 10
+bind -r J resize-pane -D 10
+bind -r K resize-pane -U 10
+bind -r L resize-pane -R 10
+
+# stop asking yes or no. I know what im doing!
+bind x kill-pane
+
+### Theming Settings ###
+
+source ~/projects/dotfiles/tmux/theme.sh
+
