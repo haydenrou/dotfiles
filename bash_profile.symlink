@@ -1,1 +1,2 @@
 source /home/hrouille/.rvm/scripts/rvm
+export PATH=~/bin:$PATH
