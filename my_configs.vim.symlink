@@ -177,7 +177,7 @@ let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 set pumheight=10
 
 set hlsearch
-hi Search cterm=NONE ctermbg=Tan
+hi Search cterm=NONE ctermbg=DarkMagenta
 
 " highlight when going to next searched word
 " this is slow
@@ -230,3 +230,4 @@ let g:ctrlp_show_hidden = 1
 
 " because I just use TMUX backgrounds instead
 hi Normal guibg=NONE ctermbg=NONE
+hi NonText guibg=NONE ctermbg=NONE
