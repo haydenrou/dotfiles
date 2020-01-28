@@ -1,5 +1,5 @@
 # for bg colour of whole pane
-set -g window-active-style "bg=colour237"
+set -g window-active-style "bg=default fg=colour4"
 # for bg colour of inactive windows
 # to look into this error
 # setw -g window-status-style fg="colour233" bg="colour88"
@@ -42,8 +42,8 @@ set -g window-status-current-format " #I:#W#F "
 # set -g window-status-current bg=colour124 fg=colour16
 
 # Window with activity status
-set -g window-status-activity bg=colour88  # fg and bg are flipped here due to
-set -g window-status-activity fg=colour233 # a bug in tmux
+set -g window-status-activity-style bg=colour88  # fg and bg are flipped here due to
+set -g window-status-activity-style fg=colour233 # a bug in tmux
 
 # Window separator
 set -g window-status-separator ""
@@ -56,8 +56,8 @@ set -g status-justify centre
 # set -g pane-border bg=default fg=colour238
 
 # Active pane border
-set -g pane-active-border bg=default
-set -g pane-active-border fg=colour88
+set -g pane-active-border-style bg=default
+set -g pane-active-border-style fg=colour88
 
 # Pane number indicator
 set -g display-panes-colour colour233
@@ -65,11 +65,9 @@ set -g display-panes-active-colour colour245
 
 # Clock mode
 set -g clock-mode-colour colour88
-set -g message-style bg=colour24
 
 # Message
-set -g message-style bg=colour88
-set -g message-style fg=black
+set -g message-style bg=default,fg=default
 
 # Command message
 set -g message-command-style bg=colour88
