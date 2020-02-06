@@ -229,8 +229,8 @@ let g:ctrlp_custom_ignore = 'tmp\|node_modules\|^public\|^\.DS_Store\|^\.git\|^\
 
 let g:ctrlp_show_hidden = 1
 
+colorscheme gruvbox
+
 " because I just use TMUX backgrounds instead
 hi Normal guibg=NONE ctermbg=NONE
 hi NonText guibg=NONE ctermbg=NONE
-
-colorscheme gruvbox
