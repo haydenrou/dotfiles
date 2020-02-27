@@ -243,3 +243,6 @@ if executable(s:clip)
     autocmd TextYankPost * call system('echo '.shellescape(join(v:event.regcontents, "\<CR>")).' | '.s:clip)
   augroup END
 end
+
+" Always open nerd tree in new tab
+let NERDTreeMapOpenInTab='<ENTER>'
