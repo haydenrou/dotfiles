@@ -54,5 +54,12 @@ bind x kill-pane
 
 ### Theming Settings ###
 
-source ~/projects/dotfiles/tmux/theme.sh
+# List of plugins
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-sensible'
+
+set -g @plugin 'jimeh/tmux-themepack'
+
+# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+run -b '~/.tmux/plugins/tpm/tpm'
 
