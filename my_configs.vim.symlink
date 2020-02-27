@@ -244,5 +244,3 @@ if executable(s:clip)
   augroup END
 end
 
-" Always open nerd tree in new tab
-let NERDTreeMapOpenInTab='<ENTER>'
