@@ -217,6 +217,9 @@ highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
 
 nmap <silent> <leader>a <Plug>(ale_next_wrap)
 
+" Splits open to the right and below
+set splitbelow splitright
+
 " Disabling highlighting
 let g:ale_set_highlights = 0
 
