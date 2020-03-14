@@ -1,2 +1,9 @@
+# When loading wsl, bashrc is not loaded.
+# https://github.com/microsoft/WSL/issues/2067
+
+if [[ -f ~/.bashrc ]] ; then
+  . ~/.bashrc
+fi
+
 source /home/hrouille/.rvm/scripts/rvm
 export PATH=~/bin:$PATH
