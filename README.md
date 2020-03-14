@@ -1,7 +1,7 @@
 This is where I keep my configuration files.
 
-Examples of links:
-`ln -s ~/projects/dotfiles/vimrc.symlink ~/.vimrc`
+What needs to be done when setting up vim and the whole environment is described in `dotenv.sh`.
 
-This'll be if you're using UltimateVim (https://github.com/amix/vimrc) and have installed it into the .vim_runtime directory.
-`ln -s ~/projects/dotfiles/my_configs.vim.symlink ~/.vim_runtime/my_configs.vim`
+To run this, make sure you make it executable before you run it: (FYI I haven't testing it yet, it serves as a form of documentation for the moment)
+`chmod +x dotenv.sh && sh ./dotenv.sh`
+
