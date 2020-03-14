@@ -87,10 +87,25 @@ fi
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-# some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias ga='git add'
+alias gaa='git add .'
+alias gap='git add -p'
+alias gb='git branch'
+alias gc='git commit'
+alias gca='git add .;git commit'
+alias gco='git checkout'
+alias gd='git diff'
+alias gf='git fetch'
+alias gfa='git fetch --all'
+alias gp='git push'
+alias gst='git status -u'
+alias rc='rails console'
+alias rdm='rake db:migrate'
+alias rdmd='rake db:migrate:data'
+alias tidybranches='git branch | grep -v develop|master | xargs git branch -D'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
