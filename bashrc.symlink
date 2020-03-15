@@ -106,6 +106,8 @@ alias rc='rails console'
 alias rdm='rake db:migrate'
 alias rdmd='rake db:migrate:data'
 alias tidybranches='git branch | grep -v develop|master | xargs git branch -D'
+alias evrc='vim ~/projects/dotfiles/vimrc.symlink'
+alias ag='ag --path-to-ignore ~/projects/dotfiles/.agignore'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
