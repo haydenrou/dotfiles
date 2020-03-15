@@ -106,8 +106,6 @@ Plugin 'tpope/vim-rails'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
 
 syntax on
 
@@ -187,10 +185,10 @@ nnoremap <Down> :echoe "Use j"<CR>
 let g:html_indent_tags = 'li\|p'
 
 " Quicker window movement
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
+nnoremap <Leader>j <C-w>j
+nnoremap <Leader>k <C-w>k
+nnoremap <Leader>h <C-w>h
+nnoremap <Leader>l <C-w>l
 
 nnoremap <Leader>w :w!<cr>
 
