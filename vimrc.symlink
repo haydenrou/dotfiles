@@ -192,6 +192,12 @@ nnoremap <Leader>l <C-w>l
 
 nnoremap <Leader>w :w!<cr>
 
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+
 nnoremap <Leader>gd :GoDef<Enter>
 
 " Move between linting errors
@@ -301,3 +307,4 @@ if executable(s:clip)
     autocmd TextYankPost * call system('echo '.shellescape(join(v:event.regcontents, "\<CR>")).' | '.s:clip)
   augroup END
 end
+
