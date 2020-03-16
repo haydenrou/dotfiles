@@ -24,6 +24,8 @@ git clone git@github.com:haydenrou/dotfiles.git ~/projects/dotfiles
 
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
 rm ~/.bashrc ~/.bash_profile ~/.tmux.conf ~/.vimrc
 ln -s ~/projects/dotfiles/bashrc.symlink ~/.bashrc
 ln -s ~/projects/dotfiles/bash_profile.symlink ~/.bash_profile
