@@ -12,6 +12,7 @@ read -p "Name?" gitname
 git config --global user.name $gitname
 
 mkdir ~/projects
+mkdir ~/.vim/undodir -p
 
 echo "Making an SSH Key";
 ssh-keygen -t rsa

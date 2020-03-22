@@ -19,6 +19,7 @@ set mouse=a        " make vim clickable
 set spelllang=en   " spelling in english
 set pastetoggle=<F2>    " allow pasting with correct indentation
 set cursorline
+set smartindent
 set nowrap
 set hidden
 set ignorecase
@@ -28,7 +29,7 @@ set magic
 set exrc
 
 " Softtabs, 2 spaces
-set tabstop=2
+set tabstop=2 softtabstop=2
 set shiftwidth=2
 set shiftround
 set expandtab
@@ -62,9 +63,6 @@ set splitright
 " Splits open to the right and below
 set splitbelow splitright
 
-set autochdir " sets the cwd to whatever file is in view.  This allows better
-              " omni completion.
-
 autocmd BufWritePre * %s/\s\+$//e
 
 set nocompatible              " be iMproved, required
@@ -77,7 +75,6 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
-Plugin 'jremmen/vim-ripgrep'
 Plugin 'scrooloose/nerdtree'
 Plugin 'git@github.com:kien/ctrlp.vim.git'
 Plugin 'git@github.com:rking/ag.vim.git'
@@ -102,6 +99,12 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'elixir-editors/vim-elixir'
 Plugin 'christoomey/vim-system-copy'
 Plugin 'tpope/vim-rails'
+" One day i'll swap from the silver searcher, but not for now
+" Rg seems to give an undefined method error...? WSL ?
+" Plugin 'jremmen/vim-ripgrep'
+" if executable('rg')
+"   let g:rg_derive_root='true'
+" endif
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -115,6 +118,7 @@ hi Search cterm=NONE ctermbg=DarkMagenta
 colorscheme slate
 
 " because I just use TMUX backgrounds instead
+set background=dark
 hi Normal guibg=NONE ctermbg=NONE
 hi NonText guibg=NONE ctermbg=NONE
 
@@ -248,7 +252,6 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
 endif
 
-" PLUGIN: RG
 " bind K to grep word under cursor
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
@@ -283,8 +286,9 @@ let g:ctrlp_show_hidden = 1
 let g:ctrlp_max_files=0
 let g:ctrlp_max_depth=40
 
-" to speed up ctrlp: https://stackoverflow.com/questions/21346068/slow-performance-on-ctrlp-it-doesnt-work-to-ignore-some-folders
-let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+let g:netrw_browse_split=2
+let g:netrw_banner=0
+let g:netrw_winsize=25
 
 " PLUGIN: ag
 let g:ag_working_path_mode="r"
