@@ -39,15 +39,18 @@ vim +PluginInstall +qall
 echo "and install your tmux plugins :)";
 ~/.tmux/plugins/tpm/bin/install_plugins
 
+echo "Time to install node";
+curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash - && sudo apt-get install -y nodejs gcc g++ make
+
 echo "This is going to configure YCM for vim";
-sudo apt-get install -y cmake python-dev python3-dev;
+sudo apt-get install -y cmake python-dev python3-dev build-essential;
 
 mkdir ~/ycm_build && cd ~/ycm_build
 
 cmake -G "Unix Makefiles" . ~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp && cmake --build . --target ycm_core --config Release
 
-echo "Time to install node";
-curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash - && sudo apt-get install -y nodejs gcc g++ make
+cd ~/.vim/bundle/YouCompleteMe
+sh ./install.py --ts-completer
 
 echo "And yarn...";
 curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - && echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
