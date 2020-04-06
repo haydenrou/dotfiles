@@ -35,9 +35,6 @@ set shiftwidth=2
 set shiftround
 set expandtab
 
-" YouCompleteMe (non specific let) to reduce massive results for binding.
-set pumheight=10
-
 " To automatically unfold all of a file
 set foldlevelstart=99
 
