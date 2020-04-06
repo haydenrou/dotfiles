@@ -174,9 +174,6 @@ nnoremap [r :ALEPreviousWrap<CR>
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
-" Always use vertical diffs
-set diffopt+=vertical
-
 autocmd FileType html,css,erb,jsx,javascript setlocal shiftwidth=2 tabstop=2
 autocmd FileType html,css,erb,jsx,javascript EmmetInstall
 
