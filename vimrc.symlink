@@ -27,6 +27,7 @@ set smartcase
 set lazyredraw
 set magic
 set exrc
+set number
 
 " Softtabs, 2 spaces
 set tabstop=2 softtabstop=2
@@ -45,10 +46,6 @@ set list listchars=tab:»·,trail:·,nbsp:·
 
 " Use one space, not two, after punctuation.
 set nojoinspaces
-
-" Numbers
-set number
-set numberwidth=5
 
 set noerrorbells
 set novisualbell
@@ -82,9 +79,6 @@ Plugin 'git@github.com:moll/vim-node.git'
 Plugin 'morhetz/gruvbox'
 Plugin 'git@github.com:ajh17/VimCompletesMe.git'
 Plugin 'git@github.com:Valloric/YouCompleteMe.git'
-Plugin 'jacoborus/tender.vim'
-Plugin 'tomasr/molokai'
-Plugin 'vim-airline/vim-airline'
 Plugin 'mbbill/undotree'
 Plugin 'dense-analysis/ale'
 Plugin 'tpope/vim-commentary'
@@ -99,6 +93,7 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'elixir-editors/vim-elixir'
 Plugin 'christoomey/vim-system-copy'
 Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-surround'
 " One day i'll swap from the silver searcher, but not for now
 " Rg seems to give an undefined method error...? WSL ?
 " Plugin 'jremmen/vim-ripgrep'
@@ -115,7 +110,7 @@ syntax on
 set hlsearch
 hi Search cterm=NONE ctermbg=DarkMagenta
 
-colorscheme slate
+colorscheme gruvbox
 
 " because I just use TMUX backgrounds instead
 set background=dark
@@ -148,7 +143,6 @@ autocmd BufRead,BufNewFile .{jscs,jshint,eslint}rc set filetype=json
 autocmd BufRead,BufNewFile tmux.conf.local set filetype=tmux
 autocmd BufRead,BufNewFile vimrc.local set filetype=vim
 
-" Ruby support with YCM
 autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
@@ -159,31 +153,10 @@ autocmd FileType ruby compiler ruby
 " shell for syntax highlighting purposes.
 let g:is_posix = 1
 
-" Tab completion
-" will insert tab at beginning of line,
-" will use completion if not at beginning
+set wildmenu
 set wildmode=list:longest,list:full
-function! InsertTabWrapper()
-    let col = col('.') - 1
-    if !col || getline('.')[col - 1] !~ '\k'
-        return "\<Tab>"
-    else
-        return "\<C-p>"
-    endif
-endfunction
-inoremap <Tab> <C-r>=InsertTabWrapper()<CR>
-inoremap <S-Tab> <C-n>
-
-" Switch between the last two files
-nnoremap <Leader><Leader> <C-^>
 
 nnoremap <Leader><Enter> :noh<cr>
-
-" Don't be an idiot, idiot - Dwight Schrute
-nnoremap <Left> :echoe "Use h"<CR>
-nnoremap <Right> :echoe "Use l"<CR>
-nnoremap <Up> :echoe "Use k"<CR>
-nnoremap <Down> :echoe "Use j"<CR>
 
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags = 'li\|p'
@@ -196,14 +169,6 @@ nnoremap <Leader>l <C-w>l
 
 nnoremap <Leader>w :w!<cr>
 
-inoremap " ""<left>
-inoremap ' ''<left>
-inoremap ( ()<left>
-inoremap [ []<left>
-inoremap { {}<left>
-
-nnoremap <Leader>gd :GoDef<Enter>
-
 " Move between linting errors
 nnoremap ]r :ALENextWrap<CR>
 nnoremap [r :ALEPreviousWrap<CR>
@@ -212,13 +177,6 @@ nnoremap [r :ALEPreviousWrap<CR>
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
-" Set spellfile to location that is guaranteed to exist, can be symlinked to
-" Dropbox or kept in Git and managed outside of thoughtbot/dotfiles using rcm.
-set spellfile=$HOME/.vim-spell-en.utf-8.add
-
-" Autocomplete with dictionary words when spell check is on
-set complete+=kspell
-
 " Always use vertical diffs
 set diffopt+=vertical
 
@@ -226,17 +184,6 @@ autocmd FileType html,css,erb,jsx,javascript setlocal shiftwidth=2 tabstop=2
 autocmd FileType html,css,erb,jsx,javascript EmmetInstall
 
 " PLUGIN: YouCompleteMe
-let g:ycm_key_list_select_completion=[]
-let g:ycm_key_list_previous_completion=[]
-let g:ycm_max_diagnostics_to_display=0
-" DEBUG STUFFS
-let g:ycm_server_keep_logfiles = 1
-let g:ycm_server_log_level = 'debug'
-let g:ycm_warning_symbol = '⚠'
-let g:ycm_error_symbol = '✘'
-let g:ycm_server_use_vim_stdout = 1
-" DEBUG STUFFS
-
 nnoremap <silent> <Leader>gd :YcmCompleter GoTo<CR>
 nnoremap <silent> <Leader>gf :YcmCompleter FixIt<CR>
 
@@ -259,12 +206,8 @@ nnoremap \ :Ag --path-to-ignore ~/projects/dotfiles/.agignore<SPACE>
 
 " PLUGIN: ale
 let g:ale_linters = { 'javascript': ['eslint'], 'ruby': ['rubocop'] }
-let g:ale_fixers = { 'javascript': ['eslint'], 'ruby': ['rubocop', 'trim_whitespace'] }
+let g:ale_fixers = { 'javascript': ['eslint'], 'ruby': ['rubocop'] }
 let g:ale_linters_explicit = 1
-let g:ale_sign_column_always = 1
-let g:ale_fix_on_save = 1
-let g:ale_sign_error = '✘'
-let g:ale_sign_warning = '⚠'
 highlight ALEErrorSign ctermbg=NONE ctermfg=red
 highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
 
@@ -292,6 +235,9 @@ let g:netrw_winsize=25
 
 " PLUGIN: ag
 let g:ag_working_path_mode="r"
+
+" PLUGIN: Undotree
+nnoremap <leader>u :UndotreeShow<CR>
 
 " PLUGIN: nerdtree
 let NERDTreeMinimalUI = 1
