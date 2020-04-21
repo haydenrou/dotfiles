@@ -28,6 +28,7 @@ set lazyredraw
 set magic
 set exrc
 set number
+set completeopt=menuone,noinsert,noselect
 
 " Softtabs, 2 spaces
 set tabstop=2 softtabstop=2
@@ -50,10 +51,6 @@ set vb t_vb=
 set undodir=~/.vim/undodir
 set undofile
 
-" Open new split panes to right and bottom, which feels more natural
-set splitbelow
-set splitright
-
 " Splits open to the right and below
 set splitbelow splitright
 
@@ -72,25 +69,23 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 Plugin 'git@github.com:kien/ctrlp.vim.git'
 Plugin 'git@github.com:rking/ag.vim.git'
-Plugin 'git@github.com:moll/vim-node.git'
 Plugin 'morhetz/gruvbox'
 Plugin 'git@github.com:ajh17/VimCompletesMe.git'
 Plugin 'git@github.com:Valloric/YouCompleteMe.git'
+Plugin 'neoclide/coc.nvim'
 Plugin 'mbbill/undotree'
 Plugin 'dense-analysis/ale'
 Plugin 'tpope/vim-commentary'
 Plugin 'pangloss/vim-javascript'
 Plugin 'plasticboy/vim-markdown'
-Plugin 'vim-scripts/nginx.vim'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'leafgarland/typescript-vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'easymotion/vim-easymotion'
-Plugin 'elixir-editors/vim-elixir'
 Plugin 'christoomey/vim-system-copy'
-Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-surround'
+Plugin 'jiangmiao/auto-pairs'
+" Plugin 'tpope/vim-rails'
+" Plugin 'vim-ruby/vim-ruby'
 " One day i'll swap from the silver searcher, but not for now
 " Rg seems to give an undefined method error...? WSL ?
 " Plugin 'jremmen/vim-ripgrep'
@@ -115,8 +110,6 @@ hi Normal guibg=NONE ctermbg=NONE
 hi NonText guibg=NONE ctermbg=NONE
 
 " Make it obvious where 80 characters is
-" set textwidth=80
-" set colorcolumn=+1
 highlight ColorColumn ctermbg=red
 call matchadd('ColorColumn', '\%81v', 100)
 
@@ -128,23 +121,10 @@ autocmd BufReadPost *
   \   exe "normal g`\"" |
   \ endif
 
-" Set syntax highlighting for specific file types
-setlocal omnifunc=syntaxcomplete#Complete
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType javascript,javascriptreact,javascript.jsx setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd BufNewFile,BufRead *.jsx set filetype=javascript
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 autocmd BufEnter *.tsx set filetype=typescript
-autocmd BufRead,BufNewFile .{jscs,jshint,eslint}rc set filetype=json
-autocmd BufRead,BufNewFile tmux.conf.local set filetype=tmux
-autocmd BufRead,BufNewFile vimrc.local set filetype=vim
-
-autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
-autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
-autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
-autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-autocmd FileType ruby compiler ruby
 
 " When the type of shell script is /bin/sh, assume a POSIX-compatible
 " shell for syntax highlighting purposes.
@@ -166,9 +146,9 @@ nnoremap <Leader>l <C-w>l
 
 nnoremap <Leader>w :w!<cr>
 
-" Move between linting errors
-nnoremap ]r :ALENextWrap<CR>
-nnoremap [r :ALEPreviousWrap<CR>
+" Vertical and horizontal splits
+nnoremap <Leader>sl <C-w>v
+nnoremap <Leader>sj <C-w>S
 
 " for easyalign
 xmap ga <Plug>(EasyAlign)
@@ -177,9 +157,62 @@ nmap ga <Plug>(EasyAlign)
 autocmd FileType html,css,erb,jsx,javascript setlocal shiftwidth=2 tabstop=2
 autocmd FileType html,css,erb,jsx,javascript EmmetInstall
 
+" https://github.com/tpope/vim-commentary/issues/68
+autocmd FileType javascript setlocal commentstring={/*\ %s\ */}
+
 " PLUGIN: YouCompleteMe
-nnoremap <silent> <Leader>gd :YcmCompleter GoTo<CR>
-nnoremap <silent> <Leader>gf :YcmCompleter FixIt<CR>
+fun! GoYCM()
+  nnoremap <buffer> <silent> <leader>gd :YcmCompleter GoTo<CR>
+  nnoremap <buffer> <silent> <leader>gr :YcmCompleter GoToReferences<CR>
+  nnoremap <buffer> <silent> <leader>rr :YcmCompleter RefactorRename<space>
+
+  let g:ycm_language_server = [
+    \   {
+    \     'name': 'bash',
+    \     'cmdline': [ 'node', expand( '$HOME/.vim/lsp/bash/node_modules/.bin/bash-language-server' ), 'start' ],
+    \     'filetypes': [ 'sh', 'bash' ],
+    \   },
+    \   {
+    \     'name': 'yaml',
+    \     'cmdline': [ 'node', expand( '$HOME/.vim/lsp/yaml/node_modules/.bin/yaml-language-server' ), '--stdio' ],
+    \     'filetypes': [ 'yaml' ],
+    \   },
+    \   {
+    \     'name': 'json',
+    \     'cmdline': [ 'node', expand( '$HOME/.vim/lsp/json/node_modules/.bin/vscode-json-languageserver' ), '--stdio' ],
+    \     'filetypes': [ 'json' ],
+    \   },
+    \   { 'name': 'docker',
+    \     'filetypes': [ 'dockerfile' ],
+    \     'cmdline': [ expand( '$HOME/.vim/lsp/docker/node_modules/.bin/docker-langserver' ), '--stdio' ]
+    \   },
+    \   { 'name': 'vim',
+    \     'filetypes': [ 'vim' ],
+    \     'cmdline': [ expand( '$HOME/.vim/lsp/viml/node_modules/.bin/vim-language-server' ), '--stdio' ]
+    \   },
+    \ ]
+endfun
+
+" PLUGIN: Coc-vim
+fun! GoCoc()
+   inoremap <buffer> <silent><expr> <TAB>
+              \ pumvisible() ? "\<C-n>" :
+              \ <SID>check_back_space() ? "\<TAB>" :
+              \ coc#refresh()
+
+  inoremap <buffer> <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+  inoremap <buffer> <silent><expr> <C-space> coc#refresh()
+
+  " GoTo code navigation.
+  nmap <buffer> <leader>gd <Plug>(coc-definition)
+  nmap <buffer> <leader>gy <Plug>(coc-type-definition)
+  nmap <buffer> <leader>gi <Plug>(coc-implementation)
+  nmap <buffer> <leader>gr <Plug>(coc-references)
+  nnoremap <buffer> <leader>cr :CocRestart
+endfun
+
+autocmd FileType typescript,javascript,javascriptreact,javascript.jsx :call GoYCM()
+autocmd FileType ruby :call GoCoc()
 
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 if executable('ag')
@@ -187,7 +220,7 @@ if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor\ --column
 
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore "
-  let g:ctrlp_user_command = 'ag %s -l --nocolor --path-to-ignore ~/projects/dotfiles/.agignore --hidden -g ""'
+  let g:ctrlp_user_command = 'ag %s -l --nocolor --path-to-ignore ~/.agignore --hidden -g ""'
 
   " ag is fast enough that CtrlP doesn't need to cache "
   let g:ctrlp_use_caching = 0
@@ -196,7 +229,7 @@ endif
 " bind K to grep word under cursor
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
-nnoremap \ :Ag --path-to-ignore ~/projects/dotfiles/.agignore<SPACE>
+nnoremap \ :Ag --path-to-ignore ~/.agignore<SPACE>
 
 " PLUGIN: ale
 let g:ale_linters = { 'javascript': ['eslint'], 'ruby': ['rubocop'] }
@@ -218,10 +251,6 @@ let g:ale_lint_on_enter = 0
 let g:ctrlp_map = '<c-t>'
 
 let g:ctrlp_show_hidden = 1
-
-" for big projects: https://github.com/kien/ctrlp.vim/issues/234
-let g:ctrlp_max_files=0
-let g:ctrlp_max_depth=40
 
 let g:netrw_browse_split=2
 let g:netrw_banner=0
