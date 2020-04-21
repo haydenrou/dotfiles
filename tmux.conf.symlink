@@ -1,5 +1,5 @@
 # Set to login shell
-set -g default-command "${SHELL}"
+set -g default-command "/bin/bash"
 
 # Set history limit
 set -g history-limit 20000
@@ -60,7 +60,7 @@ set -g @plugin 'tmux-plugins/tmux-sensible'
 
 set -g @plugin 'jimeh/tmux-themepack'
 
-set -g @themepack 'powerline/default/cyan'
+set -g @themepack 'powerline/block/magenta'
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run -b '~/.tmux/plugins/tpm/tpm'
