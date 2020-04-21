@@ -96,6 +96,10 @@ alias tidybranches='git branch | grep -v develop|master | xargs git branch -D'
 alias evrc='vim ~/projects/dotfiles/vimrc.symlink'
 alias ag='ag --path-to-ignore ~/projects/dotfiles/.agignore'
 
+if [[ -f ~/projects/dotfiles/personal.bashrc ]] ; then
+  source ~/projects/dotfiles/personal.bashrc
+fi
+
 # Stop <c-d> exiting
 set -o ignoreeof
 

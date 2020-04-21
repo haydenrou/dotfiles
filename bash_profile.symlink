@@ -1,13 +1,7 @@
 # When loading wsl, bashrc is not loaded.
 # https://github.com/microsoft/WSL/issues/2067
 
-if [[ -f ~/.bashrc ]] ; then
-  source ~/.bashrc
-fi
-
-if [[ -f ~/projects/dotfiles/personal.bashrc ]] ; then
-  source ~/projects/dotfiles/personal.bashrc
-fi
+source ~/.bashrc
 
 source $HOME/.asdf/asdf.sh
 
