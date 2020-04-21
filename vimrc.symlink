@@ -29,6 +29,7 @@ set magic
 set exrc
 set number
 set completeopt=menuone,noinsert,noselect
+set updatetime=50
 
 " Softtabs, 2 spaces
 set tabstop=2 softtabstop=2
@@ -160,7 +161,14 @@ autocmd FileType html,css,erb,jsx,javascript EmmetInstall
 " https://github.com/tpope/vim-commentary/issues/68
 autocmd FileType javascript setlocal commentstring={/*\ %s\ */}
 
+" Inspired by @theprimeagen https://github.com/ThePrimeagen
+" The below will use YCM for general completion, namely JS because it's great
+" for that
+" But Coc is much better for implementing the solargraph LSP for Ruby
+"
 " PLUGIN: YouCompleteMe
+let g:ycm_filetype_blacklist = { 'ruby': 1 }
+
 fun! GoYCM()
   nnoremap <buffer> <silent> <leader>gd :YcmCompleter GoTo<CR>
   nnoremap <buffer> <silent> <leader>gr :YcmCompleter GoToReferences<CR>
