@@ -1,0 +1,13 @@
+---
+include:
+- "**/*.rb"
+exclude:
+- spec/**/*
+- test/**/*
+- vendor/**/*
+- ".bundle/**/*"
+require:
+  - rails
+domains: []
+require_paths: []
+max_files: 0
