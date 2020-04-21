@@ -4,12 +4,12 @@ echo "Let's check you're up to date..."
 cd ~ && sudo apt-get update -y && sudo apt-get upgrade -y;
 
 echo "Installing the basics: git, vim, tmux, wget[for installing various software], (ruby, rubygems, vim-nox, silversearcher-ag)[for vim compatability with ruby & AG searching]"
-sudo apt-get install -y git vim tmux wget ruby rubygems vim-nox silversearcher-ag;
+sudo apt-get install -y git vim tmux wget ruby rubygems vim-nox silversearcher-ag neofetch;
 
 read -p "What email do you want associated with your git config?" gitemail
-git config --global user.email $gitemail
+git config --global user.email "$gitemail"
 read -p "Name?" gitname
-git config --global user.name $gitname
+git config --global user.name "$gitname"
 
 mkdir ~/projects
 mkdir ~/.vim/undodir -p
@@ -27,11 +27,14 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
+mkdir ~/.config/solargraph
 rm ~/.bashrc ~/.bash_profile ~/.tmux.conf ~/.vimrc
+ln -s ~/projects/dotfiles/aginore.symlink ~/.agignore
 ln -s ~/projects/dotfiles/bashrc.symlink ~/.bashrc
 ln -s ~/projects/dotfiles/bash_profile.symlink ~/.bash_profile
 ln -s ~/projects/dotfiles/tmux.conf.symlink ~/.tmux.conf
 ln -s ~/projects/dotfiles/vimrc.symlink ~/.vimrc
+ln -s ~/projects/dotfiles/solargraph.config.yml ~/.config/solargraph/config.yml
 
 echo "Now we'll install your vim plugins...";
 vim +PluginInstall +qall
@@ -50,7 +53,19 @@ mkdir ~/ycm_build && cd ~/ycm_build
 cmake -G "Unix Makefiles" . ~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp && cmake --build . --target ycm_core --config Release
 
 cd ~/.vim/bundle/YouCompleteMe
-sh ./install.py --ts-completer
+./install.py --ts-completer
+vim +YcmRestartServer +qall
+vim +call coc#util#install()+qall
+vim +CocInstall coc-solargraph +qall
+
+echo "Setting up LSP for YCM per the docs";
+echo "https://github.com/ycm-core/lsp-examples";
+git clone https://github.com/ycm-core/lsp-examples.git $HOME/.vim/lsp/
+$HOME/.vim/lsp/bash/install.py
+$HOME/.vim/lsp/yaml/install.py
+$HOME/.vim/lsp/json/install.py
+$HOME/.vim/lsp/docker/install.py
+$HOME/.vim/lsp/vim/install
 
 echo "And yarn...";
 curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - && echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
@@ -83,6 +98,8 @@ gem install mysql2 -v "0.5.2"
 
 echo "And mailcatcher is always useful";
 gem install mailcatcher
+
+gem install solargraph
 
 echo "It's database time!"
 sudo apt-get install -y libmysqlclient-dev mysql-server mysql-client
