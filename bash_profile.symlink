@@ -2,8 +2,11 @@
 # https://github.com/microsoft/WSL/issues/2067
 
 if [[ -f ~/.bashrc ]] ; then
-  . ~/.bashrc
+  source ~/.bashrc
 fi
 
-source $HOME/.rvm/scripts/rvm
+if [[ -f ~/projects/dotfiles/personal.bashrc ]] ; then
+  source ~/projects/dotfiles/personal.bashrc
+fi
+
 export PATH=~/bin:$PATH
