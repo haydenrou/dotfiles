@@ -111,3 +111,10 @@ export HISTCONTROL=ignoredups:erasedups
 shopt -s histappend
 # After each command, save and reload history
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+
+# FZF configurations
+export FZF_DEFAULT_OPTS='--layout=reverse --height 40%'
+export FZF_DEFAULT_COMMAND='ag %s -l --path-to-ignore ~/.agignore --hidden -g ""'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

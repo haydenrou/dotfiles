@@ -3,8 +3,8 @@
 echo "Let's check you're up to date..."
 cd ~ && sudo apt-get update -y && sudo apt-get upgrade -y;
 
-echo "Installing the basics: git, vim, tmux, wget[for installing various software], (ruby, rubygems, vim-nox, silversearcher-ag)[for vim compatability with ruby & AG searching]"
-sudo apt-get install -y git vim tmux wget ruby rubygems vim-nox silversearcher-ag neofetch;
+echo "Installing the basics: git, vim, tmux, wget[for installing various software], (ruby, rubygems, vim-nox, fzf, ripgrep)[for vim compatability with ruby & fzf /rRipGrep searching]"
+sudo apt-get install -y git vim tmux wget ruby rubygems vim-nox neofetch fzf ripgrep silversearcher-ag;
 
 read -p "What email do you want associated with your git config?" gitemail
 git config --global user.email "$gitemail"
@@ -39,6 +39,8 @@ ln -s ~/projects/dotfiles/solargraph.config.yml ~/.config/solargraph/config.yml
 echo "Now we'll install your vim plugins...";
 vim +PluginInstall +qall
 
+vim +call fzf#install() +qall
+
 echo "and install your tmux plugins :)";
 ~/.tmux/plugins/tpm/bin/install_plugins
 
@@ -55,17 +57,8 @@ cmake -G "Unix Makefiles" . ~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp && 
 cd ~/.vim/bundle/YouCompleteMe
 ./install.py --ts-completer
 vim +YcmRestartServer +qall
-vim +call coc#util#install()+qall
+vim +call coc#util#install() +qall
 vim +CocInstall coc-solargraph +qall
-
-echo "Setting up LSP for YCM per the docs";
-echo "https://github.com/ycm-core/lsp-examples";
-git clone https://github.com/ycm-core/lsp-examples.git $HOME/.vim/lsp/
-$HOME/.vim/lsp/bash/install.py
-$HOME/.vim/lsp/yaml/install.py
-$HOME/.vim/lsp/json/install.py
-$HOME/.vim/lsp/docker/install.py
-$HOME/.vim/lsp/vim/install
 
 echo "And yarn...";
 curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - && echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
