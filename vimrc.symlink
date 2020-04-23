@@ -158,6 +158,9 @@ nnoremap <Leader>w :w!<cr>
 nnoremap <Leader>sv <C-w>v
 nnoremap <Leader>sx <C-w>S
 
+nnoremap <silent> <Leader>+ :vertical resize +5<CR>
+nnoremap <silent> <Leader>- :vertical resize -5<CR>
+
 " for easyalign
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
