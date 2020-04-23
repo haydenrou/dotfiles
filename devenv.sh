@@ -1,10 +1,19 @@
 #!/bin/bash
 
+echo "Please note: this file is not tested and is generally here with a primary purpose of being documentation for the general setup of this repository. This script may not work, and there may be work-arounds required. I suggest following the steps one-by-one, and not running the script.";
+exit
+
 echo "Let's check you're up to date..."
 cd ~ && sudo apt-get update -y && sudo apt-get upgrade -y;
 
-echo "Installing the basics: git, vim, tmux, wget[for installing various software], (ruby, rubygems, vim-nox, fzf, ripgrep)[for vim compatability with ruby & fzf /rRipGrep searching]"
-sudo apt-get install -y git vim tmux wget ruby rubygems vim-nox neofetch fzf ripgrep silversearcher-ag;
+echo "Installing the basics: git, vim, tmux, wget[for installing various software], (ruby, rubygems, vim-nox, fzf, ripgrep)[for vim compatability with ruby & fzf / RipGrep searching]"
+sudo apt-get install -y git vim tmux wget ruby rubygems vim-nox neofetch silversearcher-ag;
+
+echo "RipGrep is done differently";
+curl -LO https://github.com/BurntSushi/ripgrep/releases/download/11.0.2/ripgrep_11.0.2_amd64.deb
+sudo dpkg -i ripgrep_11.0.2_amd64.deb
+
+echo "per https://github.com/junegunn/fzf/issues/1589 you'll have to install fzf manually on Ubuntu 18.04 at the moment";
 
 read -p "What email do you want associated with your git config?" gitemail
 git config --global user.email "$gitemail"
