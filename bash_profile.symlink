@@ -3,6 +3,12 @@
 
 source ~/.bashrc
 
-source $HOME/.asdf/asdf.sh
+if [ -x "$(command -v rvm)" ]; then
+  source $HOME/.rvm/scripts/rvm
+fi
+
+if [ -x "$(command -v asdf)" ]; then
+  source $HOME/.asdf/asdf.sh
+fi
 
 export PATH=~/bin:$PATH
