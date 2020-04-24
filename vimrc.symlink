@@ -177,6 +177,7 @@ autocmd FileType javascript setlocal commentstring={/*\ %s\ */}
 "
 " PLUGIN: YouCompleteMe
 let g:ycm_filetype_whitelist = { 'typescript': 1, 'javascript': 1, 'javascriptreact': 1, 'javascript.jsx': 1 }
+let g:ycm_filetype_blacklist = { 'ruby': 1, 'eruby': 1 }
 
 fun! GoYCM()
   nnoremap <buffer> <silent> <leader>gd :YcmCompleter GoTo<CR>
@@ -205,7 +206,7 @@ endfun
 autocmd FileType typescript,javascript,javascriptreact,javascript.jsx :call GoYCM()
 autocmd FileType ruby :call GoCoc()
 
-nnoremap \ :Rg<Space>
+nnoremap \ :Rg<CR>
 
 " PLUGIN: ale
 let g:ale_linters = { 'javascript': ['eslint'], 'ruby': ['rubocop'] }
