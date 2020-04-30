@@ -8,6 +8,9 @@ case $- in
       *) return;;
 esac
 
+export EDITOR=vim
+export VISUAL=vim
+
 export HISTSIZE=
 export HISTFILESIZE=
 
@@ -115,6 +118,9 @@ export HISTCONTROL=ignoredups:erasedups
 shopt -s histappend
 # After each command, save and reload history
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+
+# https://github.com/tmux-plugins/tpm/issues/58
+export TMUX_PLUGIN_MANAGER_PATH="$HOME/.tmux/plugins"
 
 # FZF configurations
 export FZF_DEFAULT_OPTS='--layout=reverse --height 40%'
