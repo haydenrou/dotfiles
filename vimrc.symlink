@@ -16,6 +16,7 @@ set laststatus=2  " Always display the status line
 set autowrite     " Automatically :write before running commands
 set relativenumber " show the numbers above your line to relative of current line
 set mouse=a        " make vim clickable
+set ttymouse=sgr
 set spelllang=en   " spelling in english
 set pastetoggle=<F2>    " allow pasting with correct indentation
 set cursorline
