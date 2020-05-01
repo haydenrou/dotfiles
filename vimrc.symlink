@@ -78,7 +78,6 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 Plugin 'morhetz/gruvbox'
-Plugin 'git@github.com:ajh17/VimCompletesMe.git'
 Plugin 'git@github.com:Valloric/YouCompleteMe.git'
 Plugin 'neoclide/coc.nvim'
 Plugin 'mbbill/undotree'
@@ -241,6 +240,7 @@ nnoremap <Leader>nn :NERDTreeToggle<Enter>
 
 " fzf for file searching
 nnoremap <C-T> :FZF<cr>
+nnoremap <C-N> :FZF -q@%<cr>
 nnoremap <C-P> :Files<cr>
 nnoremap <Leader>b :Buffers<cr>
 nnoremap <Leader>s :BLines<cr>
