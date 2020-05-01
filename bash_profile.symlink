@@ -1,14 +1,7 @@
 # When loading wsl, bashrc is not loaded.
 # https://github.com/microsoft/WSL/issues/2067
-
 source ~/.bashrc
 
-if [ -x "$(command -v rvm)" ]; then
-  source $HOME/.rvm/scripts/rvm
-fi
-
-if [ -x "$(command -v asdf)" ]; then
-  source $HOME/.asdf/asdf.sh
-fi
+source $HOME/.asdf/asdf.sh
 
 export PATH=~/bin:$PATH
