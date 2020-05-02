@@ -66,7 +66,7 @@ Most of the key binds are self explanatory within the vimrc but here are some us
 If you want to use the setup script, then you should be on Ubuntu. Otherwise just reference it for installing your setup.
 
 ```sh
-$ curl https://raw.githubusercontent.com/haydenrou/dotfiles/master/setup.sh >> ~/setup.sh
+$ curl -fLo ~/setup.sh https://raw.githubusercontent.com/haydenrou/dotfiles/master/setup.sh
 $ chmod +x ~/setup.sh
 $ sh ~/setup.sh
 ```
