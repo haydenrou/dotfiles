@@ -77,6 +77,8 @@ ln -s ~/projects/dotfiles/tmux.conf.symlink ~/.tmux.conf
 ln -s ~/projects/dotfiles/vimrc.symlink ~/.vimrc
 ln -s ~/projects/dotfiles/solargraph.config.yml ~/.config/solargraph/config.yml
 
+source ~/.bash_profile
+
 echo "and install your tmux plugins :)";
 ~/.tmux/plugins/tpm/bin/install_plugins
 
@@ -102,19 +104,17 @@ sudo apt-get install -y
 echo "This is going to configure YCM for vim";
 sudo apt-get install -y cmake python-dev python3-dev build-essential;
 
+vim +Plug Install +qall
+vim -c "call coc#util#install()|qall"
+
 mkdir ~/ycm_build && cd ~/ycm_build
 
 cmake -G "Unix Makefiles" . ~/.vim/plugged/YouCompleteMe/third_party/ycmd/cpp && cmake --build . --target ycm_core --config Release
 
+vim +YcmRestartServer +qall
+
 cd ~/.vim/plugged/YouCompleteMe
 ./install.py --ts-completer
-
-source ~/.profile
-
-vim +Plug Install +qall
-vim +YcmRestartServer +qall
-vim -c "call coc#util#install()|qall"
-vim -c "CocInstall coc-solargraph|echo 'When coc-solargraph is installed it will let you know, and you can exit with :qa'"
 
 read -p "Would you like to install Yarn? [Y/n]" yarn
 case $yarn in
@@ -144,6 +144,7 @@ case $ruby in
     asdf global ruby $ruby_version
     gem install solargraph
     gem install mailcatcher
+    vim -c "CocInstall coc-solargraph|echo 'When coc-solargraph is installed it will let you know, and you can exit with :qa'"
     ;;
   [Nn]* ) exit;;
   * ) exit;;
