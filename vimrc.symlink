@@ -69,41 +69,35 @@ autocmd BufWritePre * %s/\s\+$//e
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'scrooloose/nerdtree'
-Plugin 'morhetz/gruvbox'
-Plugin 'git@github.com:Valloric/YouCompleteMe.git'
-Plugin 'neoclide/coc.nvim'
-Plugin 'mbbill/undotree'
-Plugin 'dense-analysis/ale'
-Plugin 'tpope/vim-commentary'
-Plugin 'pangloss/vim-javascript'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'mattn/emmet-vim'
-Plugin 'junegunn/vim-easy-align'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'christoomey/vim-system-copy'
-Plugin 'tpope/vim-surround'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'junegunn/fzf'
-Plugin 'junegunn/fzf.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'scrooloose/nerdtree'
+Plug 'morhetz/gruvbox'
+Plug 'git@github.com:Valloric/YouCompleteMe.git'
+Plug 'neoclide/coc.nvim'
+Plug 'mbbill/undotree'
+Plug 'dense-analysis/ale'
+Plug 'tpope/vim-commentary'
+Plug 'pangloss/vim-javascript'
+Plug 'plasticboy/vim-markdown'
+Plug 'mattn/emmet-vim'
+Plug 'junegunn/vim-easy-align'
+Plug 'easymotion/vim-easymotion'
+Plug 'christoomey/vim-system-copy'
+Plug 'tpope/vim-surround'
+Plug 'jiangmiao/auto-pairs'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 if executable('rg')
   let g:rg_derive_root='true'
 endif
 
-" Plugin 'tpope/vim-rails'
-" Plugin 'vim-ruby/vim-ruby'
+" Plug 'tpope/vim-rails'
+" Plug 'vim-ruby/vim-ruby'
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
+call plug#end()
 
 syntax on
 
@@ -240,7 +234,6 @@ nnoremap <Leader>nn :NERDTreeToggle<Enter>
 
 " fzf for file searching
 nnoremap <C-T> :FZF<cr>
-nnoremap <C-N> :FZF -q@%<cr>
 nnoremap <C-P> :Files<cr>
 nnoremap <Leader>b :Buffers<cr>
 nnoremap <Leader>s :BLines<cr>

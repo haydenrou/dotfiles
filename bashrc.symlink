@@ -107,6 +107,8 @@ if [[ -f ~/projects/dotfiles/personal.bashrc ]] ; then
   source ~/projects/dotfiles/personal.bashrc
 fi
 
+source $HOME/.asdf/asdf.sh
+
 # Stop <c-d> exiting
 set -o ignoreeof
 

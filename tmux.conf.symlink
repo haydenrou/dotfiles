@@ -4,7 +4,7 @@ set -g default-command "/bin/bash"
 set -g default-terminal screen-256color
 
 # Set history limit
-set -g history-limit 20000
+set -g history-limit 100000
 
 # Set automatic renumbering of windows
 set -g renumber-windows on
