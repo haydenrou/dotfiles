@@ -19,7 +19,7 @@ You may want to use this setup if you are interested in or use any of the below 
 
 ## Vim
 
-![Dotfiles Demo](https://imgur.com/a/SqvUDvi)
+![Dotfiles Demo](https://i.imgur.com/bFbXSK0.mp4)
 
 ### Included plugins
 - [vim-plug](https://github.com/junegunn/vim-plug)
