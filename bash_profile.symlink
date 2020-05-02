@@ -1,7 +1,8 @@
 # When loading wsl, bashrc is not loaded.
 # https://github.com/microsoft/WSL/issues/2067
-source ~/.bashrc
 
-source $HOME/.asdf/asdf.sh
+if [ -f $HOME/.bashrc  ]; then
+    source $HOME/.bashrc
+fi
 
 export PATH=~/bin:$PATH
