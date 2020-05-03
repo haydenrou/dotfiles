@@ -114,7 +114,7 @@ cmake -G "Unix Makefiles" . ~/.vim/plugged/YouCompleteMe/third_party/ycmd/cpp &&
 vim +YcmRestartServer +qall
 
 cd ~/.vim/plugged/YouCompleteMe
-./install.py --ts-completer
+./install.py --ts-completer --js-completer
 
 read -p "Would you like to install Yarn? [Y/n]" yarn
 case $yarn in
