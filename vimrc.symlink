@@ -126,7 +126,6 @@ autocmd BufReadPost *
 autocmd FileType javascript,javascriptreact,javascript.jsx setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd BufNewFile,BufRead *.jsx set filetype=javascript
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd BufEnter *.tsx set filetype=typescript
 
 " When the type of shell script is /bin/sh, assume a POSIX-compatible
 " shell for syntax highlighting purposes.
@@ -198,7 +197,7 @@ fun! GoCoc()
 endfun
 
 autocmd FileType typescript,javascript,javascriptreact,javascript.jsx :call GoYCM()
-autocmd FileType ruby :call GoCoc()
+autocmd FileType ruby,eruby :call GoCoc()
 
 nnoremap \ :Rg<CR>
 
