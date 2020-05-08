@@ -44,8 +44,8 @@ You may want to use this setup if you are interested in or use any of the below 
 ### General usage
 Most of the key binds are self explanatory within the vimrc but here are some useful ones
 - `<Leader>` key is bound to `,`
-- `<Leader>sv` will vertically split
-- `<Leader>sx` will horizontally split
+- `<Leader>vs` will vertically split
+- `<Leader>hs` will horizontally split
 - `<Leader>hjkl` for moving between splits
 - `<Leader>+` and `<Leader>-` for vertical resizing
 - `ga` for easy align. For instance, `gaip:` will align the paragraph on `:`

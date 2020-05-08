@@ -148,8 +148,8 @@ nnoremap <Leader>l <C-w>l
 nnoremap <Leader>w :w!<cr>
 
 " Vertical and horizontal splits
-nnoremap <Leader>sv <C-w>v
-nnoremap <Leader>sx <C-w>S
+nnoremap <Leader>vs <C-w>v
+nnoremap <Leader>hs <C-w>S
 
 nnoremap <silent> <Leader>+ :vertical resize +5<CR>
 nnoremap <silent> <Leader>- :vertical resize -5<CR>

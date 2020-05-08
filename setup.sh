@@ -23,6 +23,8 @@ sudo apt-get install -y \
   libc6 \
   fzf \
   libmysqlclient-dev \
+  libsqlite3-dev \
+  libreadline-dev \
   mysql-server \
   mysql-client
 
@@ -160,7 +162,7 @@ case $versioned_mysql in
 esac
 
 echo "Moving onto database setup:"
-read -p "What password do you want _root_ to be set as for mysql?" password
+read -p "What password do you want _root_ to be set as for mysql? " password
 
 PASSWORD_SCRIPT="use mysql; update user set authentication_string=PASSWORD(\"${password}\") where User='root'; update user set plugin=\"mysql_native_password\" where User='root'; flush privileges; quit;"
 
