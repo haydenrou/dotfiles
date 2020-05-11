@@ -74,8 +74,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree'
 Plug 'morhetz/gruvbox'
-Plug 'git@github.com:Valloric/YouCompleteMe.git'
-Plug 'neoclide/coc.nvim'
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'mbbill/undotree'
 Plug 'dense-analysis/ale'
 Plug 'tpope/vim-commentary'
@@ -83,12 +82,12 @@ Plug 'pangloss/vim-javascript'
 Plug 'plasticboy/vim-markdown'
 Plug 'mattn/emmet-vim'
 Plug 'junegunn/vim-easy-align'
-Plug 'easymotion/vim-easymotion'
 Plug 'christoomey/vim-system-copy'
 Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'rafi/awesome-vim-colorschemes'
 
 if executable('rg')
   let g:rg_derive_root='true'
@@ -164,40 +163,27 @@ autocmd FileType html,css,erb,jsx,javascript EmmetInstall
 " https://github.com/tpope/vim-commentary/issues/68
 autocmd FileType javascript setlocal commentstring={/*\ %s\ */}
 
-" The below will use YCM for JS because it's great for that
-" But Coc is much better for implementing the solargraph LSP for Ruby
-" so we apply Coc for the rest
-"
-" PLUGIN: YouCompleteMe
-let g:ycm_filetype_whitelist = { 'typescript': 1, 'javascript': 1, 'javascriptreact': 1, 'javascript.jsx': 1 }
-let g:ycm_filetype_blacklist = { 'ruby': 1, 'eruby': 1 }
-
-fun! GoYCM()
-  nnoremap <buffer> <silent> <leader>gd :YcmCompleter GoTo<CR>
-  nnoremap <buffer> <silent> <leader>gr :YcmCompleter GoToReferences<CR>
-  nnoremap <buffer> <silent> <leader>rr :YcmCompleter RefactorRename<space>
-endfun
-
 " PLUGIN: Coc-vim
-fun! GoCoc()
-   inoremap <buffer> <silent><expr> <TAB>
-              \ pumvisible() ? "\<C-n>" :
-              \ <SID>check_back_space() ? "\<TAB>" :
-              \ coc#refresh()
+func GoCoC()
+    :CocEnable
+    inoremap <buffer> <silent><expr> <TAB>
+                \ pumvisible() ? "\<C-n>" :
+                \ <SID>check_back_space() ? "\<TAB>" :
+                \ coc#refresh()
 
-  inoremap <buffer> <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-  inoremap <buffer> <silent><expr> <C-space> coc#refresh()
+    inoremap <buffer> <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+    inoremap <buffer> <silent><expr> <C-space> coc#refresh()
 
-  " GoTo code navigation.
-  nmap <buffer> <leader>gd <Plug>(coc-definition)
-  nmap <buffer> <leader>gy <Plug>(coc-type-definition)
-  nmap <buffer> <leader>gi <Plug>(coc-implementation)
-  nmap <buffer> <leader>gr <Plug>(coc-references)
-  nnoremap <buffer> <leader>cr :CocRestart
+    " GoTo code navigation.
+    nmap <buffer> <leader>gd <Plug>(coc-definition)
+    nmap <buffer> <leader>gy <Plug>(coc-type-definition)
+    nmap <buffer> <leader>gi <Plug>(coc-implementation)
+    nmap <buffer> <leader>gr <Plug>(coc-references)
+    nmap <buffer> <leader>rr <Plug>(coc-rename)
+    nnoremap <buffer> <leader>cr :CocRestart
 endfun
 
-autocmd FileType typescript,javascript,javascriptreact,javascript.jsx :call GoYCM()
-autocmd FileType ruby,eruby :call GoCoc()
+autocmd BufEnter * :call GoCoC()
 
 nnoremap \ :Rg<CR>
 
