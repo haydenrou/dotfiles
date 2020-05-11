@@ -9,7 +9,7 @@ sudo apt-get install -y \
   tmux \
   wget \
   gpg \
-  dirmngr
+  dirmngr \
   nnn \
   xsel \
   curl \
@@ -23,19 +23,24 @@ sudo apt-get install -y \
   libc6 \
   fzf \
   libmysqlclient-dev \
+  libssl-dev \
+  libreadline-dev \
   libsqlite3-dev \
   libreadline-dev \
   mysql-server \
   mysql-client
 
 echo "As per https://github.com/junegunn/fzf/issues/1589 we'll have to install fzf manually on Ubuntu 18.04 at the moment";
-read -p "Are you running Ubuntu? [Y/n]? " ubuntu
-case $ubuntu in
-  [Yy]* ) wget http://mirrors.kernel.org/ubuntu/pool/universe/f/fzf/fzf_0.18.0-2_amd64.deb | sudo dkpg -i;;
+wget http://mirrors.kernel.org/ubuntu/pool/universe/f/fzf/fzf_0.18.0-2_amd64.deb | sudo dpkg -i;
+
+ls -a ~ | grep fzf_ | xargs rm
+
+read -p "Would you like to run i3 [Y/n]? " ithree
+case $ithree in
+  [Yy]* ) sudo apt-get install -y i3 i3status dmenu i3lock xbacklight feh conky lxappearance xcompmgr;;
   [Nn]* ) exit;;
   * ) exit;;
 esac
-ls -a ~ | grep fzf_ | xargs rm
 
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
@@ -57,7 +62,8 @@ eval `ssh-agent`
 ssh-add ~/.ssh/id_rsa
 
 echo $(cat ~/.ssh/id_rsa.pub)
-read -p "Press <Enter> once you have added the SSH key above to github.";
+
+read -p "Press <Enter> once you have added the SSH key above to github." irrelevant
 
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.7.8
 
@@ -68,10 +74,11 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
+mkdir ~/.config/alacritty
 mkdir ~/.config/solargraph -p
 rm ~/.bashrc ~/.bash_profile ~/.tmux.conf ~/.vimrc > /dev/null 2>&1
-ln -s ~/projects/dotfiles/aginore.symlink ~/.agignore
-ln -s ~/projects/dotfiles/alacritty.symlink.yml ~/.alacritty.yml
+ln -s ~/projects/dotfiles/aginore.symlink ~/.ignore
+ln -s ~/projects/dotfiles/alacritty.symlink.yml ~/.config/alacritty/alacritty.yml
 ln -s ~/projects/dotfiles/profile.symlink ~/.profile
 ln -s ~/projects/dotfiles/bash_profile.symlink ~/.bash_profile
 ln -s ~/projects/dotfiles/bashrc.symlink ~/.bashrc
@@ -80,6 +87,7 @@ ln -s ~/projects/dotfiles/vimrc.symlink ~/.vimrc
 ln -s ~/projects/dotfiles/solargraph.config.yml ~/.config/solargraph/config.yml
 
 source ~/.bash_profile
+source ~/.bashrc
 
 echo "and install your tmux plugins :)";
 ~/.tmux/plugins/tpm/bin/install_plugins
@@ -103,20 +111,11 @@ sudo apt-get install -y
   g++ \
   make
 
-echo "This is going to configure YCM for vim";
-sudo apt-get install -y cmake python-dev python3-dev build-essential;
-
 vim +Plug Install +qall
-vim -c "call coc#util#install()|qall"
 
-mkdir ~/ycm_build && cd ~/ycm_build
+vim -c "call coc#util#install()|echo 'Quit vim using :qa when completed'"
 
-cmake -G "Unix Makefiles" . ~/.vim/plugged/YouCompleteMe/third_party/ycmd/cpp && cmake --build . --target ycm_core --config Release
-
-vim +YcmRestartServer +qall
-
-cd ~/.vim/plugged/YouCompleteMe
-./install.py --ts-completer --js-completer
+vim -c "CocInstall coc-html coc-css coc-tsserver coc-json coc-tailwindcss|echo 'When the plugin is installed it will let you know, and you can exit with :qa'"
 
 read -p "Would you like to install Yarn? [Y/n]" yarn
 case $yarn in
@@ -132,7 +131,7 @@ esac
 
 read -p "Do you want to install Elixir? [Y/n] " elixir
 case $elixir in
-  [Yy]* ) wget https://packages.erlang-solutions.com/erlang-solutions_2.0_all.deb && sudo dpkg -i erlang-solutions_2.0_all.deb && sudo apt-get update -y && sudo apt-get install esl-erlang -y && sudo apt-get install elixir -y;;
+  [Yy]* ) wget https://packages.erlang-solutions.com/erlang-solutions_2.0_all.deb && sudo dpkg -i erlang-solutions_2.0_all.deb && sudo apt-get update -y && sudo apt-get install esl-erlang -y && sudo apt-get install elixir -y && vim -c "CocInstall coc-elixir|echo 'When the plugin is installed it will let you know, and you can exit with :qa'";;
   [Nn]* ) exit;;
   * ) exit;;
 esac
@@ -146,6 +145,7 @@ case $ruby in
     asdf global ruby $ruby_version
     gem install solargraph
     gem install mailcatcher
+    gem install rubocop
     vim -c "CocInstall coc-solargraph|echo 'When coc-solargraph is installed it will let you know, and you can exit with :qa'"
     ;;
   [Nn]* ) exit;;
@@ -164,9 +164,11 @@ esac
 echo "Moving onto database setup:"
 read -p "What password do you want _root_ to be set as for mysql? " password
 
-PASSWORD_SCRIPT="use mysql; update user set authentication_string=PASSWORD(\"${password}\") where User='root'; update user set plugin=\"mysql_native_password\" where User='root'; flush privileges; quit;"
+PASSWORD_SCRIPT="ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY \"${password}\"; FLUSH PRIVILEGES; exit;"
 
-sudo /etc/init.d/mysql stop && sudo mysqld_safe --skip-grant-tables && mysql -uroot < PASSWORD_SCRIPT && sudo /etc/init.d/mysql stop && sudo /etc/init.d/mysql start
+sudo mysql < PASSWORD_SCRIPT
+
+vim -c "smile"
 
 echo '==========================================================================='
 echo "Done! You can now `rm ~/setup.sh`, and there is a copy in `~/projects/dotfiles` for reference if you're interested. Please read the README to see further details. Enjoy..."
