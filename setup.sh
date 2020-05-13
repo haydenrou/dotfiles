@@ -6,6 +6,7 @@ echo "Installing the basics: git, vim, tmux, wget, ruby, rubygems, vim-nox, fzf,
 sudo apt-get install -y \
   git \
   vim \
+  neovim \
   tmux \
   wget \
   gpg \
@@ -51,7 +52,7 @@ read -p "And the name? " gitname
 git config --global user.name "$gitname"
 
 mkdir ~/projects
-mkdir ~/.vim/undodir -p
+mkdir ~/.local/share/nvim/undo -p
 
 mkdir ~/.fonts
 wget https://github.com/abertsch/Menlo-for-Powerline/raw/master/Menlo%20for%20Powerline.ttf -P ~/.fonts/
@@ -75,15 +76,16 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 mkdir ~/.config/alacritty
+mkdir ~/.config/nvim
 mkdir ~/.config/solargraph -p
 rm ~/.bashrc ~/.bash_profile ~/.tmux.conf ~/.vimrc > /dev/null 2>&1
-ln -s ~/projects/dotfiles/aginore.symlink ~/.ignore
+ln -s ~/projects/dotfiles/aginore.symlink ~/.agignore
 ln -s ~/projects/dotfiles/alacritty.symlink.yml ~/.config/alacritty/alacritty.yml
 ln -s ~/projects/dotfiles/profile.symlink ~/.profile
 ln -s ~/projects/dotfiles/bash_profile.symlink ~/.bash_profile
 ln -s ~/projects/dotfiles/bashrc.symlink ~/.bashrc
 ln -s ~/projects/dotfiles/tmux.conf.symlink ~/.tmux.conf
-ln -s ~/projects/dotfiles/vimrc.symlink ~/.vimrc
+ln -s ~/projects/dotfiles/vimrc.symlink ~/.config/nvim/init.vim
 ln -s ~/projects/dotfiles/solargraph.config.yml ~/.config/solargraph/config.yml
 
 source ~/.bash_profile

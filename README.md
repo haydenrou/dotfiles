@@ -5,6 +5,7 @@ This repository contains configuration files and setup for my current setup.
 You may want to use this setup if you are interested in or use any of the below features.
 
 ### Installed software
+- [neovim](https://neovim.io/)
 - [asdf-vm](https://github.com/asdf-vm/asdf)
 - tmux with [tpm](https://github.com/tmux-plugins/tpm) and [tmux themepack](https://github.com/jimeh/tmux-themepack)
 - [neofetch](https://github.com/dylanaraps/neofetch)
@@ -18,7 +19,7 @@ You may want to use this setup if you are interested in or use any of the below 
 - yarn
 - [i3wm](https://github.com/i3/i3)
 
-## Vim
+## nvim
 
 ![Dotfiles Demo](https://i.imgur.com/GPAG0qE.png)
 
@@ -44,7 +45,7 @@ You may want to use this setup if you are interested in or use any of the below 
 Most of the key binds are self explanatory within the vimrc but here are some useful ones
 - `<Leader>` key is bound to `,`
 - `<Leader>vs` will vertically split
-- `<Leader>hs` will horizontally split
+- `<Leader>zs` will horizontally split
 - `<Leader>hjkl` for moving between splits
 - `<Leader>+` and `<Leader>-` for vertical resizing
 - `ga` for easy align. For instance, `gaip:` will align the paragraph on `:`
