@@ -38,7 +38,17 @@ ls -a ~ | grep fzf_ | xargs rm
 
 read -p "Would you like to run i3 [Y/n]? " ithree
 case $ithree in
-  [Yy]* ) sudo apt-get install -y i3 i3status dmenu i3lock xbacklight feh conky lxappearance xcompmgr;;
+  [Yy]* ) sudo apt-get install -y \
+    i3 \
+    i3status \
+    dmenu \
+    i3lock \
+    xbacklight \
+    feh \
+    conky \
+    lxappearance \
+    xcompmgr \
+    && ln -s ~/projects/dotfiles/i3config.symlink ~/.config/i3/config;;
   [Nn]* ) exit;;
   * ) exit;;
 esac
