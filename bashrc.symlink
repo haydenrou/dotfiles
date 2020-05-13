@@ -8,8 +8,8 @@ case $- in
       *) return;;
 esac
 
-export EDITOR=vim
-export VISUAL=vim
+export EDITOR=nvim
+export VISUAL=nvim
 
 export HISTSIZE=
 export HISTFILESIZE=
@@ -77,7 +77,11 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-alias vi='vim'
+if [ -x /usr/bin/nvim ]; then
+  alias vi='nvim'
+  alias vim='nvim'
+fi
+
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
