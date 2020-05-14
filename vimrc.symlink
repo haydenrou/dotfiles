@@ -1,5 +1,3 @@
-set encoding=utf-8
-
 " Leader
 let mapleader = ","
 
@@ -7,16 +5,10 @@ set backspace=2   " Backspace deletes like most programs in insert mode
 set nobackup
 set nowritebackup
 set noswapfile    " http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
-set history=500
 set noshowmode
-set ruler         " show the cursor position all the time
-set showcmd       " display incomplete commands
-set incsearch     " do incremental searching
-set laststatus=2  " Always display the status line
 set autowrite     " Automatically :write before running commands
 set relativenumber " show the numbers above your line to relative of current line
 set mouse=a        " make vim clickable
-set ttymouse=sgr
 set spelllang=en   " spelling in english
 set pastetoggle=<F2>    " allow pasting with correct indentation
 set cursorline
@@ -47,10 +39,7 @@ set list listchars=tab:»·,trail:·,nbsp:·
 " Use one space, not two, after punctuation.
 set nojoinspaces
 
-set noerrorbells
-set novisualbell
 set vb t_vb=
-set undodir=~/.vim/undodir
 set undofile
 
 " https://github.com/junegunn/fzf.vim/issues/456
@@ -64,9 +53,11 @@ set grepprg=rg\ --vimgrep\ --smart-case\ --hidden\ --follow
 " Splits open to the right and below
 set splitbelow splitright
 
+set runtimepath^=~/.vim runtimepath+=~/.vim/after
+let &packpath = &runtimepath
+
 autocmd BufWritePre * %s/\s\+$//e
 
-set nocompatible              " be iMproved, required
 filetype off                  " required
 
 call plug#begin('~/.vim/plugged')
@@ -100,13 +91,11 @@ call plug#end()
 
 syntax on
 
-set hlsearch
 hi Search cterm=NONE ctermbg=DarkMagenta
 
 colorscheme gruvbox
 
 " because I just use TMUX backgrounds instead
-set background=dark
 hi Normal guibg=NONE ctermbg=NONE
 hi NonText guibg=NONE ctermbg=NONE
 
@@ -130,7 +119,6 @@ autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 " shell for syntax highlighting purposes.
 let g:is_posix = 1
 
-set wildmenu
 set wildmode=list:longest,list:full
 
 nnoremap <Leader><Enter> :noh<cr>
@@ -148,7 +136,7 @@ nnoremap <Leader>w :w!<cr>
 
 " Vertical and horizontal splits
 nnoremap <Leader>vs <C-w>v
-nnoremap <Leader>hs <C-w>S
+nnoremap <Leader>zs <C-w>S
 
 nnoremap <silent> <Leader>+ :vertical resize +5<CR>
 nnoremap <silent> <Leader>- :vertical resize -5<CR>
