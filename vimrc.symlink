@@ -218,8 +218,7 @@ map <Leader>nf :NERDTreeFind<cr>
 nnoremap <Leader>nn :NERDTreeToggle<Enter>
 
 " fzf for file searching
-nnoremap <C-T> :FZF<cr>
-nnoremap <C-P> :Files<cr>
+nnoremap <C-T> :Files<cr>
 nnoremap <Leader>b :Buffers<cr>
 nnoremap <Leader>s :BLines<cr>
 
