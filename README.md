@@ -40,6 +40,7 @@ You may want to use this setup if you are interested in or use any of the below 
 - [vim-surround](https://github.com/tpope/vim-surround)
 - [auto-pairs](https://github.com/jiangmiao/auto-pairs)
 - [fzf.vim](https://github.com/junegunn/fzf.vim)
+- [elixir vim](https://github.com/elixir-editors/vim-elixir)
 
 ### General usage
 Most of the key binds are self explanatory within the vimrc but here are some useful ones
