@@ -78,7 +78,9 @@ Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'elixir-editors/vim-elixir'
 Plug 'rafi/awesome-vim-colorschemes'
+
 
 if executable('rg')
   let g:rg_derive_root='true'
@@ -206,8 +208,7 @@ map <Leader>nf :NERDTreeFind<cr>
 nnoremap <Leader>nn :NERDTreeToggle<Enter>
 
 " fzf for file searching
-nnoremap <C-T> :FZF<cr>
-nnoremap <C-P> :Files<cr>
+nnoremap <C-T> :Files<cr>
 nnoremap <Leader>b :Buffers<cr>
 nnoremap <Leader>s :BLines<cr>
 

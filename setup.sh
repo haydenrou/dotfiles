@@ -143,7 +143,22 @@ esac
 
 read -p "Do you want to install Elixir? [Y/n] " elixir
 case $elixir in
-  [Yy]* ) wget https://packages.erlang-solutions.com/erlang-solutions_2.0_all.deb && sudo dpkg -i erlang-solutions_2.0_all.deb && sudo apt-get update -y && sudo apt-get install esl-erlang -y && sudo apt-get install elixir -y && vim -c "CocInstall coc-elixir|echo 'When the plugin is installed it will let you know, and you can exit with :qa'";;
+  [Yy]* )
+    asdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang.git
+    asdf install erlang 23.0
+    asdf global erlang 23.0
+    asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git
+    asdf install elixir 1.10.13
+    asdf global elixir 1.10.13
+    vim -c "CocInstall coc-elixir|echo 'Exit vim when installed'"
+    mix local.hex
+      read -p "And do you want to install Phoenix? [Y/n] " phoenix
+      case $phoenix in
+        [Yy]* ) mix archive.install hex phx_new 1.5.1;;
+        [Nn]* ) exit;;
+        * ) exit;;
+      esac
+    ;;
   [Nn]* ) exit;;
   * ) exit;;
 esac

@@ -3,3 +3,5 @@ vendor
 tmp
 public
 .git
+assets/node_modules
+.elixir_ls
