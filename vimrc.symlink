@@ -113,8 +113,9 @@ autocmd BufReadPost *
   \   exe "normal g`\"" |
   \ endif
 
-autocmd FileType javascript,javascriptreact,javascript.jsx setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd BufNewFile,BufRead *.jsx set filetype=javascript
+autocmd FileType javascript,javascriptreact,javascript.jsx,javascript.tsx setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd BufNewFile,BufRead *.jsx set filetype=javascriptreact
+autocmd BufNewFile,BufRead *.tsx set syntax=javascriptreact
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 
 " When the type of shell script is /bin/sh, assume a POSIX-compatible
@@ -151,7 +152,7 @@ autocmd FileType html,css,erb,jsx,javascript setlocal shiftwidth=2 tabstop=2
 autocmd FileType html,css,erb,jsx,javascript EmmetInstall
 
 " https://github.com/tpope/vim-commentary/issues/68
-autocmd FileType javascript setlocal commentstring={/*\ %s\ */}
+autocmd FileType javascript,javascriptreact,typescript,typescriptreact setlocal commentstring={/*\ %s\ */}
 
 " PLUGIN: Coc-vim
 func GoCoC()
