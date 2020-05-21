@@ -74,13 +74,13 @@ Plug 'plasticboy/vim-markdown'
 Plug 'mattn/emmet-vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'christoomey/vim-system-copy'
+Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'elixir-editors/vim-elixir'
 Plug 'rafi/awesome-vim-colorschemes'
-
 
 if executable('rg')
   let g:rg_derive_root='true'
@@ -95,7 +95,7 @@ syntax on
 
 hi Search cterm=NONE ctermbg=DarkMagenta
 
-colorscheme gruvbox
+colorscheme happy_hacking
 
 " because I just use TMUX backgrounds instead
 hi Normal guibg=NONE ctermbg=NONE
@@ -197,6 +197,12 @@ let g:ale_lint_on_enter = 0
 let g:netrw_browse_split=2
 let g:netrw_banner=0
 let g:netrw_winsize=25
+
+" PLUGIN: Fugitive
+nmap <leader>gst :G<CR>
+nmap <leader>gj :diffget //3<CR>
+nmap <leader>gf :diffget //2<CR>
+nmap <leader>gd :Gdiff<CR>
 
 " PLUGIN: Undotree
 nnoremap <leader>u :UndotreeShow<CR>

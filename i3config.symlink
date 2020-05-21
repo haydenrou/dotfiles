@@ -169,8 +169,9 @@ bar {
 # CUSTOM KEYS START
 # ------------------------------------------
 exec --no-startup-id nm-applet
-exec --no-startup-id feh --bg-fill /home/hrouille/Pictures/bg2.png
+exec --no-startup-id feh --bg-fill /home/hrouille/Pictures/bg3.png
 exec_always --no-startup-id compton --config /home/hrouille/.config/compton.conf
+bindsym $mod+F12 exec flameshot gui
 
 # FKeys
 # Pulse Audio controls

@@ -41,6 +41,7 @@ You may want to use this setup if you are interested in or use any of the below 
 - [auto-pairs](https://github.com/jiangmiao/auto-pairs)
 - [fzf.vim](https://github.com/junegunn/fzf.vim)
 - [elixir vim](https://github.com/elixir-editors/vim-elixir)
+- [vim-airline](https://github.com/vim-airline/vim-airline)
 
 ### General usage
 Most of the key binds are self explanatory within the vimrc but here are some useful ones
@@ -62,6 +63,9 @@ Most of the key binds are self explanatory within the vimrc but here are some us
 - `<Leader>b` opens a FZF file search for the open buffers
 - `<Leader>s` opens a search of the current files lines and will take you to the line found
 - `cp$` copy rest of line (or any pattern) to clipboard
+- `<Leader>gst` fugitive git statsu
+- `<Leader>gj` fugitive get head when in merge
+- `<Leader>gf` fugitive get upstream when in merge
 
 ## Installation
 ### Prerequisites
