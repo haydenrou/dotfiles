@@ -42,6 +42,7 @@ You may want to use this setup if you are interested in or use any of the below 
 - [fzf.vim](https://github.com/junegunn/fzf.vim)
 - [elixir vim](https://github.com/elixir-editors/vim-elixir)
 - [vim-airline](https://github.com/vim-airline/vim-airline)
+- [awesome-vim-colorschemes](https://github.com/rafi/awesome-vim-colorschemes)
 
 ### General usage
 Most of the key binds are self explanatory within the vimrc but here are some useful ones

@@ -18,7 +18,6 @@ sudo apt-get install -y \
   rubygems \
   vim-nox \
   neofetch \
-  silversearcher-ag \
   ripgrep \
   powerline \
   libc6 \
@@ -89,7 +88,7 @@ mkdir ~/.config/alacritty
 mkdir ~/.config/nvim
 mkdir ~/.config/solargraph -p
 rm ~/.bashrc ~/.bash_profile ~/.tmux.conf ~/.vimrc > /dev/null 2>&1
-ln -s ~/projects/dotfiles/aginore.symlink ~/.agignore
+ln -s ~/projects/dotfiles/ignore.symlink ~/.ignore
 ln -s ~/projects/dotfiles/alacritty.symlink.yml ~/.config/alacritty/alacritty.yml
 ln -s ~/projects/dotfiles/profile.symlink ~/.profile
 ln -s ~/projects/dotfiles/bash_profile.symlink ~/.bash_profile
