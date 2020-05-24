@@ -131,7 +131,7 @@ export TMUX_PLUGIN_MANAGER_PATH="$HOME/.tmux/plugins"
 
 # FZF configurations
 export FZF_DEFAULT_OPTS='--layout=reverse --height 40%'
-export FZF_DEFAULT_COMMAND='ag --path-to-ignore ~/.agignore --hidden -g ""'
+export FZF_DEFAULT_COMMAND="rg --files --hidden --follow --glob '!.git'"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
