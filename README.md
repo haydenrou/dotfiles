@@ -19,6 +19,13 @@ You may want to use this setup if you are interested in or use any of the below 
 - yarn
 - [i3wm](https://github.com/i3/i3)
 
+### Useful aliases
+- general git aliases, i.e. `ga`, `gco`, `gd`, `gc` etc
+- `gcob<Enter>` checkout branch from fzf
+- `tidybranches` [!dangerous] delete all branches except develop and master
+- rails aliases such as `rdm`, `rdmd`, `rc`
+- `evrc` edit vimrc
+
 ## nvim
 
 ![Dotfiles Demo](https://i.imgur.com/GPAG0qE.png)
