@@ -155,6 +155,11 @@ autocmd FileType html,css,erb,jsx,javascript EmmetInstall
 autocmd FileType javascript,javascriptreact,typescript,typescriptreact setlocal commentstring={/*\ %s\ */}
 
 " PLUGIN: Coc-vim
+function! s:check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
 func GoCoC()
     :CocEnable
     inoremap <buffer> <silent><expr> <TAB>
