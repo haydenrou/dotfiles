@@ -86,9 +86,6 @@ if executable('rg')
   let g:rg_derive_root='true'
 endif
 
-" Plug 'tpope/vim-rails'
-" Plug 'vim-ruby/vim-ruby'
-
 call plug#end()
 
 syntax on
