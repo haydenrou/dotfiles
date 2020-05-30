@@ -169,25 +169,27 @@ bar {
 # CUSTOM KEYS START
 # ------------------------------------------
 exec --no-startup-id nm-applet
-exec --no-startup-id feh --bg-fill /home/hrouille/Pictures/bg3.png
+exec --no-startup-id feh --bg-fill /home/hrouille/.bgs/bg4.jpg
 exec_always --no-startup-id compton --config /home/hrouille/.config/compton.conf
 bindsym $mod+F12 exec flameshot gui
 
 # FKeys
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+bindsym $mod+F1 exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+bindsym $mod+F2 exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+bindsym $mod+F3 exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
 #
-# # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+# # Screen brightness controls
+set $refresh_i3status killall -SIGUSR1 i3status
+bindsym $mod+F8 exec light -U 10 && light > ~/.config/brightness && $refresh_i3status # decrease screen brightness
+bindsym $mod+F9 exec light -A 10 && light > ~/.config/brightness && $refresh_i3status # increase screen brightness
 
 # Alsa audio controls.
-bindsym $mod+Shift+comma exec ~/.config/i3/scripts/alsa restore
-bindsym $mod+semicolon exec ~/.config/i3/scripts/alsa down Headphone
-bindsym $mod+comma exec ~/.config/i3/scripts/alsa up Headphone
-bindsym $mod+m move workspace to output left
+# bindsym $mod+Shift+comma exec ~/.config/i3/scripts/alsa restore
+# bindsym $mod+semicolon exec ~/.config/i3/scripts/alsa down Headphone
+# bindsym $mod+comma exec ~/.config/i3/scripts/alsa up Headphone
+
+# bindsym $mod+m move workspace to output left
 
 # Suspend
 bindsym $mod+Shift+period exec systemctl suspend

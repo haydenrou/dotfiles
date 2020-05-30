@@ -47,7 +47,9 @@ case $ithree in
     conky \
     lxappearance \
     xcompmgr \
-    && ln -s ~/projects/dotfiles/i3config.symlink ~/.config/i3/config;;
+    && touch ~/.config/brightness \
+    && mkdir ~/.config/i3 && ln -s ~/projects/dotfiles/i3config.symlink ~/.config/i3/config \
+    && mkdir ~/.config/i3status && ln -s ~/projects/dotfiles/i3status.config.symlink ~/.config/i3status/config;;
   [Nn]* ) exit;;
   * ) exit;;
 esac
