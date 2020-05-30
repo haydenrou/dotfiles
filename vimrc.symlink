@@ -204,7 +204,7 @@ let g:netrw_winsize=25
 nmap <leader>gst :G<CR>
 nmap <leader>gj :diffget //3<CR>
 nmap <leader>gf :diffget //2<CR>
-nmap <leader>gd :Gdiff<CR>
+nmap <leader>gdf :Gdiff<CR>
 
 " PLUGIN: Undotree
 nnoremap <leader>u :UndotreeShow<CR>

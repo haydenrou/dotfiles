@@ -74,6 +74,7 @@ Most of the key binds are self explanatory within the vimrc but here are some us
 - `<Leader>gst` fugitive git statsu
 - `<Leader>gj` fugitive get head when in merge
 - `<Leader>gf` fugitive get upstream when in merge
+- `<Leader>gdd` fugitive git diff
 
 ## Installation
 ### Prerequisites
