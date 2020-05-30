@@ -25,6 +25,7 @@ You may want to use this setup if you are interested in or use any of the below 
 - `tidybranches` [!dangerous] delete all branches except develop and master
 - rails aliases such as `rdm`, `rdmd`, `rc`
 - `evrc` edit vimrc
+- Providing you have [feh](https://github.com/derf/feh) installed, `chbg` will cycle backgrounds through images in your `~/.bgs` folder
 
 ## nvim
 

@@ -104,6 +104,15 @@ alias rdmd='rake db:migrate:data'
 alias tidybranches='git branch | grep -v develop|master | xargs git branch -D'
 alias evrc='vim ~/projects/dotfiles/vimrc.symlink'
 
+function randomize_background () {
+  bgs=$(ls $HOME/.bgs)
+  randombg=$(ls $HOME/.bgs | grep -E '(jpg|png)$' | sort -R | tail -1)
+
+  feh --bg-scale $HOME/.bgs/$randombg
+}
+
+alias chbg=randomize_background
+
 shopt -s autocd
 
 bind "set completion-ignore-case on"
