@@ -109,7 +109,7 @@ read -p "Would you like to install GOLANG? [Y/n]" golang
 case $golang in
   [Yy]* )
     asdf plugin-add golang https://github.com/kennyp/asdf-golang.git
-    read -p "Enter a specific version (the LTS at time of writing is 1.13) " golang_version
+    read -p "Enter a specific version (the LTS at time of writing is 1.14) " golang_version
     asdf install golang $golang_version
     asdf global golang $golang_version
     ;;
