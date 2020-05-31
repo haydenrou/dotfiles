@@ -24,9 +24,6 @@ set number
 set completeopt=menuone,noinsert,noselect
 set updatetime=50
 
-" Softtabs, 2 spaces
-set tabstop=2 softtabstop=2
-set shiftwidth=2
 set shiftround
 set expandtab
 
@@ -92,7 +89,7 @@ syntax on
 
 hi Search cterm=NONE ctermbg=DarkMagenta
 
-colorscheme happy_hacking
+colorscheme hybrid_material
 
 " because I just use TMUX backgrounds instead
 hi Normal guibg=NONE ctermbg=NONE
@@ -145,8 +142,8 @@ nnoremap <silent> <Leader>- :vertical resize -5<CR>
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
-autocmd FileType html,css,erb,jsx,javascript setlocal shiftwidth=2 tabstop=2
-autocmd FileType html,css,erb,jsx,javascript EmmetInstall
+autocmd FileType html,css,erb,jsx,javascript,rb,typescriptreact,javascriptreact setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType html,css,erb,jsx,javascript,typescriptreact,javascriptreact EmmetInstall
 
 " https://github.com/tpope/vim-commentary/issues/68
 autocmd FileType javascript,javascriptreact,typescript,typescriptreact setlocal commentstring={/*\ %s\ */}
