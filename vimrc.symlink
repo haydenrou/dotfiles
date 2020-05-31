@@ -143,6 +143,7 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 autocmd FileType html,css,erb,jsx,javascript,rb,typescriptreact,javascriptreact setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType go setlocal shiftwidth=4 tabstop=4 softtabstop=4
 autocmd FileType html,css,erb,jsx,javascript,typescriptreact,javascriptreact EmmetInstall
 
 " https://github.com/tpope/vim-commentary/issues/68
