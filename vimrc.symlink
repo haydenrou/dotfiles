@@ -31,7 +31,7 @@ set expandtab
 set foldlevelstart=99
 
 " Display extra whitespace
-set list listchars=tab:»·,trail:·,nbsp:·
+set list listchars=trail:·,nbsp:·
 
 " Use one space, not two, after punctuation.
 set nojoinspaces
@@ -87,13 +87,11 @@ call plug#end()
 
 syntax on
 
-hi Search cterm=NONE ctermbg=DarkMagenta
+colorscheme snow
 
-colorscheme hybrid_material
-
-" because I just use TMUX backgrounds instead
 hi Normal guibg=NONE ctermbg=NONE
 hi NonText guibg=NONE ctermbg=NONE
+hi Search cterm=NONE ctermbg=LightMagenta ctermfg=black
 
 " Make it obvious where 80 characters is
 highlight ColorColumn ctermbg=red
@@ -133,7 +131,7 @@ nnoremap <Leader>w :w!<cr>
 
 " Vertical and horizontal splits
 nnoremap <Leader>vs <C-w>v
-nnoremap <Leader>zs <C-w>S
+nnoremap <Leader>xs <C-w>S
 
 nnoremap <silent> <Leader>+ :vertical resize +5<CR>
 nnoremap <silent> <Leader>- :vertical resize -5<CR>
