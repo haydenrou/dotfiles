@@ -24,14 +24,14 @@ set number
 set completeopt=menuone,noinsert,noselect
 set updatetime=50
 
+set spell spelllang=en_gb
+nnoremap <leader>sp :norm mm[s1z=`m<cr>
+
 set shiftround
 set expandtab
 
 " To automatically unfold all of a file
 set foldlevelstart=99
-
-" Display extra whitespace
-set list listchars=trail:·,nbsp:·
 
 " Use one space, not two, after punctuation.
 set nojoinspaces
@@ -87,7 +87,7 @@ call plug#end()
 
 syntax on
 
-colorscheme snow
+colorscheme tender
 
 hi Normal guibg=NONE ctermbg=NONE
 hi NonText guibg=NONE ctermbg=NONE
@@ -141,7 +141,7 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 autocmd FileType html,css,erb,jsx,javascript,rb,typescriptreact,javascriptreact,scss setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType go setlocal shiftwidth=4 tabstop=4 softtabstop=4
+autocmd FileType go set softtabstop=0 noexpandtab
 autocmd FileType html,css,erb,jsx,javascript,typescriptreact,javascriptreact EmmetInstall
 
 " https://github.com/tpope/vim-commentary/issues/68
