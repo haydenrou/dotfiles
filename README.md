@@ -18,10 +18,13 @@ You may want to use this setup if you are interested in or use any of the below 
 - [Elixir](https://elixir-lang.org/)
 - yarn
 - [i3wm](https://github.com/i3/i3)
+- [tldr](https://tldr.sh)
+- [bat](https://github.com/sharkdp/bat)
 
 ### Useful aliases
 - general git aliases, i.e. `ga`, `gco`, `gd`, `gc` etc
 - `gcob<Enter>` checkout branch from fzf
+- `gpb<Enter>` pull branch from fzf
 - `tidybranches` [!dangerous] delete all branches except develop and master
 - rails aliases such as `rdm`, `rdmd`, `rc`
 - `evrc` edit vimrc
@@ -29,7 +32,7 @@ You may want to use this setup if you are interested in or use any of the below 
 
 ## nvim
 
-![Dotfiles Demo](https://i.imgur.com/GPAG0qE.png)
+![Dotfiles Demo](https://i.imgur.com/muOQBBa.png)
 
 ### Included plugins
 - [vim-plug](https://github.com/junegunn/vim-plug)

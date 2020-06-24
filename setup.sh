@@ -28,7 +28,9 @@ sudo apt-get install -y \
   libsqlite3-dev \
   libreadline-dev \
   mysql-server \
-  mysql-client
+  mysql-client \
+  bat \
+  tldr
 
 echo "As per https://github.com/junegunn/fzf/issues/1589 we'll have to install fzf manually on Ubuntu 18.04 at the moment";
 wget http://mirrors.kernel.org/ubuntu/pool/universe/f/fzf/fzf_0.18.0-2_amd64.deb | sudo dpkg -i;
