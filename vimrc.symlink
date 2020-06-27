@@ -64,7 +64,6 @@ Plug 'scrooloose/nerdtree'
 Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'mbbill/undotree'
-Plug 'dense-analysis/ale'
 Plug 'tpope/vim-commentary'
 Plug 'pangloss/vim-javascript'
 Plug 'plasticboy/vim-markdown'
@@ -175,22 +174,6 @@ endfun
 autocmd BufEnter * :call GoCoC()
 
 nnoremap \ :Rg<CR>
-
-" PLUGIN: ale
-let g:ale_linters = { 'javascript': ['eslint'], 'ruby': ['rubocop'] }
-let g:ale_fixers = { 'javascript': ['eslint'], 'ruby': ['rubocop'] }
-let g:ale_linters_explicit = 1
-highlight ALEErrorSign ctermbg=NONE ctermfg=red
-highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
-
-nmap <silent> <leader>a <Plug>(ale_next_wrap)
-
-" Disabling highlighting
-let g:ale_set_highlights = 0
-
-" Only run linting when saving the file
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_lint_on_enter = 0
 
 let g:netrw_browse_split=2
 let g:netrw_banner=0

@@ -41,7 +41,6 @@ You may want to use this setup if you are interested in or use any of the below 
 - [gruvbox theme](https://github.com/morhetz/gruvbox)
 - [coc.nvim ](https://github.com/neoclide/coc.nvim)
 - [undotree](https://github.com/mbbill/undotree)
-- [ale](https://github.com/dense-analysis/ale)
 - [vim-commentary](https://github.com/tpope/vim-commentary)
 - [vim-javascript](https://github.com/pangloss/vim-javascript)
 - [vim-markdown](https://github.com/plasticboy/vim-markdown)
