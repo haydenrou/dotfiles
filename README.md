@@ -1,7 +1,10 @@
-# dotfiles
-This repository contains configuration files and setup for my current setup.
+<div align="center">
+        <h1>dotfiles</h1>
+        <strong>i3, Vim, Bash, Ruby, Javascript & React, Elixir, Golang & more!</strong>
+</div>
 
-## What and why
+![Dotfiles Demo](https://i.imgur.com/muOQBBa.png)
+
 You may want to use this setup if you are interested in or use any of the below features.
 
 ### Installed software
@@ -29,10 +32,6 @@ You may want to use this setup if you are interested in or use any of the below 
 - rails aliases such as `rdm`, `rdmd`, `rc`
 - `evrc` edit vimrc
 - Providing you have [feh](https://github.com/derf/feh) installed, `chbg` will cycle backgrounds through images in your `~/.bgs` folder
-
-## nvim
-
-![Dotfiles Demo](https://i.imgur.com/muOQBBa.png)
 
 ### Included plugins
 - [vim-plug](https://github.com/junegunn/vim-plug)
