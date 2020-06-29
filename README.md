@@ -1,6 +1,7 @@
 <div align="center">
         <h1>dotfiles</h1>
         <strong>i3, Vim, Bash, Ruby, Javascript & React, Elixir, Golang & more!</strong>
+        <br>
 </div>
 
 ![Dotfiles Demo](https://i.imgur.com/muOQBBa.png)

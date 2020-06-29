@@ -106,6 +106,8 @@ source $HOME/.asdf/asdf.sh
 # Stop <c-d> exiting
 set -o ignoreeof
 
+set -o vi
+
 # Allow history to be recorded in tmux sessions
 # https://askubuntu.com/questions/339546/how-do-i-see-the-history-of-the-commands-i-have-run-in-tmux
 # avoid duplicates
