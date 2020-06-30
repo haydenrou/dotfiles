@@ -23,6 +23,7 @@ set exrc
 set number
 set completeopt=menuone,noinsert,noselect
 set updatetime=50
+set inccommand=split
 
 set spell spelllang=en_gb
 nnoremap <leader>sp :norm mm[s1z=`m<cr>
