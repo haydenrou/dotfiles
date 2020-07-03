@@ -53,6 +53,8 @@ You may want to use this setup if you are interested in or use any of the below 
 - [elixir vim](https://github.com/elixir-editors/vim-elixir)
 - [vim-airline](https://github.com/vim-airline/vim-airline)
 - [awesome-vim-colorschemes](https://github.com/rafi/awesome-vim-colorschemes)
+- [markdown preview](https://github.com/iamcco/markdown-preview.nvim)
+- [tickit.vim](https://github.com/haydenrou/tickit.vim)
 
 ### General usage
 Most of the key binds are self explanatory within the vimrc but here are some useful ones
@@ -88,3 +90,8 @@ $ curl -fLo ~/setup.sh https://raw.githubusercontent.com/haydenrou/dotfiles/mast
 $ chmod +x ~/setup.sh
 $ sh ~/setup.sh
 ```
+
+## Contribution
+You're more than welcome to submit an issue or PR with any bugs or feature suggestions.
+
+If you want to pair up on a project, or build out any of the above, pop me an email at <hayden@rouille.dev>.

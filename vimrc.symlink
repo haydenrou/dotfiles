@@ -78,7 +78,10 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'elixir-editors/vim-elixir'
 Plug 'rafi/awesome-vim-colorschemes'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+Plug 'haydenrou/tickit.vim'
 
+" Use rg for FZF
 if executable('rg')
   let g:rg_derive_root='true'
 endif
@@ -87,7 +90,7 @@ call plug#end()
 
 syntax on
 
-colorscheme tender
+colorscheme gruvbox
 
 hi Normal guibg=NONE ctermbg=NONE
 hi NonText guibg=NONE ctermbg=NONE
@@ -153,6 +156,8 @@ function! s:check_back_space() abort
     return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
+call tickit#set_ticker("✓")
+
 func GoCoC()
     :CocEnable
     inoremap <buffer> <silent><expr> <TAB>
@@ -200,13 +205,4 @@ nnoremap <Leader>nn :NERDTreeToggle<Enter>
 nnoremap <C-T> :Files<cr>
 nnoremap <Leader>b :Buffers<cr>
 nnoremap <Leader>s :BLines<cr>
-
-" For WSL copy to clipboard
-let s:clip = '/mnt/c/Windows/System32/clip.exe'
-if executable(s:clip)
-  augroup WSLYank
-    autocmd!
-    autocmd TextYankPost * call system('echo '.shellescape(join(v:event.regcontents, "\<CR>")).' | '.s:clip)
-  augroup END
-end
 
