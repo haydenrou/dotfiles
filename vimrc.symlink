@@ -156,7 +156,7 @@ function! s:check_back_space() abort
     return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-call tickit#set_ticker("✓")
+call tickit#set_ticker("")
 
 func GoCoC()
     :CocEnable
@@ -194,15 +194,11 @@ nmap <leader>gdf :Gdiff<CR>
 " PLUGIN: Undotree
 nnoremap <leader>u :UndotreeShow<CR>
 
-" PLUGIN: nerdtree
-let NERDTreeMinimalUI = 1
-let NERDTreeWinPos = "right"
-let NERDTreeShowHidden=1
-map <Leader>nf :NERDTreeFind<cr>
-nnoremap <Leader>nn :NERDTreeToggle<Enter>
-
 " fzf for file searching
 nnoremap <C-T> :Files<cr>
 nnoremap <Leader>b :Buffers<cr>
 nnoremap <Leader>s :BLines<cr>
 
+" find word under cursor
+nnoremap <leader>prr :CocSearch <C-R>=expand("<cword>")<CR><CR>
+nnoremap <leader>pw :Rg <C-R>=expand("<cword>")<CR><CR>
