@@ -29,8 +29,12 @@ sudo apt-get install -y \
   libreadline-dev \
   mysql-server \
   mysql-client \
-  bat \
   tldr
+
+# bat installation isn't through apt yet
+curl -fLo bat.deb https://github.com/sharkdp/bat/releases/download/v0.15.4/bat-musl_0.15.4_amd64.deb
+sudo dpkg -i ./bat.deb
+rm ./bat.deb
 
 echo "As per https://github.com/junegunn/fzf/issues/1589 we'll have to install fzf manually on Ubuntu 18.04 at the moment";
 wget http://mirrors.kernel.org/ubuntu/pool/universe/f/fzf/fzf_0.18.0-2_amd64.deb | sudo dpkg -i;
