@@ -56,8 +56,8 @@ case $ithree in
     && touch ~/.config/brightness \
     && mkdir ~/.config/i3 && ln -s ~/projects/dotfiles/i3config.symlink ~/.config/i3/config \
     && mkdir ~/.config/i3status && ln -s ~/projects/dotfiles/i3status.config.symlink ~/.config/i3status/config;;
-  [Nn]* ) exit;;
-  * ) exit;;
+  [Nn]* ) ;;
+  * )
 esac
 
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
@@ -119,8 +119,8 @@ case $golang in
     asdf install golang $golang_version
     asdf global golang $golang_version
     ;;
-  [Nn]* ) exit;;
-  * ) exit;;
+  [Nn]* ) ;;
+  * )
 esac
 
 read -p "Would you like to install NodeJS? [Y/n]" nodejs
@@ -132,8 +132,8 @@ case $nodejs in
     asdf install nodejs $nodejs_version
     asdf global nodejs $nodejs_version
     ;;
-  [Nn]* ) exit;;
-  * ) exit;;
+  [Nn]* );;
+  * )
 esac
 
 sudo apt-get install -y
@@ -156,8 +156,8 @@ case $yarn in
     asdf install yarn $yarn_version
     asdf global yarn $yarn_version
     ;;
-  [Nn]* ) exit;;
-  * ) exit;;
+  [Nn]* );;
+  * )
 esac
 
 read -p "Do you want to install Elixir? [Y/n] " elixir
@@ -174,12 +174,12 @@ case $elixir in
       read -p "And do you want to install Phoenix? [Y/n] " phoenix
       case $phoenix in
         [Yy]* ) mix archive.install hex phx_new 1.5.1;;
-        [Nn]* ) exit;;
-        * ) exit;;
+        [Nn]* );;
+        * )
       esac
     ;;
-  [Nn]* ) exit;;
-  * ) exit;;
+  [Nn]* );;
+  * )
 esac
 
 read -p "Do you want to install Ruby? [Y/n] " ruby
@@ -194,8 +194,8 @@ case $ruby in
     gem install rubocop
     vim -c "CocInstall coc-solargraph|echo 'When coc-solargraph is installed it will let you know, and you can exit with :qa'"
     ;;
-  [Nn]* ) exit;;
-  * ) exit;;
+  [Nn]* );;
+  * )
 esac
 
 read -p "Do you want the mysql2 gem at version 0.5.2? [Y/n] " versioned_mysql
@@ -203,8 +203,8 @@ case $versioned_mysql in
   [Yy]* )
     gem install mysql2 -v "0.5.2"
     ;;
-  [Nn]* ) exit;;
-  * ) exit;;
+  [Nn]* );;
+  * )
 esac
 
 echo "Moving onto database setup:"
