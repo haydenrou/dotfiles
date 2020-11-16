@@ -1,5 +1,5 @@
 " Leader
-let mapleader = ","
+let mapleader = " "
 
 set backspace=2   " Backspace deletes like most programs in insert mode
 set nobackup
@@ -91,6 +91,13 @@ call plug#end()
 
 syntax on
 
+
+let g:gruvbox_contrast_dark = 'hard'
+if exists('+termguicolors')
+        let &t_8f = "\<Esc[38;2;%lu;%lu;%lum"
+        let &t_8b = "\<Esc[48;2;%lu;%lu;%lum"
+endif
+let g:gruvbox_invert_selection='0'
 colorscheme gruvbox
 
 hi Normal guibg=NONE ctermbg=NONE
@@ -158,6 +165,7 @@ function! s:check_back_space() abort
 endfunction
 
 call tickit#set_ticker("")
+call tickit#set_location($HOME . "/projects/notes/TODO.md")
 
 func GoCoC()
     :CocEnable
@@ -214,3 +222,11 @@ nnoremap <leader>pw :Rg <C-R>=expand("<cword>")<CR><CR>
 
 " delete and paste register from visual mode
 vnoremap <leader>p "_dP
+
+function Loadproj(proj) abort
+        let g:autoload_path = "~/projects/" . a:proj . "/autoload/" . a:proj
+        let g:plugin_path = "~/projects/" . a:proj . "/plugin/" . a:proj
+
+        execute "source" . g:autoload_path
+        execute "source" . g:plugin_path
+endfunction

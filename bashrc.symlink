@@ -83,7 +83,6 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 function randomize_background () {
-  bgs=$(ls $HOME/.bgs)
   randombg=$(ls $HOME/.bgs | grep -E '(jpg|png)$' | sort -R | tail -1)
 
   feh --bg-scale $HOME/.bgs/$randombg
@@ -126,3 +125,4 @@ export FZF_DEFAULT_COMMAND="rg --files --hidden --follow --glob '!.git'"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+export EYAML_CONFIG="./eyaml_config.yaml"
