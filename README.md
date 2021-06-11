@@ -28,13 +28,15 @@ You may want to use this setup if you are interested in or use any of the below 
 ### Useful aliases
 - general git aliases, i.e. `ga`, `gco`, `gd`, `gc` etc
 - `gcob<Enter>` checkout branch from fzf
-- `gpb<Enter>` pull branch from fzf
-- `tidybranches` [!dangerous] delete all branches except develop and master
+- `gpullb<Enter>` pull branch from fzf
+- `gpushb<Enter>` push to origin upstream branch from fzf
+- `gmergeb<Enter>` merge branch from fzf
 - rails aliases such as `rdm`, `rdmd`, `rc`
 - `evrc` edit vimrc
 - Providing you have [feh](https://github.com/derf/feh) installed, `chbg` will cycle backgrounds through images in your `~/.bgs` folder
 - `CTRL-T` will search for files from the command line with fzf
 - `ALT-C` will search for directories from the command line and selecting one will place you in the directory [Note: on MacOS `ESC-C` will do this]
+- From within tmux you can open vi mode with `<prefix>[`
 
 ### Included plugins
 - [vim-plug](https://github.com/junegunn/vim-plug)
@@ -57,10 +59,11 @@ You may want to use this setup if you are interested in or use any of the below 
 - [awesome-vim-colorschemes](https://github.com/rafi/awesome-vim-colorschemes)
 - [markdown preview](https://github.com/iamcco/markdown-preview.nvim)
 - [tickit.vim](https://github.com/haydenrou/tickit.vim)
+- [vim-dispatch](https://github.com/tpope/vim-dispatch)
 
 ### General usage
 Most of the key binds are self explanatory within the vimrc but here are some useful ones
-- `<Leader>` key is bound to `,`
+- `<Leader>` key is bound to ` `
 - `<Leader>vs` will vertically split
 - `<Leader>zs` will horizontally split
 - `<Leader>hjkl` for moving between splits
@@ -82,6 +85,7 @@ Most of the key binds are self explanatory within the vimrc but here are some us
 - `<Leader>gj` fugitive get head when in merge
 - `<Leader>gf` fugitive get upstream when in merge
 - `<Leader>gdd` fugitive git diff
+- `<Leader>p` delete and paste register from within visual mode. the active register will not be replaced
 
 ## Installation
 ### Prerequisites
