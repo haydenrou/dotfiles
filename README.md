@@ -33,6 +33,8 @@ You may want to use this setup if you are interested in or use any of the below 
 - rails aliases such as `rdm`, `rdmd`, `rc`
 - `evrc` edit vimrc
 - Providing you have [feh](https://github.com/derf/feh) installed, `chbg` will cycle backgrounds through images in your `~/.bgs` folder
+- `CTRL-T` will search for files from the command line with fzf
+- `ALT-C` will search for directories from the command line and selecting one will place you in the directory [Note: on MacOS `ESC-C` will do this]
 
 ### Included plugins
 - [vim-plug](https://github.com/junegunn/vim-plug)
