@@ -95,7 +95,7 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 mkdir ~/.config/alacritty
 mkdir ~/.config/nvim
 mkdir ~/.config/solargraph -p
-rm ~/.bashrc ~/.bash_profile ~/.tmux.conf ~/.vimrc > /dev/null 2>&1
+rm ~/.bashrc ~/.bash_profile ~/.tmux.conf ~/.vimrc ~/.profile > /dev/null 2>&1
 ln -s ~/projects/dotfiles/ignore.symlink ~/.ignore
 ln -s ~/projects/dotfiles/alacritty.symlink.yml ~/.config/alacritty/alacritty.yml
 ln -s ~/projects/dotfiles/profile.symlink ~/.profile
