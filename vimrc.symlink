@@ -16,6 +16,9 @@ set smartindent
 set nowrap
 set hidden
 set ignorecase
+set incsearch
+set scrolloff=8
+set signcolumn=yes
 set smartcase
 set lazyredraw
 set magic
@@ -121,6 +124,20 @@ autocmd BufNewFile,BufRead *.jsx set filetype=javascriptreact
 autocmd BufNewFile,BufRead *.tsx set syntax=javascriptreact
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 
+fun! TrimWhitespace()
+        let l:save = winsaveview()
+        keeppatterns %s/\s\+$//e
+        call winrestview(l:save)
+endfun
+
+augroup HAYDEN
+        autocmd!
+        autocmd BufWritePre * :call TrimWhitespace()
+augroup END
+
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '>-2<CR>gv=gv
+
 " When the type of shell script is /bin/sh, assume a POSIX-compatible
 " shell for syntax highlighting purposes.
 let g:is_posix = 1
@@ -147,11 +164,32 @@ nnoremap <Leader>xs <C-w>S
 nnoremap <silent> <Leader>+ :vertical resize +5<CR>
 nnoremap <silent> <Leader>- :vertical resize -5<CR>
 
+nnoremap Y y$
+
+nnoremap n nzzzv
+nnoremap N Nzzzv
+nnoremap J mzJ`z
+
+inoremap , ,<c-g>u
+inoremap . .<c-g>u
+inoremap ! !<c-g>u
+inoremap ? ?<c-g>u
+
+nnoremap <expr> k (v:count > 5 ? "m'" . v:count : "") . 'k'
+nnoremap <expr> j (v:count > 5 ? "m'" . v:count : "") . 'j'
+
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+inoremap <C-j> <esc>:m .+1<CR>==
+inoremap <C-k> <esc>:m .-2<CR>==
+nnoremap <leader>j :m .+1<CR>==
+nnoremap <leader>k :m .-2<CR>==
+
 " for easyalign
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
-autocmd FileType html,css,erb,jsx,javascript,rb,typescriptreact,javascriptreact,scss setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType html,css,erb,jsx,javascript,rb,typescriptreact,javascriptreact,scss,typescript setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType go set softtabstop=0 noexpandtab
 autocmd FileType html,css,erb,jsx,javascript,typescriptreact,javascriptreact EmmetInstall
 
