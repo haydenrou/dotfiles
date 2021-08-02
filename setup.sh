@@ -1,5 +1,8 @@
 #!/bin/bash
 
+echo "This script is not updated and doesn't work correctly, just use it as a guide"
+exit 0
+
 cd ~ && sudo apt-get update -y && sudo apt-get upgrade -y;
 
 echo "Installing the basics: git, vim, tmux, wget, ruby, rubygems, vim-nox, fzf, ripgrep"
