@@ -1,17 +1,23 @@
+"=============================================================================="
+" FILE:         vimrc                                                          "
+" AUTHOR:       Hayden Rouille :: https://github.com/haydenrou                 "
+" DESCRIPTION:  My general vimrc config                                        "
+"=============================================================================="
+
 " Leader
 let mapleader = " "
 
-set backspace=2   " Backspace deletes like most programs in insert mode
+set backspace=2      " Backspace deletes like most programs in insert mode
 set nobackup
 set noerrorbells
 set nowritebackup
-set noswapfile    " http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
+set noswapfile       " http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
 set noshowmode
-set autowrite     " Automatically :write before running commands
-set relativenumber " show the numbers above your line to relative of current line
-set mouse=a        " make vim clickable
-set spelllang=en   " spelling in english
-set pastetoggle=<F2>    " allow pasting with correct indentation
+set autowrite        " Automatically :write before running commands
+set relativenumber   " show the numbers above your line to relative of current line
+set mouse=a          " make vim clickable
+set spelllang=en     " spelling in english
+set pastetoggle=<F2> " allow pasting with correct indentation
 set cursorline
 set smartindent
 set nowrap
@@ -29,6 +35,7 @@ set completeopt=menuone,noinsert,noselect
 set updatetime=50
 set inccommand=split
 
+" correct spelling on previous word
 set spell spelllang=en_gb
 nnoremap <leader>sp :norm mm[s1z=`m<cr>
 
@@ -57,8 +64,6 @@ set splitbelow splitright
 
 set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath = &runtimepath
-
-autocmd BufWritePre * %s/\s\+$//e
 
 filetype on
 
@@ -95,16 +100,7 @@ call plug#end()
 
 syntax enable
 
-function! ToggleRel()
-        if &relativenumber == 0
-                set relativenumber
-        else
-                set norelativenumber
-        endif
-endfunction
-
-nnoremap <leader>r :call ToggleRel()<CR>
-
+" grooooooovy
 let g:gruvbox_contrast_dark = 'hard'
 if exists('+termguicolors')
         let &t_8f = "\<Esc[38;2;%lu;%lu;%lum"
@@ -121,18 +117,6 @@ hi Search cterm=NONE ctermbg=LightMagenta ctermfg=black
 highlight ColorColumn ctermbg=red
 call matchadd('ColorColumn', '\%81v', 100)
 
-" When editing a file, always jump to the last known cursor position.
-" Don't do it for commit messages, when the position is invalid, or when
-" inside an event handler (happens when dropping a file on gvim).
-autocmd BufReadPost *
-  \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
-  \   exe "normal g`\"" |
-  \ endif
-
-autocmd FileType javascript,javascriptreact,javascript.jsx,javascript.tsx,typescript,typescriptreact setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd BufNewFile,BufRead *.jsx set filetype=javascriptreact
-autocmd BufNewFile,BufRead *.tsx set syntax=javascriptreact
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 
 fun! TrimWhitespace()
         let l:save = winsaveview()
@@ -140,9 +124,32 @@ fun! TrimWhitespace()
         call winrestview(l:save)
 endfun
 
-augroup HAYDEN
+augroup MOREBUFFS
         autocmd!
+
+        autocmd FileType html,css,erb,jsx,javascript,rb,typescriptreact,javascriptreact,scss,typescript setlocal shiftwidth=2 tabstop=2 softtabstop=2
+        autocmd FileType go set softtabstop=0 noexpandtab
+        autocmd FileType html,css,erb,jsx,javascript,typescriptreact,javascriptreact EmmetInstall
+
+        " https://github.com/tpope/vim-commentary/issues/68
+        autocmd FileType javascript,javascriptreact,typescript,typescriptreact setlocal commentstring={/*\ %s\ */}
+
+
+        autocmd BufWritePre * %s/\s\+$//e
         autocmd BufWritePre * :call TrimWhitespace()
+
+        " When editing a file, always jump to the last known cursor position.
+        " Don't do it for commit messages, when the position is invalid, or when
+        " inside an event handler (happens when dropping a file on gvim).
+        autocmd BufReadPost *
+                                \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
+                                \   exe "normal g`\"" |
+                                \ endif
+
+        autocmd FileType javascript,javascriptreact,javascript.jsx,javascript.tsx,typescript,typescriptreact setlocal omnifunc=javascriptcomplete#CompleteJS
+        autocmd BufNewFile,BufRead *.jsx set filetype=javascriptreact
+        autocmd BufNewFile,BufRead *.tsx set syntax=javascriptreact
+        autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 augroup END
 
 vnoremap J :m '>+1<CR>gv=gv
@@ -158,6 +165,16 @@ nnoremap <Leader><Enter> :noh<cr>
 
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags = 'li\|p'
+
+" Relative number makes it confusing for non vim users spectating...
+function! ToggleRel()
+        if &relativenumber == 0
+                set relativenumber
+        else
+                set norelativenumber
+        endif
+endfunction
+nnoremap <leader>r :call ToggleRel()<CR>
 
 " Quicker window movement
 nnoremap <Leader>j <C-w>j
@@ -188,6 +205,8 @@ inoremap ? ?<c-g>u
 nnoremap <expr> k (v:count > 5 ? "m'" . v:count : "") . 'k'
 nnoremap <expr> j (v:count > 5 ? "m'" . v:count : "") . 'j'
 
+nnoremap \ :Rg<CR>
+
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 inoremap <C-j> <esc>:m .+1<CR>==
@@ -195,25 +214,22 @@ inoremap <C-k> <esc>:m .-2<CR>==
 nnoremap <leader>j :m .+1<CR>==
 nnoremap <leader>k :m .-2<CR>==
 
-" for easyalign
+" search for word on cursor
+nnoremap <leader>prr :CocSearch <C-R>=expand("<cword>")<CR><CR>
+nnoremap <leader>pw :Rg <C-R>=expand("<cword>")<CR><CR>
+
+" delete and paste register from visual mode
+vnoremap <leader>p "_dP
+
+" PLUGIN: EasyAlign
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
-autocmd FileType html,css,erb,jsx,javascript,rb,typescriptreact,javascriptreact,scss,typescript setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType go set softtabstop=0 noexpandtab
-autocmd FileType html,css,erb,jsx,javascript,typescriptreact,javascriptreact EmmetInstall
-
-" https://github.com/tpope/vim-commentary/issues/68
-autocmd FileType javascript,javascriptreact,typescript,typescriptreact setlocal commentstring={/*\ %s\ */}
-
-" PLUGIN: Coc-vim
+" PLUGIN: CoC
 function! s:check_back_space() abort
     let col = col('.') - 1
     return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
-
-call tickit#set_ticker("")
-call tickit#set_location($HOME . "/projects/notes/TODO.md")
 
 func GoCoC()
     :CocEnable
@@ -236,7 +252,9 @@ endfun
 
 autocmd BufEnter * :call GoCoC()
 
-nnoremap \ :Rg<CR>
+" PLUGIN: Tickit
+call tickit#set_ticker("")
+call tickit#set_location($HOME . "/projects/notes/TODO.md")
 
 let g:netrw_browse_split=2
 let g:netrw_banner=0
@@ -258,19 +276,13 @@ nmap <leader>gdf :Gdiff<CR>
 " PLUGIN: Undotree
 nnoremap <leader>u :UndotreeShow<CR>
 
-" fzf for file searching
+" PLUGIN: fzf
 nnoremap <C-T> :Files<cr>
 nnoremap <Leader>b :Buffers<cr>
 nnoremap <Leader>s :BLines<cr>
 let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
 
-" find word under cursor
-nnoremap <leader>prr :CocSearch <C-R>=expand("<cword>")<CR><CR>
-nnoremap <leader>pw :Rg <C-R>=expand("<cword>")<CR><CR>
-
-" delete and paste register from visual mode
-vnoremap <leader>p "_dP
-
+" Load a vim project you're working on
 function Loadproj(proj) abort
         let g:autoload_path = "~/projects/" . a:proj . "/autoload/" . a:proj
         let g:plugin_path = "~/projects/" . a:proj . "/plugin/" . a:proj
@@ -278,3 +290,4 @@ function Loadproj(proj) abort
         execute "source" . g:autoload_path
         execute "source" . g:plugin_path
 endfunction
+
