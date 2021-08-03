@@ -60,7 +60,7 @@ let &packpath = &runtimepath
 
 autocmd BufWritePre * %s/\s\+$//e
 
-filetype off                  " required
+filetype on
 
 call plug#begin('~/.vim/plugged')
 
@@ -93,8 +93,17 @@ endif
 
 call plug#end()
 
-syntax on
+syntax enable
 
+function! ToggleRel()
+        if &relativenumber == 0
+                set relativenumber
+        else
+                set norelativenumber
+        endif
+endfunction
+
+nnoremap <leader>r :call ToggleRel()<CR>
 
 let g:gruvbox_contrast_dark = 'hard'
 if exists('+termguicolors')
@@ -120,7 +129,7 @@ autocmd BufReadPost *
   \   exe "normal g`\"" |
   \ endif
 
-autocmd FileType javascript,javascriptreact,javascript.jsx,javascript.tsx setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType javascript,javascriptreact,javascript.jsx,javascript.tsx,typescript,typescriptreact setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd BufNewFile,BufRead *.jsx set filetype=javascriptreact
 autocmd BufNewFile,BufRead *.tsx set syntax=javascriptreact
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
