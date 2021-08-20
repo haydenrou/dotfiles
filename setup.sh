@@ -149,7 +149,7 @@ vim +Plug Install +qall
 
 vim -c "call coc#util#install()|echo 'Quit vim using :qa when completed'"
 
-vim -c "CocInstall coc-html coc-css coc-tsserver coc-json coc-tailwindcss|echo 'When the plugin is installed it will let you know, and you can exit with :qa'"
+vim -c "CocInstall coc-sh coc-html coc-css coc-tsserver coc-json coc-tailwindcss coc-elixir coc-erlang_ls coc-go coc-graphql coc-docker coc-solargraph|echo 'When the plugin is installed it will let you know, and you can exit with :qa'"
 
 read -p "Would you like to install Yarn? [Y/n]" yarn
 case $yarn in
@@ -172,7 +172,6 @@ case $elixir in
     asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git
     asdf install elixir 1.10.13
     asdf global elixir 1.10.13
-    vim -c "CocInstall coc-elixir|echo 'Exit vim when installed'"
     mix local.hex
       read -p "And do you want to install Phoenix? [Y/n] " phoenix
       case $phoenix in
@@ -195,7 +194,6 @@ case $ruby in
     gem install solargraph
     gem install mailcatcher
     gem install rubocop
-    vim -c "CocInstall coc-solargraph|echo 'When coc-solargraph is installed it will let you know, and you can exit with :qa'"
     ;;
   [Nn]* );;
   * )

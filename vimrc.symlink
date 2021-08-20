@@ -127,7 +127,7 @@ endfun
 augroup MOREBUFFS
         autocmd!
 
-        autocmd FileType html,css,erb,jsx,javascript,rb,typescriptreact,javascriptreact,scss,typescript setlocal shiftwidth=2 tabstop=2 softtabstop=2
+        autocmd FileType html,css,erb,jsx,javascript,rb,typescriptreact,javascriptreact,scss,typescript,json setlocal shiftwidth=2 tabstop=2 softtabstop=2
         autocmd FileType go set softtabstop=0 noexpandtab
         autocmd FileType html,css,erb,jsx,javascript,typescriptreact,javascriptreact EmmetInstall
 
