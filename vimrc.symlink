@@ -246,6 +246,9 @@ func GoCoC()
     nmap <buffer> <leader>gr <Plug>(coc-references)
     nmap <buffer> <leader>rr <Plug>(coc-rename)
     nnoremap <buffer> <leader>cr :CocRestart
+    
+    nmap <silent> [g <Plug>(coc-diagnostic-prev)
+    nmap <silent> ]g <Plug>(coc-diagnostic-next)
 endfun
 
 autocmd BufEnter * :call GoCoC()
@@ -262,6 +265,7 @@ let g:netrw_winsize=25
 let NERDTreeMinimalUI = 1
 let NERDTreeWinPos = "right"
 let NERDTreeShowHidden=1
+let NERDTreeIgnore = ['.map$', '.d.ts$', '^_build$[[dir]]']
 map <Leader>nf :NERDTreeFind<cr>
 nnoremap <Leader>nn :NERDTreeToggle<Enter>
 
