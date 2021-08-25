@@ -5,3 +5,6 @@ public
 .git
 assets/node_modules
 .elixir_ls
+cover
+_build
+deps
