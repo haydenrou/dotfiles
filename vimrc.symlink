@@ -237,6 +237,7 @@ func GoCoC()
                 \ coc#refresh()
 
     inoremap <buffer> <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+    inoremap <buffer> <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
     inoremap <buffer> <silent><expr> <C-space> coc#refresh()
 
     " GoTo code navigation.
