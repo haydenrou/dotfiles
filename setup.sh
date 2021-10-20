@@ -149,7 +149,9 @@ vim +Plug Install +qall
 
 vim -c "call coc#util#install()|echo 'Quit vim using :qa when completed'"
 
-vim -c "CocInstall coc-sh coc-html coc-css coc-tsserver coc-json coc-tailwindcss coc-elixir coc-erlang_ls coc-go coc-graphql coc-docker coc-solargraph|echo 'When the plugin is installed it will let you know, and you can exit with :qa'"
+vim -c "CocInstall coc-sh coc-html coc-eslint coc-css coc-tsserver coc-json coc-tailwindcss coc-elixir coc-erlang_ls coc-go coc-graphql coc-docker coc-solargraph|echo 'When the plugin is installed it will let you know, and you can exit with :qa'"
+
+vim -c "CocCommand eslint.showOutputChannel"
 
 read -p "Would you like to install Yarn? [Y/n]" yarn
 case $yarn in
