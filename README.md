@@ -24,6 +24,7 @@ You may want to use this setup if you are interested in or use any of the below 
 - [i3wm](https://github.com/i3/i3)
 - [tldr](https://tldr.sh)
 - [bat](https://github.com/sharkdp/bat)
+- [tmate](https://tmate.io/)
 
 ### Useful aliases
 - general git aliases, i.e. `ga`, `gco`, `gd`, `gc` etc
