@@ -32,7 +32,8 @@ sudo apt-get install -y \
   libreadline-dev \
   mysql-server \
   mysql-client \
-  tldr
+  tldr \
+  tmate
 
 # bat installation isn't through apt yet
 curl -fLo bat.deb https://github.com/sharkdp/bat/releases/download/v0.15.4/bat-musl_0.15.4_amd64.deb
