@@ -108,6 +108,7 @@ ln -s ~/projects/dotfiles/bashrc.symlink ~/.bashrc
 ln -s ~/projects/dotfiles/tmux.conf.symlink ~/.tmux.conf
 ln -s ~/projects/dotfiles/vimrc.symlink ~/.config/nvim/init.vim
 ln -s ~/projects/dotfiles/solargraph.config.yml ~/.config/solargraph/config.yml
+ln -s ~/projects/dotfiles/coc-settings.symlink.json ~/.config/nvim/coc-settings.json
 
 source ~/.bash_profile
 source ~/.bashrc
@@ -150,7 +151,7 @@ vim +Plug Install +qall
 
 vim -c "call coc#util#install()|echo 'Quit vim using :qa when completed'"
 
-vim -c "CocInstall coc-sh coc-html coc-eslint coc-css coc-tsserver coc-json coc-tailwindcss coc-elixir coc-erlang_ls coc-go coc-graphql coc-docker coc-solargraph|echo 'When the plugin is installed it will let you know, and you can exit with :qa'"
+vim -c "CocInstall coc-sh coc-html coc-eslint coc-css coc-tsserver coc-json coc-tailwindcss coc-elixir coc-erlang_ls coc-go coc-docker coc-solargraph|echo 'When the plugin is installed it will let you know, and you can exit with :qa'"
 
 vim -c "CocCommand eslint.showOutputChannel"
 

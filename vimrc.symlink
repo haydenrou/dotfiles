@@ -69,27 +69,28 @@ filetype on
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree'
-Plug 'gruvbox-community/gruvbox'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'mbbill/undotree'
-Plug 'tpope/vim-commentary'
-Plug 'pangloss/vim-javascript'
 Plug 'plasticboy/vim-markdown'
 Plug 'mattn/emmet-vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'christoomey/vim-system-copy'
-Plug 'vim-airline/vim-airline'
-Plug 'tpope/vim-surround'
-Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'elixir-editors/vim-elixir'
-Plug 'rafi/awesome-vim-colorschemes'
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'haydenrou/tickit.vim'
+
+" The man himself
+Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+
+" Colorschemes
+Plug 'rafi/awesome-vim-colorschemes'
+Plug 'vim-airline/vim-airline'
 
 " Use rg for FZF
 if executable('rg')
@@ -147,8 +148,9 @@ augroup MOREBUFFS
                                 \ endif
 
         autocmd FileType javascript,javascriptreact,javascript.jsx,javascript.tsx,typescript,typescriptreact setlocal omnifunc=javascriptcomplete#CompleteJS
-        autocmd BufNewFile,BufRead *.jsx set filetype=javascriptreact
-        autocmd BufNewFile,BufRead *.tsx set syntax=javascriptreact
+        autocmd BufNewFile,BufRead *.jsx set filetype=javascript.jsx
+        autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
+        autocmd BufNewFile,BufRead *.tsx set syntax=typescript.tsx
         autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 augroup END
 
@@ -247,7 +249,7 @@ func GoCoC()
     nmap <buffer> <leader>gr <Plug>(coc-references)
     nmap <buffer> <leader>rr <Plug>(coc-rename)
     nnoremap <buffer> <leader>cr :CocRestart
-    
+
     nmap <silent> [g <Plug>(coc-diagnostic-prev)
     nmap <silent> ]g <Plug>(coc-diagnostic-next)
 endfun

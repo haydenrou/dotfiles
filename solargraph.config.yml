@@ -11,3 +11,5 @@ require:
 domains: []
 require_paths: []
 max_files: 0
+reporters:
+- rubocop
