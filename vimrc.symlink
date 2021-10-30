@@ -25,7 +25,6 @@ set hidden
 set ignorecase
 set incsearch
 set scrolloff=8
-set signcolumn=yes
 set smartcase
 set lazyredraw
 set magic
@@ -34,6 +33,12 @@ set number
 set completeopt=menuone,noinsert,noselect
 set updatetime=50
 set inccommand=split
+
+if has("nvim-0.5.0") || has("patch-8.1.1564")
+        set signcolumn=number
+else
+        set signcolumn=yes
+endif
 
 " correct spelling on previous word
 set spell spelllang=en_gb
