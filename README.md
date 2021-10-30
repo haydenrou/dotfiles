@@ -107,6 +107,7 @@ Most of the key binds are self explanatory within the vimrc but here are some us
 - `ctrl-v` and `ctrl-x` to open split panes from fzf file search
 - `ctrl-w =` to equal size the panes
 - `ctrl-w r` to swap pane positions
+- `:cdo g/word/norm! D` to action on a quickfix list
 
 ## Installation
 ### Prerequisites
