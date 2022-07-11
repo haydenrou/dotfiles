@@ -106,6 +106,7 @@ ln -s ~/projects/dotfiles/bash_profile.symlink ~/.bash_profile
 ln -s ~/projects/dotfiles/bashrc.symlink ~/.bashrc
 ln -s ~/projects/dotfiles/tmux.conf.symlink ~/.tmux.conf
 ln -s ~/projects/dotfiles/vimrc.symlink ~/.config/nvim/init.vim
+ln -s ~/projects/dotfiles/coc-settings.symlink.json ~/.config/nvim/coc-settings.json
 ln -s ~/projects/dotfiles/solargraph.config.yml ~/.config/solargraph/config.yml
 
 source ~/.bash_profile
@@ -149,7 +150,8 @@ vim +Plug Install +qall
 
 vim -c "call coc#util#install()|echo 'Quit vim using :qa when completed'"
 
-vim -c "CocInstall coc-html coc-css coc-tsserver coc-json coc-tailwindcss|echo 'When the plugin is installed it will let you know, and you can exit with :qa'"
+vim -c "CocInstall coc-html coc-css coc-tsserver coc-json coc-tailwindcss coc-prettier|echo 'When the plugin is installed it will let you know, and you can exit with :qa'"
+vim -c "packadd nvim-treesitter|echo 'you can exit now :)'"
 
 read -p "Would you like to install Yarn? [Y/n]" yarn
 case $yarn in

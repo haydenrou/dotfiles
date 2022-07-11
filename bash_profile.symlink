@@ -5,4 +5,5 @@ if [ -f $HOME/.bashrc  ]; then
     source $HOME/.bashrc
 fi
 
-export PATH=~/bin:$PATH
+export PATH=/bin:$PATH
+export ARCHFLAGS="-arch x86_64"

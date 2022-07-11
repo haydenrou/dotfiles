@@ -65,6 +65,9 @@ set splitbelow splitright
 set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath = &runtimepath
 
+" add function to call for non-markdown https://stackoverflow.com/questions/6496778/vim-run-autocmd-on-all-filetypes-except
+" autocmd BufWritePre * %s/\s\+$//e
+
 filetype on
 
 call plug#begin('~/.vim/plugged')
@@ -75,7 +78,6 @@ Plug 'gruvbox-community/gruvbox'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'mbbill/undotree'
 Plug 'tpope/vim-commentary'
-Plug 'pangloss/vim-javascript'
 Plug 'plasticboy/vim-markdown'
 Plug 'mattn/emmet-vim'
 Plug 'junegunn/vim-easy-align'
@@ -132,7 +134,8 @@ augroup MOREBUFFS
         autocmd FileType html,css,erb,jsx,javascript,typescriptreact,javascriptreact EmmetInstall
 
         " https://github.com/tpope/vim-commentary/issues/68
-        autocmd FileType javascript,javascriptreact,typescript,typescriptreact setlocal commentstring={/*\ %s\ */}
+        " autocmd FileType javascript,javascriptreact,typescript,typescriptreact setlocal commentstring={/*\ %s\ */}
+        " autocmd FileType javascriptreact,typescriptreact setlocal commentstring={/*\ %s\ */}
 
 
         autocmd BufWritePre * %s/\s\+$//e
@@ -229,6 +232,17 @@ function! s:check_back_space() abort
     return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
+  else
+    call feedkeys('K', 'in')
+  endif
+endfunction
+
 func GoCoC()
     :CocEnable
     inoremap <buffer> <silent><expr> <TAB>
@@ -237,6 +251,7 @@ func GoCoC()
                 \ coc#refresh()
 
     inoremap <buffer> <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+    inoremap <buffer> <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
     inoremap <buffer> <silent><expr> <C-space> coc#refresh()
 
     " GoTo code navigation.
@@ -245,7 +260,11 @@ func GoCoC()
     nmap <buffer> <leader>gi <Plug>(coc-implementation)
     nmap <buffer> <leader>gr <Plug>(coc-references)
     nmap <buffer> <leader>rr <Plug>(coc-rename)
+    nmap <buffer> <leader>cf <Plug>(coc-fix-current)
     nnoremap <buffer> <leader>cr :CocRestart
+
+    nmap <silent> [g <Plug>(coc-diagnostic-prev)
+    nmap <silent> ]g <Plug>(coc-diagnostic-next)
 endfun
 
 autocmd BufEnter * :call GoCoC()
@@ -262,6 +281,7 @@ let g:netrw_winsize=25
 let NERDTreeMinimalUI = 1
 let NERDTreeWinPos = "right"
 let NERDTreeShowHidden=1
+let NERDTreeIgnore = ['.map$', '.d.ts$', '^_build$[[dir]]']
 map <Leader>nf :NERDTreeFind<cr>
 nnoremap <Leader>nn :NERDTreeToggle<Enter>
 
@@ -288,4 +308,3 @@ function Loadproj(proj) abort
         execute "source" . g:autoload_path
         execute "source" . g:plugin_path
 endfunction
-

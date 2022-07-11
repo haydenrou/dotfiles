@@ -37,6 +37,10 @@ window:
     x: 5
     y: 5
 
+  # Window opacity as a floating point number from `0.0` to `1.0`.
+  # The value `0.0` is completely transparent and `1.0` is opaque.
+  opacity: 0.8
+
   # Spread additional padding evenly around the terminal content.
   #dynamic_padding: false
 
@@ -60,7 +64,7 @@ window:
   #
   # Values for `startup_mode` (macOS only):
   #   - SimpleFullscreen
-  # startup_mode: Fullscreen
+  startup_mode: Maximized
 
   # Window title
   #title: Alacritty
@@ -97,7 +101,7 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: Menlo for Powerline
+    family: Menlo
 
     # The `style` can be specified to pick a specific face.
     #style: Regular
@@ -228,12 +232,6 @@ colors:
 #  duration: 0
 #  color: '#ffffff'
 
-# Background opacity
-#
-# Window opacity as a floating point number from `0.0` to `1.0`.
-# The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 0.8
-
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
 
@@ -280,10 +278,10 @@ live_config_reload: true
 #   - (macOS) /bin/bash --login
 #   - (Linux/BSD) user login shell
 #   - (Windows) powershell
-#shell:
-#  program: /bin/bash
-#  args:
-#    - --login
+shell:
+ program: /bin/bash
+ args:
+   - --login
 
 # Startup directory
 #
@@ -569,7 +567,7 @@ key_bindings:
   #- { key: K,      mods: Command, mode: ~Vi, chars: "\x0c"            }
   #- { key: Key0,   mods: Command,            action: ResetFontSize    }
   #- { key: Equals, mods: Command,            action: IncreaseFontSize }
-  #- { key: Add,    mods: Command,            action: IncreaseFontSize }
+  #- { key: Plus,   mods: Command,            action: IncreaseFontSize }
   #- { key: Minus,  mods: Command,            action: DecreaseFontSize }
   #- { key: K,      mods: Command,            action: ClearHistory     }
   #- { key: V,      mods: Command,            action: Paste            }

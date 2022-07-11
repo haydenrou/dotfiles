@@ -90,6 +90,7 @@ function randomize_background () {
 
 alias chbg=randomize_background
 
+# Enable CD to directory without providing `cd`
 shopt -s autocd
 
 bind "set completion-ignore-case on"

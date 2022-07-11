@@ -1,0 +1,5 @@
+{
+  "solargraph.formatting": true,
+  "solargraph.diagnostics": true,
+  "coc.preferences.formatOnSaveFiletypes": ["json"]
+}
