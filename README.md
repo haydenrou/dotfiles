@@ -1,6 +1,6 @@
 <div align="center">
         <h1>dotfiles</h1>
-        <strong>i3, Vim, Bash, Ruby, Javascript & React, Elixir, Golang & more!</strong>
+        <strong>i3, Vim, Bash, Ruby, Typescript & React, Elixir, Golang & more!</strong>
 </div>
 <br>
 
@@ -26,7 +26,7 @@ You may want to use this setup if you are interested in or use any of the below 
 - [bat](https://github.com/sharkdp/bat)
 - [tmate](https://tmate.io/)
 
-### Useful aliases
+### Bash Usage
 - general git aliases, i.e. `ga`, `gco`, `gd`, `gc` etc
 - `gcob<Enter>` checkout branch from fzf
 - `gpullb<Enter>` pull branch from fzf
@@ -39,28 +39,28 @@ You may want to use this setup if you are interested in or use any of the below 
 - `ALT-C` will search for directories from the command line and selecting one will place you in the directory [Note: on MacOS `ESC-C` will do this]
 - From within tmux you can open vi mode with `<prefix>[`
 
-### Included plugins
+### Included Vim Plugins
 ##### [vim-plug for plugin management](https://github.com/junegunn/vim-plug)
-- [vim-fugitive](https://github.com/tpope/vim-fugitive)
 - [nerdtree](https://github.com/preservim/nerdtree)
 - [coc.nvim ](https://github.com/neoclide/coc.nvim)
 - [undotree](https://github.com/mbbill/undotree)
-- [vim-commentary](https://github.com/tpope/vim-commentary)
 - [vim-markdown](https://github.com/plasticboy/vim-markdown)
+- [markdown preview](https://github.com/iamcco/markdown-preview.nvim)
 - [emmet-vim](https://github.com/mattn/emmet-vim)
 - [vim-easy-align](https://github.com/junegunn/vim-easy-align)
 - [vim-system-copy](https://github.com/christoomey/vim-system-copy)
-- [vim-surround](https://github.com/tpope/vim-surround)
 - [fzf.vim](https://github.com/junegunn/fzf.vim)
 - [elixir vim](https://github.com/elixir-editors/vim-elixir)
-- [vim-airline](https://github.com/vim-airline/vim-airline)
-- [awesome-vim-colorschemes](https://github.com/rafi/awesome-vim-colorschemes)
-- [markdown preview](https://github.com/iamcco/markdown-preview.nvim)
 - [tickit.vim](https://github.com/haydenrou/tickit.vim)
+- [treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+- [vim-fugitive](https://github.com/tpope/vim-fugitive)
 - [vim-dispatch](https://github.com/tpope/vim-dispatch)
+- [vim-surround](https://github.com/tpope/vim-surround)
+- [vim-commentary](https://github.com/tpope/vim-commentary)
+- [awesome-vim-colorschemes](https://github.com/rafi/awesome-vim-colorschemes)
+- [vim-airline](https://github.com/vim-airline/vim-airline)
 
-### General usage
-Most of the key binds are self explanatory within the vimrc but here are some useful ones
+### Vim Usage
 - `<Leader>` key is bound to ` `
 - `<Leader>vs` will vertically split
 - `<Leader>zs` will horizontally split
@@ -70,49 +70,30 @@ Most of the key binds are self explanatory within the vimrc but here are some us
 - `<Leader><Enter>` to get rid of search highlighting
 - `<Leader>gd` will go to definition using Coc.nvim
 - `<Leader>gr` will go to references using Coc.nvim
-- `\` will trigger a grep from the cwd
+- `\` will trigger a fzf grep from the cwd
 - `<Leader>nn` will toggle NerdTree
 - `<Leader>nf` will open NerdTree at the current files location
 - `<Leader>u` will toggle Undotree
 - `<C-T>` will open your file search
-- `<C-P>` same as above but with a preview of the files
 - `<Leader>b` opens a FZF file search for the open buffers
 - `<Leader>s` opens a search of the current files lines and will take you to the line found
 - `cp$` copy rest of line (or any pattern) to clipboard
 - `<Leader>gst` fugitive git status
 - `<Leader>gj` fugitive get head when in merge
 - `<Leader>gf` fugitive get upstream when in merge
-- `<Leader>gdd` fugitive git diff
 - `<Leader>sp` to spell previously incorrect word
 - `<Leader>p` delete and paste register from within visual mode. the active register will not be replaced
+- `K` Go to the documentation of the function under the cursor. If Coc isn't enabled for the filetype, it will search nvims :h
+- ... Explore the vimrc to find more!
 
-### Handy vim-bits :)
-- `ctrl-a` or `ctrl-x` to increment/decrement numbers
-- `ctrl-g` to see what file and line you're at
-- `g8` to see the ASCII of the character on your cursor
-- `g<` to see previous output
-- `g&` to replay last substitute command
-- `gu` or `gU` + motion will upcase/downcase
-- `g?` to turn selection into rot13 or `g??` for the line
-- `gd` go to definition
-- `gf` go to file
-- `gq` put a long line on multiple lines. Mainly for comments
-- `gv` to highlight previous highlighted region
-- `gi` to last insert location
-- `:<,'>g/Word/norm! diw` to execute command on highlighted section for only lines with Word on
-- `~` to capitalize / uncapitalize a letter
-- `q` followed by a letter to record a macro
-- `m` followed by a letter to mark a spot in a file. If the letter is a capital then it's bound globally
-- `` `a `` move to the mark
-- `ctrl-v` and `ctrl-x` to open split panes from fzf file search
-- `ctrl-w =` to equal size the panes
-- `ctrl-w r` to swap pane positions
-- `:cdo g/word/norm! D` to action on a quickfix list
+[A handy list of vim-bits](./VIMBITS.md)
 
 ## Installation
 ### Prerequisites
-If you want to use the setup script, then you should be on Ubuntu. Otherwise just reference it for installing your setup.
+Currently the setup.sh script in this repository is somewhat unfinished and won't work entirely correctly.
+It is there primarily for documentation, so if you are going to use this configuration, use it as guidance to install what you need to.
 
+#### Deprecated
 ```sh
 $ curl -fLo ~/setup.sh https://raw.githubusercontent.com/haydenrou/dotfiles/master/setup.sh
 $ chmod +x ~/setup.sh
