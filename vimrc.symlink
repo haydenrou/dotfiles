@@ -67,6 +67,7 @@ set grepprg=rg\ --vimgrep\ --smart-case\ --hidden\ --follow
 " Splits open to the right and below
 set splitbelow splitright
 
+" https://neovim.io/doc/user/nvim.html#nvim-from-vim
 set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath = &runtimepath
 
@@ -90,6 +91,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'elixir-editors/vim-elixir'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'haydenrou/tickit.vim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " The man himself
 Plug 'tpope/vim-fugitive'

@@ -148,11 +148,13 @@ sudo apt-get install -y
   g++ \
   make
 
-vim +Plug Install +qall
+vim -c "packadd nvim-treesitter|echo 'you have added the treesitter package, you can exit now'"
+vim +Plug Install +qall # you may need to redo TSInstall
+vim -c "TSInstall ruby|echo 'you have installed Ruby for treesitter, and can exit now'"
+vim -c "TSInstall typescript|echo 'you have installed typescript for treesitter, and can exit now'"
 
 vim -c "call coc#util#install()|echo 'Quit vim using :qa when completed'"
 
-vim -c "packadd nvim-treesitter|echo 'you can exit now :)'"
 vim -c "CocInstall coc-sh coc-html coc-eslint coc-css coc-tsserver coc-json coc-tailwindcss coc-prettier coc-elixir coc-erlang_ls coc-go coc-docker coc-solargraph|echo 'When the plugin is installed it will let you know, and you can exit with :qa'"
 
 vim -c "CocCommand eslint.showOutputChannel"
