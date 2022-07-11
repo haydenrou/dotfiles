@@ -24,6 +24,7 @@ You may want to use this setup if you are interested in or use any of the below 
 - [i3wm](https://github.com/i3/i3)
 - [tldr](https://tldr.sh)
 - [bat](https://github.com/sharkdp/bat)
+- [tmate](https://tmate.io/)
 
 ### Useful aliases
 - general git aliases, i.e. `ga`, `gco`, `gd`, `gc` etc
@@ -39,20 +40,17 @@ You may want to use this setup if you are interested in or use any of the below 
 - From within tmux you can open vi mode with `<prefix>[`
 
 ### Included plugins
-- [vim-plug](https://github.com/junegunn/vim-plug)
+##### [vim-plug for plugin management](https://github.com/junegunn/vim-plug)
 - [vim-fugitive](https://github.com/tpope/vim-fugitive)
 - [nerdtree](https://github.com/preservim/nerdtree)
-- [gruvbox theme](https://github.com/morhetz/gruvbox)
 - [coc.nvim ](https://github.com/neoclide/coc.nvim)
 - [undotree](https://github.com/mbbill/undotree)
 - [vim-commentary](https://github.com/tpope/vim-commentary)
-- [vim-javascript](https://github.com/pangloss/vim-javascript)
 - [vim-markdown](https://github.com/plasticboy/vim-markdown)
 - [emmet-vim](https://github.com/mattn/emmet-vim)
 - [vim-easy-align](https://github.com/junegunn/vim-easy-align)
 - [vim-system-copy](https://github.com/christoomey/vim-system-copy)
 - [vim-surround](https://github.com/tpope/vim-surround)
-- [auto-pairs](https://github.com/jiangmiao/auto-pairs)
 - [fzf.vim](https://github.com/junegunn/fzf.vim)
 - [elixir vim](https://github.com/elixir-editors/vim-elixir)
 - [vim-airline](https://github.com/vim-airline/vim-airline)
@@ -81,11 +79,35 @@ Most of the key binds are self explanatory within the vimrc but here are some us
 - `<Leader>b` opens a FZF file search for the open buffers
 - `<Leader>s` opens a search of the current files lines and will take you to the line found
 - `cp$` copy rest of line (or any pattern) to clipboard
-- `<Leader>gst` fugitive git statsu
+- `<Leader>gst` fugitive git status
 - `<Leader>gj` fugitive get head when in merge
 - `<Leader>gf` fugitive get upstream when in merge
 - `<Leader>gdd` fugitive git diff
+- `<Leader>sp` to spell previously incorrect word
 - `<Leader>p` delete and paste register from within visual mode. the active register will not be replaced
+
+### Handy vim-bits :)
+- `ctrl-a` or `ctrl-x` to increment/decrement numbers
+- `ctrl-g` to see what file and line you're at
+- `g8` to see the ASCII of the character on your cursor
+- `g<` to see previous output
+- `g&` to replay last substitute command
+- `gu` or `gU` + motion will upcase/downcase
+- `g?` to turn selection into rot13 or `g??` for the line
+- `gd` go to definition
+- `gf` go to file
+- `gq` put a long line on multiple lines. Mainly for comments
+- `gv` to highlight previous highlighted region
+- `gi` to last insert location
+- `:<,'>g/Word/norm! diw` to execute command on highlighted section for only lines with Word on
+- `~` to capitalize / uncapitalize a letter
+- `q` followed by a letter to record a macro
+- `m` followed by a letter to mark a spot in a file. If the letter is a capital then it's bound globally
+- `` `a `` move to the mark
+- `ctrl-v` and `ctrl-x` to open split panes from fzf file search
+- `ctrl-w =` to equal size the panes
+- `ctrl-w r` to swap pane positions
+- `:cdo g/word/norm! D` to action on a quickfix list
 
 ## Installation
 ### Prerequisites

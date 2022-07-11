@@ -32,7 +32,8 @@ sudo apt-get install -y \
   libreadline-dev \
   mysql-server \
   mysql-client \
-  tldr
+  tldr \
+  tmate
 
 # bat installation isn't through apt yet
 curl -fLo bat.deb https://github.com/sharkdp/bat/releases/download/v0.15.4/bat-musl_0.15.4_amd64.deb
@@ -108,6 +109,7 @@ ln -s ~/projects/dotfiles/tmux.conf.symlink ~/.tmux.conf
 ln -s ~/projects/dotfiles/vimrc.symlink ~/.config/nvim/init.vim
 ln -s ~/projects/dotfiles/coc-settings.symlink.json ~/.config/nvim/coc-settings.json
 ln -s ~/projects/dotfiles/solargraph.config.yml ~/.config/solargraph/config.yml
+ln -s ~/projects/dotfiles/coc-settings.symlink.json ~/.config/nvim/coc-settings.json
 
 source ~/.bash_profile
 source ~/.bashrc
@@ -150,8 +152,10 @@ vim +Plug Install +qall
 
 vim -c "call coc#util#install()|echo 'Quit vim using :qa when completed'"
 
-vim -c "CocInstall coc-html coc-css coc-tsserver coc-json coc-tailwindcss coc-prettier|echo 'When the plugin is installed it will let you know, and you can exit with :qa'"
 vim -c "packadd nvim-treesitter|echo 'you can exit now :)'"
+vim -c "CocInstall coc-sh coc-html coc-eslint coc-css coc-tsserver coc-json coc-tailwindcss coc-prettier coc-elixir coc-erlang_ls coc-go coc-docker coc-solargraph|echo 'When the plugin is installed it will let you know, and you can exit with :qa'"
+
+vim -c "CocCommand eslint.showOutputChannel"
 
 read -p "Would you like to install Yarn? [Y/n]" yarn
 case $yarn in
@@ -174,7 +178,6 @@ case $elixir in
     asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git
     asdf install elixir 1.10.13
     asdf global elixir 1.10.13
-    vim -c "CocInstall coc-elixir|echo 'Exit vim when installed'"
     mix local.hex
       read -p "And do you want to install Phoenix? [Y/n] " phoenix
       case $phoenix in
@@ -197,7 +200,6 @@ case $ruby in
     gem install solargraph
     gem install mailcatcher
     gem install rubocop
-    vim -c "CocInstall coc-solargraph|echo 'When coc-solargraph is installed it will let you know, and you can exit with :qa'"
     ;;
   [Nn]* );;
   * )

@@ -1,5 +1,9 @@
 {
-  "solargraph.formatting": true,
   "solargraph.diagnostics": true,
+  "solargraph.autoformat": true,
+  "solargraph.completion": true,
+  "solargraph.formatting": true,
+  "solargraph.hover": true,
+  "solargraph.rename": true,
   "coc.preferences.formatOnSaveFiletypes": ["json"]
 }
