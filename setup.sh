@@ -124,6 +124,7 @@ case $golang in
     read -p "Enter a specific version (the LTS at time of writing is 1.14) " golang_version
     asdf install golang $golang_version
     asdf global golang $golang_version
+    vim -c "TSInstall go|echo 'you have installed go for treesitter, and can exit now'"
     ;;
   [Nn]* ) ;;
   * )

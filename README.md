@@ -25,6 +25,7 @@ You may want to use this setup if you are interested in or use any of the below 
 - [tldr](https://tldr.sh)
 - [bat](https://github.com/sharkdp/bat)
 - [tmate](https://tmate.io/)
+- [todoist helper](https://github.com/haydenrou/todoist_helper)
 
 ### Bash Usage
 - general git aliases, i.e. `ga`, `gco`, `gd`, `gc` etc

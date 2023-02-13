@@ -79,7 +79,7 @@ filetype on
 call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree'
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 Plug 'mbbill/undotree'
 Plug 'plasticboy/vim-markdown'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
@@ -89,17 +89,25 @@ Plug 'christoomey/vim-system-copy'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'elixir-editors/vim-elixir'
+Plug 'rust-lang/rust.vim'
 Plug 'haydenrou/tickit.vim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter-context'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
+
+Plug 'Eandrju/cellular-automaton.nvim'
+nnoremap <leader>fml :CellularAutomaton make_it_rain<CR>
 
 " Colorschemes
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 
 " Use rg for FZF
 if executable('rg')
@@ -110,19 +118,19 @@ call plug#end()
 
 syntax enable
 
-" grooooooovy
 let g:gruvbox_contrast_dark = 'hard'
 if exists('+termguicolors')
         let &t_8f = "\<Esc[38;2;%lu;%lu;%lum"
         let &t_8b = "\<Esc[48;2;%lu;%lu;%lum"
 endif
 let g:gruvbox_invert_selection='0'
-colorscheme sonokai
 let g:airline_theme='bubblegum'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline_powerline_fonts = 1
+
+colorscheme tokyonight
 
 hi Normal guibg=NONE ctermbg=NONE
 hi NonText guibg=NONE ctermbg=NONE
@@ -290,6 +298,11 @@ call tickit#set_location($HOME . "/projects/notes/TODO.md")
 let g:netrw_browse_split=2
 let g:netrw_banner=0
 let g:netrw_winsize=25
+
+" PLUGIN: rust
+let g:rustfmt_autosave = 1
+let g:rustfmt_emit_files = 1
+let g:rustfmt_fail_silently = 0
 
 " PLUGIN: Nerdtree
 let NERDTreeMinimalUI = 1
