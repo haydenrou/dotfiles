@@ -1,1 +1,6 @@
 personal.bashrc
+.DS_Store
+.hg
+.svn
+*.vscode
+node_modules
