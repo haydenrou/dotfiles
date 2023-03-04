@@ -1,0 +1,40 @@
+# default layout (can be bsp, stack or float)
+yabai -m config layout bsp
+
+# new window spawns to the right if vertical split, or bottom if horizontal split
+yabai -m config window_placement second_child
+
+# padding set to 12px
+yabai -m config top_padding 12
+yabai -m config bottom_padding 12
+yabai -m config left_padding 12
+yabai -m config right_padding 12
+yabai -m config window_gap 12
+
+# -- mouse settings --
+
+# center mouse on window with focus
+yabai -m config mouse_follows_focus on
+
+# modifier for clicking and dragging with mouse
+yabai -m config mouse_modifier alt
+# set modifier + left-click drag to move window
+yabai -m config mouse_action1 move
+# set modifier + right-click drag to resize window
+yabai -m config mouse_action2 resize
+
+# disable specific apps
+yabai -m rule --add app="^System Settings$" manage=off
+yabai -m rule --add app="^Calculator$" manage=off
+yabai -m rule --add app="^Karabiner-Elements$" manage=off
+yabai -m rule --add app="^QuickTime Player$" manage=off
+
+# Note: Hayden
+# This solution doesn't actually work for me, but I'm leaving it here as documentation
+# I'm currently just running skhd manually as I don't have time to look into this right now
+#
+# Start SKHD in the background. Work around issues:
+# https://github.com/koekeishiya/skhd/issues/103
+# https://github.com/koekeishiya/skhd/issues/139
+# thanks to @aSapien!!!
+# skhd -c $HOME/.config/skhd/skhdrc

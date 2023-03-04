@@ -111,6 +111,11 @@ ln -s ~/projects/dotfiles/coc-settings.symlink.json ~/.config/nvim/coc-settings.
 ln -s ~/projects/dotfiles/solargraph.config.yml ~/.config/solargraph/config.yml
 ln -s ~/projects/dotfiles/coc-settings.symlink.json ~/.config/nvim/coc-settings.json
 
+mkdir ~/.config/yabai
+ln -s ~/projects/dotfiles/yabairc.symlink ~/.config/yabai/yabairc
+mkdir ~/.config/skhd
+ln -s ~/projects/dotfiles/skhd.symlink ~/.config/skhd/skhdrc
+
 source ~/.bash_profile
 source ~/.bashrc
 
