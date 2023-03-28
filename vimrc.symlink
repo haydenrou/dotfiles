@@ -98,6 +98,8 @@ Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
+Plug 'nvim-lua/plenary.nvim' " Required for harpoon
+Plug 'ThePrimeagen/harpoon'
 
 Plug 'Eandrju/cellular-automaton.nvim'
 nnoremap <leader>fml :CellularAutomaton make_it_rain<CR>
@@ -172,8 +174,6 @@ augroup MOREBUFFS
 
         autocmd FileType javascript,javascriptreact,javascript.jsx,javascript.tsx,typescript,typescriptreact setlocal omnifunc=javascriptcomplete#CompleteJS
         autocmd BufNewFile,BufRead *.jsx set filetype=javascript.jsx
-        autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
-        autocmd BufNewFile,BufRead *.tsx set syntax=typescript.tsx
         autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 augroup END
 
@@ -310,6 +310,12 @@ let NERDTreeShowHidden=1
 let NERDTreeIgnore = ['.map$', '.d.ts$', '^_build$[[dir]]']
 map <Leader>nf :NERDTreeFind<cr>
 nnoremap <Leader>nn :NERDTreeToggle<Enter>
+
+" PLUGIN: Harpoon
+nnoremap <leader>a :lua require("harpoon.mark").add_file()<CR>
+nnoremap <C-e> :lua require("harpoon.ui").toggle_quick_menu()<CR>
+nnoremap <C-n> :lua require("harpoon.ui").nav_next()<CR>
+nnoremap <C-p> :lua require("harpoon.ui").nav_prev()<CR>
 
 " PLUGIN: Fugitive
 nmap <leader>gst :G<CR>
