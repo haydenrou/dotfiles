@@ -1,8 +1,5 @@
-if [ -x "$(command -v nvim)" ]; then
-  alias vi='nvim'
-  alias vim='nvim'
-fi
-
+alias vi='nvim'
+alias vim='nvim'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'

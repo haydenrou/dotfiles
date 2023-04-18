@@ -8,13 +8,8 @@ case $- in
       *) return;;
 esac
 
-if [ -x /usr/bin/nvim ]; then
-        export EDITOR=nvim
-        export VISUAL=nvim
-  else
-        export EDITOR=vi
-        export VISUAL=vi
-fi
+export EDITOR=nvim
+export VISUAL=nvim
 
 export HISTSIZE=
 export HISTFILESIZE=

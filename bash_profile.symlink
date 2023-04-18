@@ -5,6 +5,6 @@ if [ -f $HOME/.bashrc  ]; then
     source $HOME/.bashrc
 fi
 
-export PATH=/bin:$HOME/bin:$PATH
-export ARCHFLAGS="-arch x86_64"
+export PATH=$HOME/.docker/bin:/bin:$HOME/bin:$PATH
+export ARCHFLAGS="-arch arm64"
 . "$HOME/.cargo/env"
