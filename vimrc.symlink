@@ -126,15 +126,18 @@ if exists('+termguicolors')
         let &t_8b = "\<Esc[48;2;%lu;%lu;%lum"
 endif
 let g:gruvbox_invert_selection='0'
-let g:airline_theme='bubblegum'
+let g:airline_theme='badwolf'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline_powerline_fonts = 1
 
-colorscheme sonokai
+colorscheme tender
 
 hi Normal guibg=NONE ctermbg=NONE
+hi NormalNC guibg=NONE ctermbg=NONE
+hi CursorLine guibg=NONE ctermbg=NONE
+hi EndOfBuffer guibg=NONE ctermbg=NONE
 hi NonText guibg=NONE ctermbg=NONE
 hi Search cterm=NONE ctermbg=LightMagenta ctermfg=black
 
