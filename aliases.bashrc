@@ -28,3 +28,4 @@ alias ei3='vim ~/projects/dotfiles/i3config.symlink'
 alias cdd='cd ~/projects/dotfiles'
 alias it='git'
 alias complete_todo='todoist_helper show todos -a "id,content" | fzf | xargs -I{} todoist_helper complete todo {}'
+alias egst="gst | grep modified | awk '{ gsub(/^[^ ]*modified: /,\"\"); print }' | fzf | xargs nvim"

@@ -6,5 +6,6 @@
   "solargraph.hover": true,
   "solargraph.rename": true,
   "coc.preferences.formatOnSaveFiletypes": ["json"],
-  "rust-analyzer.serverPath": "~/.cargo/bin/rust-analyzer"
+  "rust-analyzer.serverPath": "~/.cargo/bin/rust-analyzer",
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true
 }
