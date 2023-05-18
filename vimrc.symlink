@@ -180,9 +180,6 @@ augroup MOREBUFFS
         autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 augroup END
 
-vnoremap J :m '>+1<CR>gv=gv
-vnoremap K :m '>-2<CR>gv=gv
-
 " When the type of shell script is /bin/sh, assume a POSIX-compatible
 " shell for syntax highlighting purposes.
 let g:is_posix = 1
@@ -277,6 +274,8 @@ func GoCoC()
         \ coc#refresh()
     inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
     inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
+    inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
     " GoTo code navigation.
     nmap <buffer> <leader>gd <Plug>(coc-definition)
