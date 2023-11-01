@@ -100,6 +100,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'nvim-lua/plenary.nvim' " Required for harpoon
 Plug 'ThePrimeagen/harpoon'
+Plug 'github/copilot.vim'
 
 Plug 'Eandrju/cellular-automaton.nvim'
 nnoremap <leader>fml :CellularAutomaton make_it_rain<CR>
@@ -132,7 +133,9 @@ let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline_powerline_fonts = 1
 
-colorscheme tender
+" colorscheme slate
+" colorscheme stellarized
+colorscheme catppuccin
 
 hi Normal guibg=NONE ctermbg=NONE
 hi NormalNC guibg=NONE ctermbg=NONE
@@ -333,6 +336,10 @@ nnoremap <C-T> :Files<cr>
 nnoremap <Leader>b :Buffers<cr>
 nnoremap <Leader>s :BLines<cr>
 let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
+
+" PLUGIN: copilot
+imap <silent><script><expr> <C-L> copilot#Accept("\<CR>")
+let g:copilot_no_tab_map = v:true
 
 " Load a vim project you're working on
 function Loadproj(proj) abort
