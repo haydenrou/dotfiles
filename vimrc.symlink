@@ -114,7 +114,7 @@ Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 
 " Use rg for FZF
 if executable('rg')
-  let g:rg_derive_root='true'
+        let g:rg_derive_root='true'
 endif
 
 call plug#end()
@@ -148,7 +148,6 @@ hi Search cterm=NONE ctermbg=LightMagenta ctermfg=black
 highlight ColorColumn ctermbg=red
 call matchadd('ColorColumn', '\%81v', 100)
 
-
 fun! TrimWhitespace()
         let l:save = winsaveview()
         keeppatterns %s/\s\+$//e
@@ -159,7 +158,7 @@ augroup MOREBUFFS
         autocmd!
 
         autocmd FileType html,css,erb,jsx,javascript,rb,typescriptreact,javascriptreact,scss,typescript,json setlocal shiftwidth=2 tabstop=2 softtabstop=2
-        autocmd FileType go,make set softtabstop=0 noexpandtab tabstop=4 shiftwidth=4
+        autocmd FileType go,make,vim set softtabstop=0 noexpandtab tabstop=4 shiftwidth=4
         autocmd BufNewFile,BufRead *.templ set filetype=go
         autocmd FileType html,css,erb,jsx,javascript,typescriptreact,javascriptreact EmmetInstall
 
@@ -175,9 +174,9 @@ augroup MOREBUFFS
         " Don't do it for commit messages, when the position is invalid, or when
         " inside an event handler (happens when dropping a file on gvim).
         autocmd BufReadPost *
-                                \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
-                                \   exe "normal g`\"" |
-                                \ endif
+        	\ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
+            \   exe "normal g`\"" |
+        	\ endif
 
         autocmd FileType javascript,javascriptreact,javascript.jsx,javascript.tsx,typescript,typescriptreact setlocal omnifunc=javascriptcomplete#CompleteJS
         autocmd BufNewFile,BufRead *.jsx set filetype=javascript.jsx
@@ -257,41 +256,41 @@ nmap ga <Plug>(EasyAlign)
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
-  if CocAction('hasProvider', 'hover')
-    call CocActionAsync('doHover')
-  else
-    call feedkeys('K', 'in')
-  endif
+        if CocAction('hasProvider', 'hover')
+                call CocActionAsync('doHover')
+        else
+                call feedkeys('K', 'in')
+        endif
 endfunction
 
 func GoCoC()
-    :CocEnable
+        :CocEnable
 
-    function! CheckBackspace() abort
-      let col = col('.') - 1
-      return !col || getline('.')[col - 1]  =~# '\s'
-    endfunction
+        function! CheckBackspace() abort
+                let col = col('.') - 1
+                return !col || getline('.')[col - 1]  =~# '\s'
+        endfunction
 
-    inoremap <silent><expr> <Tab>
-        \ coc#pum#visible() ? coc#pum#next(1) :
-        \ CheckBackspace() ? "\<Tab>" :
-        \ coc#refresh()
-    inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
-    inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
-    inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+        inoremap <silent><expr> <Tab>
+                \ coc#pum#visible() ? coc#pum#next(1) :
+                \ CheckBackspace() ? "\<Tab>" :
+                \ coc#refresh()
+        inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
+        inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
+        inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
-    " GoTo code navigation.
-    nmap <buffer> <leader>gd <Plug>(coc-definition)
-    nmap <buffer> <leader>gy <Plug>(coc-type-definition)
-    nmap <buffer> <leader>gi <Plug>(coc-implementation)
-    nmap <buffer> <leader>gr <Plug>(coc-references)
-    nmap <buffer> <leader>rr <Plug>(coc-rename)
-    nmap <buffer> <leader>cf <Plug>(coc-fix-current)
-    nnoremap <buffer> <leader>cr :CocRestart
+        " GoTo code navigation.
+        nmap <buffer> <leader>gd <Plug>(coc-definition)
+        nmap <buffer> <leader>gy <Plug>(coc-type-definition)
+        nmap <buffer> <leader>gi <Plug>(coc-implementation)
+        nmap <buffer> <leader>gr <Plug>(coc-references)
+        nmap <buffer> <leader>rr <Plug>(coc-rename)
+        nmap <buffer> <leader>cf <Plug>(coc-fix-current)
+        nnoremap <buffer> <leader>cr :CocRestart
 
-    nmap <silent> [g <Plug>(coc-diagnostic-prev)
-    nmap <silent> ]g <Plug>(coc-diagnostic-next)
+        nmap <silent> [g <Plug>(coc-diagnostic-prev)
+        nmap <silent> ]g <Plug>(coc-diagnostic-next)
 endfun
 
 autocmd BufEnter * :call GoCoC()
