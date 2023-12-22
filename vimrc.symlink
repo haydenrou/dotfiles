@@ -159,7 +159,8 @@ augroup MOREBUFFS
         autocmd!
 
         autocmd FileType html,css,erb,jsx,javascript,rb,typescriptreact,javascriptreact,scss,typescript,json setlocal shiftwidth=2 tabstop=2 softtabstop=2
-        autocmd FileType go set softtabstop=0 noexpandtab tabstop=4 shiftwidth=4
+        autocmd FileType go,make set softtabstop=0 noexpandtab tabstop=4 shiftwidth=4
+        autocmd BufNewFile,BufRead *.templ set filetype=go
         autocmd FileType html,css,erb,jsx,javascript,typescriptreact,javascriptreact EmmetInstall
 
         " https://github.com/tpope/vim-commentary/issues/68
