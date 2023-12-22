@@ -73,7 +73,7 @@ read -p "And the name? " gitname
 git config --global user.name "$gitname"
 
 mkdir ~/projects
-mkdir ~/.local/share/nvim/undo -p
+mkdir -p ~/.local/share/nvim/undo
 
 mkdir ~/.fonts
 wget https://github.com/abertsch/Menlo-for-Powerline/raw/master/Menlo%20for%20Powerline.ttf -P ~/.fonts/
@@ -98,7 +98,7 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 
 mkdir ~/.config/alacritty
 mkdir ~/.config/nvim
-mkdir ~/.config/solargraph -p
+mkdir -p ~/.config/solargraph
 rm ~/.bashrc ~/.bash_profile ~/.tmux.conf ~/.vimrc ~/.profile > /dev/null 2>&1
 ln -s ~/projects/dotfiles/ignore.symlink ~/.ignore
 ln -s ~/projects/dotfiles/gh-cli.config.yml ~/.config/gh/config.yml
