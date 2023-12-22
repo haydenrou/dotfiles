@@ -1,6 +1,6 @@
 <div align="center">
         <h1>dotfiles</h1>
-        <strong>i3, Vim, Bash, Ruby, Typescript & React, Elixir, Golang & more!</strong>
+        <strong>i3, Vim, ZSH, Ruby, Typescript & React, Elixir, Golang & more!</strong>
 </div>
 <br>
 
@@ -25,9 +25,10 @@ You may want to use this setup if you are interested in or use any of the below 
 - [tldr](https://tldr.sh)
 - [bat](https://github.com/sharkdp/bat)
 - [tmate](https://tmate.io/)
+- [zoxide](https://github.com/ajeetdsouza/zoxide)
 - [todoist helper](https://github.com/haydenrou/todoist_helper)
 
-### Bash Usage
+### ZSH Usage
 - general git aliases, i.e. `ga`, `gco`, `gd`, `gc` etc
 - `gcob<Enter>` checkout branch from fzf
 - `gpullb<Enter>` pull branch from fzf

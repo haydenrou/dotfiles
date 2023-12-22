@@ -25,6 +25,7 @@ sudo apt-get install -y \
   powerline \
   libc6 \
   fzf \
+  zoxide \
   libmysqlclient-dev \
   libssl-dev \
   libreadline-dev \

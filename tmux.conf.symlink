@@ -1,5 +1,5 @@
 # Set to login shell
-set -g default-command "/bin/bash"
+set -g default-command "/bin/zsh"
 
 set -g default-terminal screen-256color
 
