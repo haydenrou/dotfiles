@@ -44,6 +44,8 @@ rm ./bat.deb
 echo "As per https://github.com/junegunn/fzf/issues/1589 we'll have to install fzf manually on Ubuntu 18.04 at the moment";
 wget http://mirrors.kernel.org/ubuntu/pool/universe/f/fzf/fzf_0.18.0-2_amd64.deb | sudo dpkg -i;
 
+mkdir -p ~/.config/nvim/lua
+
 ls -a ~ | grep fzf_ | xargs rm
 
 read -p "Would you like to run i3 [Y/n]? " ithree

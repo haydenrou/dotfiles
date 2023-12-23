@@ -1,6 +1,6 @@
 <div align="center">
         <h1>dotfiles</h1>
-        <strong>i3, Vim, ZSH, Ruby, Typescript & React, Elixir, Golang & more!</strong>
+        <strong>skhd, yabai, Vim, ZSH, Ruby, Typescript & React, Elixir, Golang & more!</strong>
 </div>
 <br>
 
