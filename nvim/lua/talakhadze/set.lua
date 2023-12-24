@@ -47,8 +47,5 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
     command = [[%s/\s\+$//e]],
 })
 
+vim.keymap.set("n", "<Leader>r", "<cmd>set relativenumber!<cr>")
 
--- TODO: This doesn't work
-vim.keymap.set("n", "<Leader>r", function()
-    vim.opt.relativenumber = not vim.opt.relativenumber
-end)
