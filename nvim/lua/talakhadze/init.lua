@@ -4,6 +4,8 @@
 --  DESCRIPTION:  My general vimrc config                                         --
 -- ============================================================================== --
 
+vim.g.mapleader = " "
+
 require("talakhadze.lazy")
 
 require("talakhadze.colorscheme")

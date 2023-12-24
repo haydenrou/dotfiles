@@ -90,6 +90,9 @@ You may want to use this setup if you are interested in or use any of the below 
 
 [A handy list of vim-bits](./VIMBITS.md)
 
+#### Telescope
+- Pressing tab to select from the list, then following with `<C-q>` will open a quickfix list
+
 ## Installation
 ### Prerequisites
 Currently the setup.sh script in this repository is somewhat unfinished and won't work entirely correctly.

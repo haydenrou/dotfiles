@@ -1,5 +1,3 @@
-vim.g.mapleader = " "
-
 vim.keymap.set("n", "<leader>sp", ":norm mm[s1z=`m<cr>", opts)
 
 vim.keymap.set("n", "<leader>w", ":w!<cr>", opts)
