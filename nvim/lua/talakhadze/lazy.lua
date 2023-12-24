@@ -37,6 +37,8 @@ local plugins = {
     { 'tpope/vim-fugitive' },
 
     { 'github/copilot.vim' },
+
+    { 'nvim-tree/nvim-tree.lua' },
 }
 
 require("lazy").setup(plugins, opts)
