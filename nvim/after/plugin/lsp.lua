@@ -42,8 +42,9 @@ local cmp_action = require('lsp-zero').cmp_action()
 
 cmp.setup({
     mapping = cmp.mapping.preset.insert({
-        -- make tab work
-        --
+        ['<Tab>'] = cmp_action.luasnip_supertab(),
+        ['<S-Tab>'] = cmp_action.luasnip_shift_supertab(),
+
         -- `Enter` key to confirm completion
         ['<CR>'] = cmp.mapping.confirm({ select = true }),
 
