@@ -1,7 +1,7 @@
 # Set to login shell
 set -g default-command "/bin/zsh"
 
-set -g default-terminal screen-256color
+set-option -sa terminal-features ',screen-256color:RGB'
 
 # Set history limit
 set -g history-limit 100000
