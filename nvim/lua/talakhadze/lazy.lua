@@ -39,6 +39,8 @@ local plugins = {
     { 'github/copilot.vim' },
 
     { 'nvim-tree/nvim-tree.lua' },
+
+    { 'nvim-lualine/lualine.nvim' },
 }
 
 require("lazy").setup(plugins, opts)
