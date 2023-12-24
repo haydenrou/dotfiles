@@ -1,4 +1,5 @@
 local lsp_zero = require('lsp-zero')
+local lspconfig = require('lspconfig')
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
@@ -8,12 +9,30 @@ require('mason-lspconfig').setup({
     },
 })
 
-require'lspconfig'.lua_ls.setup{
+lspconfig.lua_ls.setup {
     settings = {
         Lua = {
             diagnostics = {
                 globals = { 'vim', 'opts' }
             }
+        }
+    }
+}
+
+lspconfig.solargraph.setup {
+    filetypes = {"ruby", "rakefile"},
+    root_dir = lspconfig.util.root_pattern("Gemfile", ".git", "."),
+    settings = {
+        solargraph = {
+            autoformat = true,
+            completion = true,
+            hover = true,
+            formatting = true,
+            diagnostic = true,
+            folding = true,
+            references = true,
+            rename = true,
+            symbols = true
         }
     }
 }
