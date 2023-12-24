@@ -4,6 +4,8 @@ vim.g.loaded_netrwPlugin = 1
 
 vim.opt.termguicolors = true
 
+local api = require("nvim-tree.api")
+
 require("nvim-tree").setup({
     sort = {
         sorter = "case_sensitive",
@@ -20,5 +22,5 @@ require("nvim-tree").setup({
     },
 })
 
-vim.keymap.set("n", "<leader>nn", ":NvimTreeToggle<CR>")
-vim.keymap.set("n", "<leader>nf", ":NvimTreeFindFile<CR>")
+vim.keymap.set('n', '<leader>nn', api.tree.toggle)
+vim.keymap.set('n', '<leader>nf', function() api.tree.toggle({ find_file = true, focus = true }) end)

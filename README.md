@@ -95,6 +95,9 @@ You may want to use this setup if you are interested in or use any of the below 
 Currently the setup.sh script in this repository is somewhat unfinished and won't work entirely correctly.
 It is there primarily for documentation, so if you are going to use this configuration, use it as guidance to install what you need to.
 
+## Notes
+- Use `:checkhealth` to validate most things are working as intended
+
 #### Deprecated
 ```sh
 $ curl -fLo ~/setup.sh https://raw.githubusercontent.com/haydenrou/dotfiles/master/setup.sh
