@@ -94,7 +94,7 @@ if [[ -f $HOME/projects/dotfiles/personal.bashrc ]] ; then
   source $HOME/projects/dotfiles/personal.bashrc
 fi
 
-source $HOME/projects/dotfiles/aliases.bashrc
+source $HOME/projects/dotfiles/zsh/alises.zsh
 
 source $HOME/.asdf/asdf.sh
 

@@ -42,7 +42,7 @@ if [[ -f $HOME/projects/dotfiles/personal.zshrc ]] ; then
   source $HOME/projects/dotfiles/personal.zshrc
 fi
 
-source $HOME/projects/dotfiles/aliases.symlink.zshrc
+source $HOME/projects/dotfiles/zsh/aliases.zsh
 
 source $HOME/.asdf/asdf.sh
 
