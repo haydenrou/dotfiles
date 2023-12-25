@@ -20,7 +20,7 @@ lspconfig.lua_ls.setup {
 }
 
 lspconfig.solargraph.setup {
-    filetypes = {"ruby", "rakefile"},
+    filetypes = { "ruby", "rakefile" },
     root_dir = lspconfig.util.root_pattern("Gemfile", ".git", "."),
     settings = {
         solargraph = {
