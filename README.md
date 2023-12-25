@@ -42,43 +42,27 @@ Using [lazy.nvim](https://github.com/folke/lazy.nvim) as a plugin manager, here 
 ## Notable Settings:
 
 - Line numbers and relative numbers are turned on.
-- Backspace is configured to delete over indentation, end-of-line, and at the start of the line.
-- Backup and swap files are disabled.
-- The current line is highlighted.
-- Smart indentation is enabled.
 - Line wrapping is turned off.
-- Searches are case-insensitive, with case-sensitive search if the pattern contains uppercase characters.
-- A minimum of 6 lines is maintained above and below the cursor while scrolling.
-- Tabs are set to 4 spaces for indentation.
-- The time to trigger CursorHold events is decreased to 50 milliseconds.
-- The column at the 80th character is highlighted.
-- The sign column is always shown.
-- Highlighting and incremental searching are enabled.
-- Spelling check in British English is turned on.
-- Tabs are expanded to spaces.
-- Persistent undo is configured in the `~/.local/share/nvim/undo` directory.
-- The grep program for searching is set to `rg --vimgrep --no-heading --smart-case`.
+- The grep program for searching is set to ripgrep.
 - Trailing whitespace is automatically stripped on buffer write.
-- `<Leader>r` toggles relative line numbers.
 
 ## Binds:
 
 ### General:
 
 - `<leader>` is set to `<Space>`
-- `<leader>sp` will select the current paragraph, indent it, and return the cursor to its original position. Useful for formatting text.
-- `<leader>w` will save the current file.
+- `<leader>sp` will spell the previous word correctly.
 - `n` and `N` after a search will reposition the cursor to the center of the screen for better visibility.
 - `J` combines the next line with the current line, ensuring the cursor remains at the beginning of the combined line.
 - `<C-d>` and `<C-u>` scroll half a screen down or up while keeping the cursor position fixed.
-- `<leader><Enter>` clears the search highlight after pressing `<Enter>`.
+- `<leader><Enter>` clears the search highlight.
 - `J` (Visual Mode) and `K` (Visual Mode) move the selected lines down (`J`) or up (`K`) in visual mode.
 - `<leader>y` and `<leader>Y` yank the current line (`<leader>y`) or from the cursor to the end of the line (`<leader>Y`) to the system clipboard.
-- `<leader>p` and `<leader>d` paste (`<leader>p`) or delete (`<leader>d`) without copying to the system clipboard.
-- `Q` is a no-operation (`<nop>`), effectively doing nothing.
+- `<leader>p` and `<leader>d` paste (`<leader>p`) or delete (`<leader>d`) without copying to the buffer.
 - `<leader>f` formats the current buffer using the LSP (Language Server Protocol).
 - `<C-k>`, `<C-j>`, `<leader>k`, and `<leader>j` navigate through quickfix and location lists, ensuring the cursor position is centered.
 - `<leader>s` performs a case-insensitive search and replace across the entire buffer, prompting for confirmation.
+- `<Leader>r` toggles relative line numbers.
 
 [A random list of handy vim commands](./docs/vimbits.md)
 
@@ -134,8 +118,6 @@ By default, the following LSPs will be installed:
 
 Additionally, use `<C-Space>` to open the completion menu if it's not automatically open.
 
-- TODO: from lsp.lua
-
 ## Zsh Aliases:
 
 - `vi` and `vim` are aliased to `nvim`.
@@ -173,7 +155,9 @@ Additionally, use `<C-Space>` to open the completion menu if it's not automatica
     - https://github.com/JoosepAlviste/nvim-ts-context-commentstring may do the trick
 - Add setup for icons in nvim-tree
     - see docs https://github.com/nvim-tree/nvim-tree.lua
-- Update lsp.lua keymaps and section in readme
+- Update lsp.lua keymaps and section LSP/Bindings section in README.md
+- Set default spaces/tabs for correct filetypes per the _backup/vimrc.symlink
+  - as well as some missing bindings
 
 ## Contribution
 You're more than welcome to submit an issue or PR with any bugs or feature suggestions.
