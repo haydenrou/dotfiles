@@ -108,6 +108,12 @@ $ chmod +x ~/setup.sh
 $ sh ~/setup.sh
 ```
 
+## TODO
+- Add setup for tsx/jsx commenting
+    - https://github.com/JoosepAlviste/nvim-ts-context-commentstring may do the trick
+- Add setup for icons in nvim-tree
+    - see docs https://github.com/nvim-tree/nvim-tree.lua
+
 ## Contribution
 You're more than welcome to submit an issue or PR with any bugs or feature suggestions.
 
