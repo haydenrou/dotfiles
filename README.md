@@ -1,6 +1,6 @@
 <div align="center">
-        <h1>haydenrou/dotfiles</h1>
-        <strong>my Personalised Development Environment</strong>
+    <h1>haydenrou/dotfiles</h1>
+    <strong>My Personalized Development Environment</strong>
 </div>
 <br>
 
@@ -24,9 +24,10 @@ Most files in this repo are structured so that you can symlink the directory dir
 ## Neovim Plugins:
 
 Using [lazy.nvim](https://github.com/folke/lazy.nvim) as a plugin manager, here are the plugins used:
+
 - [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) for fuzzy finding
 - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) for code parsing etc
-- [melange-nvim](https://github.com/savq/melange-nvim) as a colourscheme
+- [melange-nvim](https://github.com/savq/melange-nvim) as a color scheme
 - [mason.nvim](https://github.com/williamboman/mason.nvim) is used in conjunction with lsp-zero to manage your different LSPs
 - [lsp-zero.nvim](https://github.com/VonHeikemen/lsp-zero.nvim) to use NeoVim's LSP client
 - [harpoon](https://github.com/ThePrimeagen/harpoon) is used for silky smooth file movement
@@ -101,15 +102,15 @@ Using [lazy.nvim](https://github.com/folke/lazy.nvim) as a plugin manager, here 
 ## LSPs (Language Server Protocols):
 
 By default, the following LSPs will be installed:
-- `tsserver` for typescript
-- `eslint` for eslint
-- `solargraph` for ruby
-- `lua_ls` for lua
-- `tailwindcss` for tailwind
-- `rust_analyzer` for rust
-- `gopls` for golang
-- `jsonls` for json
-- `emmet_ls` for emmet html
+- `tsserver` for typescript.
+- `eslint` for eslint.
+- `solargraph` for ruby.
+- `lua_ls` for lua.
+- `tailwindcss` for tailwind.
+- `rust_analyzer` for rust.
+- `gopls` for golang.
+- `jsonls` for json.
+- `emmet_ls` for emmet html.
 
 ### Bindings:
 
@@ -121,7 +122,7 @@ Additionally, use `<C-Space>` to open the completion menu if it's not automatica
 ## Zsh Aliases:
 
 - `vi` and `vim` are aliased to `nvim`.
-- `ga` and `gaa` alias git add for staging changes for either a specified file, or all unstaged files.
+- `ga` and `gaa` alias git add for staging changes for either a specified file or all unstaged files.
 - `gap` prompts for interactive staging with `git add -p`.
 - `gb` shows the Git branch, and `gc` initiates a Git commit.
 - `gca` combines `git add .` and `git commit`.
@@ -137,11 +138,11 @@ Additionally, use `<C-Space>` to open the completion menu if it's not automatica
 - `it` is bound to `git` because ¯\_(ツ)_/¯
 - `egst` shows modified files with `git status` and opens them in Neovim.
 - `CTRL-T` will search for files from the command line with fzf
-- `ESC-C` (`ALT-C` on Linux) will search for directories from the command line and selecting one will place you in the directory
+- `ESC-C` (`ALT-C` on Linux) will search for directories from the command line, and selecting one will place you in the directory
 - tmux prefix is set to `<C-b>`
 - Open vi mode with `<prefix>[` within tmux
 
-## Suggested software:
+## Suggested Software:
 - [alacritty terminal](https://alacritty.org/)
 - [zoxide](https://github.com/ajeetdsouza/zoxide)
 
@@ -152,14 +153,14 @@ Additionally, use `<C-Space>` to open the completion menu if it's not automatica
 
 ## TODO
 - Add setup for tsx/jsx commenting
-    - https://github.com/JoosepAlviste/nvim-ts-context-commentstring may do the trick
+  - [nvim-ts-context-commentstring](https://github.com/JoosepAlviste/nvim-ts-context-commentstring) may do the trick
 - Add setup for icons in nvim-tree
-    - see docs https://github.com/nvim-tree/nvim-tree.lua
+  - see docs [nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua)
 - Update lsp.lua keymaps and section LSP/Bindings section in README.md
-- Set default spaces/tabs for correct filetypes per the _backup/vimrc.symlink
+- Set default spaces/tabs for correct file types per the _backup/vimrc.symlink
   - as well as some missing bindings
 
 ## Contribution
 You're more than welcome to submit an issue or PR with any bugs or feature suggestions.
 
-If you want to pair up on a project, or build out any of the above, pop me an email at <hayden@rouille.dev>.
+If you want to pair up on a project or build out any of the above, pop me an email at <hayden@rouille.dev>.
