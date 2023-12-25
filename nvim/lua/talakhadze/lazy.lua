@@ -36,6 +36,7 @@ local plugins = {
     { 'mbbill/undotree' },
 
     { 'tpope/vim-fugitive' },
+    { 'tpope/vim-rhubarb' },
 
     { 'github/copilot.vim' },
 
