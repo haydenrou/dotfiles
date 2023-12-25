@@ -3,9 +3,30 @@ local lspconfig = require('lspconfig')
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-    ensure_installed = { "tsserver", "eslint", "solargraph", "lua_ls", "tailwindcss", "rust_analyzer", "gopls", "jsonls", "emmet_ls" },
+    ensure_installed = { "tsserver", "eslint", "solargraph", "lua_ls", "tailwindcss", "rust_analyzer", "gopls", "templ", "cmake", "jsonls", "emmet_ls" },
     handlers = {
         lsp_zero.default_setup,
+    },
+})
+
+-- Formatting for GO Templ files
+vim.api.nvim_create_autocmd({ "BufWritePre" }, { pattern = { "*.templ" }, callback = function() vim.lsp.buf.format() end, })
+
+require("lspconfig").tailwindcss.setup({
+    filetypes = {
+        'templ'
+        -- include any other filetypes where you need tailwindcss
+    },
+    init_options = {
+        userLanguages = {
+            templ = "html"
+        }
+    }
+})
+
+vim.filetype.add({
+    extension = {
+        templ = "templ",
     },
 })
 
