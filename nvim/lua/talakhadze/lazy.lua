@@ -19,8 +19,8 @@ local plugins = {
 
     { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
 
-    -- Colorscheme
-    { "savq/melange-nvim" },
+    -- Colour scheme
+    { "shaunsingh/nord.nvim" },
 
     -- lsp-zero
     { 'williamboman/mason.nvim' },
