@@ -43,7 +43,9 @@ local plugins = {
     { 'nvim-tree/nvim-tree.lua' },
 
     { 'nvim-lualine/lualine.nvim' },
-    { 'numToStr/Comment.nvim' }
+    { 'numToStr/Comment.nvim' },
+
+    { "kylechui/nvim-surround",                   version = "*",                                                                                                                         event = "VeryLazy" },
 }
 
 require("lazy").setup(plugins, opts)
