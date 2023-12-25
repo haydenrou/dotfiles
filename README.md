@@ -149,7 +149,7 @@ Additionally, use `<C-Space>` to open the completion menu if it's not automatica
 ## Debugging:
 
 - Check `:checkhealth` to ensure all plugins are working correctly.
-- Use `:map` or `:verbose map <leader>nn` (for instance) to...
+- Use `:map` or `:verbose map <leader>nn` (for instance) to check keybinds are being set correctly.
 
 ## TODO
 - Add setup for tsx/jsx commenting
