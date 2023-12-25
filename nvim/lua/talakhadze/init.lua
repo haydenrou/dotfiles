@@ -1,7 +1,7 @@
 -- ============================================================================== --
---  FILE:         vimrc                                                           --
+--  FILE:         init.lua                                                        --
 --  AUTHOR:       Hayden Rouille :: https://github.com/haydenrou                  --
---  DESCRIPTION:  My general vimrc config                                         --
+--  DESCRIPTION:  NeoVim configuration file                                       --
 -- ============================================================================== --
 
 vim.g.mapleader = " "
