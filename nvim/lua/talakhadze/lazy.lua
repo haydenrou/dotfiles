@@ -41,6 +41,7 @@ local plugins = {
     { 'github/copilot.vim' },
 
     { 'nvim-tree/nvim-tree.lua' },
+    { 'nvim-tree/nvim-web-devicons' },
 
     { 'nvim-lualine/lualine.nvim' },
     { 'numToStr/Comment.nvim' },

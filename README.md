@@ -145,6 +145,8 @@ Additionally, use `<C-Space>` to open the completion menu if it's not automatica
 ## Suggested Software:
 - [alacritty terminal](https://alacritty.org/)
 - [zoxide](https://github.com/ajeetdsouza/zoxide)
+- [nerd fonts](https://www.nerdfonts.com/font-downloads) for devicons to display in nvim-tree
+    - for instance, `brew tap homebrew/cask-fonts && brew install --cask font-commit-mono-nerd-font`, and added to your terminal (see `alacrity/config.yml`)
 
 ## Debugging:
 
@@ -154,8 +156,6 @@ Additionally, use `<C-Space>` to open the completion menu if it's not automatica
 ## TODO
 - Add setup for tsx/jsx commenting
   - [nvim-ts-context-commentstring](https://github.com/JoosepAlviste/nvim-ts-context-commentstring) may do the trick
-- Add setup for icons in nvim-tree
-  - see docs [nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua)
 - Update lsp.lua keymaps and section LSP/Bindings section in README.md
 - Set default spaces/tabs for correct file types per the _backup/vimrc.symlink
   - as well as some missing bindings

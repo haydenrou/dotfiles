@@ -6,7 +6,9 @@ font:
   glyph_offset:
     y: 9
   normal:
-    family: "Roboto Mono Light for Powerline"
+    family: "CommitMono Nerd Font"
+    style: "Regular"
+
 window:
   padding:
     x: 5
