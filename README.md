@@ -27,7 +27,7 @@ Using [lazy.nvim](https://github.com/folke/lazy.nvim) as a plugin manager, here 
 
 - [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) for fuzzy finding
 - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) for code parsing etc
-- [melange-nvim](https://github.com/savq/melange-nvim) as a color scheme
+- [shaunsingh/nord.nvim](https://github.com/shaunsingh/nord.nvim) as a colour scheme
 - [mason.nvim](https://github.com/williamboman/mason.nvim) is used in conjunction with lsp-zero to manage your different LSPs
 - [lsp-zero.nvim](https://github.com/VonHeikemen/lsp-zero.nvim) to use NeoVim's LSP client
 - [harpoon](https://github.com/ThePrimeagen/harpoon) is used for silky smooth file movement
