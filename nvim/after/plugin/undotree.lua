@@ -1,1 +1,3 @@
-vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
+require("talakhadze.utils.nmap")
+
+Nmap("<leader>u", vim.cmd.UndotreeToggle)
