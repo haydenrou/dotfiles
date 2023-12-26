@@ -116,6 +116,7 @@ By default, the following LSPs will be installed:
 
 - Pressing `Tab` (or `Shift-Tab`) completes your LSP suggestions.
 - Pressing `<Enter>` populates the currently selected tab.
+- `[g` and `]g` will go to the previous and next diagnostics error respectively.
 
 Additionally, use `<C-Space>` to open the completion menu if it's not automatically open.
 
