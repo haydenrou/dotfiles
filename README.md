@@ -153,14 +153,14 @@ Additionally, use `<C-Space>` to open the completion menu if it's not automatica
 - Check `:checkhealth` to ensure all plugins are working correctly.
 - Use `:map` or `:verbose map <leader>nn` (for instance) to check keybinds are being set correctly.
 
-## TODO
+## TODO:
 - Add setup for tsx/jsx commenting
   - [nvim-ts-context-commentstring](https://github.com/JoosepAlviste/nvim-ts-context-commentstring) may do the trick
 - Update lsp.lua keymaps and section LSP/Bindings section in README.md
 - Set default spaces/tabs for correct file types per the _backup/vimrc.symlink
   - as well as some missing bindings
 
-## Contribution
+## Contribution:
 You're more than welcome to submit an issue or PR with any bugs or feature suggestions.
 
 If you want to pair up on a project or build out any of the above, pop me an email at <hayden@rouille.dev>.
