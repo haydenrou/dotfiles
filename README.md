@@ -148,6 +148,7 @@ Additionally, use `<C-Space>` to open the completion menu if it's not automatica
 - [nerd fonts](https://www.nerdfonts.com/font-downloads) for devicons to display in nvim-tree
     - for instance, `brew tap homebrew/cask-fonts && brew install --cask font-commit-mono-nerd-font`, and added to your terminal (see `alacrity/config.yml`)
 - [cmake](https://cmake.org/) `brew install cmake` or else the installation of telescopes fzf plugin will fail
+- [fd](https://github.com/sharkdp/fd) as an optional dependency of telescope, used in telescope.lua
 
 ## Debugging:
 
