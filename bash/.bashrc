@@ -103,6 +103,8 @@ set -o ignoreeof
 
 set -o vi
 
+eval "$(zoxide init bash)"
+
 # Allow history to be recorded in tmux sessions
 # https://askubuntu.com/questions/339546/how-do-i-see-the-history-of-the-commands-i-have-run-in-tmux
 # avoid duplicates
