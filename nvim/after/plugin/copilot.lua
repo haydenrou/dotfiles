@@ -1,6 +1,6 @@
-require("talakhadze.utils.imap")
+local imap = require("talakhadze.utils.imap")
 
-Imap('<C-L>', 'copilot#Accept("<CR>")', {
+imap('<C-L>', 'copilot#Accept("<CR>")', {
     expr = true,
     replace_keycodes = false
 })
