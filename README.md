@@ -164,6 +164,13 @@ Additionally, use `<C-Space>` to open the completion menu if it's not automatica
 - Update lsp.lua keymaps and section LSP/Bindings section in README.md
 - Set default spaces/tabs for correct file types per the _backup/vimrc.symlink
   - as well as some missing bindings
+- Would quickfix work better like this?
+```
+nmap("<leader>cf", function() vim.lsp.buf.code_action({
+    filter = function(result) return result.isPreferred end,
+    apply = true
+})
+```
 
 ## Contribution:
 

@@ -96,6 +96,7 @@ lsp_zero.on_attach(function(client, bufnr)
     nmap("<leader>vca", function() vim.lsp.buf.code_action() end, opts)
     nmap("<leader>vrr", function() vim.lsp.buf.references() end, opts)
     nmap("<leader>vrn", function() vim.lsp.buf.rename() end, opts)
+    nmap("<leader>cf", function() vim.lsp.buf.code_action({ "quickfix", apply = true }) end, { noremap = true, silent = true })
     imap("<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end)
 
