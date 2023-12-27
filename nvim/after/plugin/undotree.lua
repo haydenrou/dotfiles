@@ -1,3 +1,3 @@
-require("talakhadze.utils.nmap")
+local nmap = require("talakhadze.utils.nmap")
 
-Nmap("<leader>u", vim.cmd.UndotreeToggle)
+nmap("<leader>u", vim.cmd.UndotreeToggle)

@@ -1,3 +1,3 @@
-require("talakhadze.utils.nmap")
+local nmap = require("talakhadze.utils.nmap")
 
-Nmap("<leader>gs", vim.cmd.Git)
+nmap("<leader>gs", vim.cmd.Git)

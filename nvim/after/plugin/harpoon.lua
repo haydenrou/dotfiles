@@ -1,8 +1,8 @@
-require("talakhadze.utils.nmap")
+local nmap = require("talakhadze.utils.nmap")
 
 local harpoon = require("harpoon")
 
 harpoon:setup()
 
-Nmap("<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
-Nmap("<leader>a", function() harpoon:list():append() end)
+nmap("<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+nmap("<leader>a", function() harpoon:list():append() end)

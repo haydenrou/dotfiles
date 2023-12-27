@@ -1,7 +1,7 @@
 local lsp_zero = require('lsp-zero')
 local lspconfig = require('lspconfig')
-require('talakhadze.utils.nmap')
-require('talakhadze.utils.imap')
+local nmap = require('talakhadze.utils.nmap')
+local imap = require('talakhadze.utils.imap')
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
@@ -87,16 +87,16 @@ cmp.setup({
 lsp_zero.on_attach(function(client, bufnr)
     local opts = { buffer = bufnr, remap = false }
 
-    Nmap("gd", function() vim.lsp.buf.definition() end, opts)
-    Nmap("K", function() vim.lsp.buf.hover() end, opts)
-    Nmap("<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
-    Nmap("<leader>vd", function() vim.diagnostic.open_float() end, opts)
-    Nmap("[g", function() vim.diagnostic.goto_prev() end, opts)
-    Nmap("]g", function() vim.diagnostic.goto_next() end, opts)
-    Nmap("<leader>vca", function() vim.lsp.buf.code_action() end, opts)
-    Nmap("<leader>vrr", function() vim.lsp.buf.references() end, opts)
-    Nmap("<leader>vrn", function() vim.lsp.buf.rename() end, opts)
-    Imap("<C-h>", function() vim.lsp.buf.signature_help() end, opts)
+    nmap("gd", function() vim.lsp.buf.definition() end, opts)
+    nmap("K", function() vim.lsp.buf.hover() end, opts)
+    nmap("<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
+    nmap("<leader>vd", function() vim.diagnostic.open_float() end, opts)
+    nmap("[g", function() vim.diagnostic.goto_prev() end, opts)
+    nmap("]g", function() vim.diagnostic.goto_next() end, opts)
+    nmap("<leader>vca", function() vim.lsp.buf.code_action() end, opts)
+    nmap("<leader>vrr", function() vim.lsp.buf.references() end, opts)
+    nmap("<leader>vrn", function() vim.lsp.buf.rename() end, opts)
+    imap("<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end)
 
 lsp_zero.setup()

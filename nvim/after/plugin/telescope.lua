@@ -1,4 +1,4 @@
-require("talakhadze.utils.nmap")
+local nmap = require("talakhadze.utils.nmap")
 
 local builtin = require('telescope.builtin')
 local telescope = require('telescope')
@@ -57,6 +57,6 @@ telescope.setup({
 
 telescope.load_extension('fzf')
 
-Nmap('\\', builtin.live_grep, {})
-Nmap('<C-t>', builtin.find_files, {})
-Nmap('<leader>b', builtin.buffers, {})
+nmap('\\', builtin.live_grep, {})
+nmap('<C-t>', builtin.find_files, {})
+nmap('<leader>b', builtin.buffers, {})
