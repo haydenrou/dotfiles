@@ -144,6 +144,7 @@ Additionally, use `<C-Space>` to open the completion menu if it's not automatica
 - Open vi mode with `<prefix>[` within tmux
 
 ## Suggested Software:
+
 - [alacritty terminal](https://alacritty.org/)
 - [zoxide](https://github.com/ajeetdsouza/zoxide)
 - [nerd fonts](https://www.nerdfonts.com/font-downloads) for devicons to display in nvim-tree
@@ -155,6 +156,7 @@ Additionally, use `<C-Space>` to open the completion menu if it's not automatica
 
 - Check `:checkhealth` to ensure all plugins are working correctly.
 - Use `:map` or `:verbose map <leader>nn` (for instance) to check keybinds are being set correctly.
+- `:lua print(vim.inspect(vim.lsp.buf_get_clients()[1].resolved_capabilities))` to see what the LSP can do
 
 ## TODO:
 - Add setup for tsx/jsx commenting
@@ -164,6 +166,7 @@ Additionally, use `<C-Space>` to open the completion menu if it's not automatica
   - as well as some missing bindings
 
 ## Contribution:
+
 You're more than welcome to submit an issue or PR with any bugs or feature suggestions.
 
 If you want to pair up on a project or build out any of the above, pop me an email at <hayden@rouille.dev>.
