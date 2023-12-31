@@ -4,7 +4,6 @@ vim.opt.backspace = "indent,eol,start"
 vim.opt.backup = false
 vim.opt.swapfile = false
 
-vim.opt.cursorline = true
 vim.opt.smartindent = true
 
 vim.opt.wrap = false
