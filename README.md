@@ -4,7 +4,7 @@
 </div>
 <br>
 
-![Dotfiles Demo](https://i.imgur.com/lCmkMfR.png)
+![Dotfiles Demo](https://i.imgur.com/qVCCpbT.jpeg)
 
 To prevent myself from going down wild Linux rabbit holes and trying every distribution I can get my hands on, I've transitioned to the world of Apple. Therefore, this configuration may require changes to work in a Linux environment.
 
@@ -25,6 +25,7 @@ Most files in this repo are structured so that you can symlink the directory dir
 
 Using [lazy.nvim](https://github.com/folke/lazy.nvim) as a plugin manager, here are the plugins used:
 
+- [goolord/alpha-nvim](https://github.com/goolord/alpha-nvim) for the dashboard (see the asciis in utils)
 - [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) for fuzzy finding
 - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) for code parsing etc
 - [rose-pine/neovim](https://github.com/rose-pine/neovim) as a colour scheme. an equivalent is used for tmux and alacritty themes too
