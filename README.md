@@ -160,10 +160,13 @@ Additionally, use `<C-Space>` to open the completion menu if it's not automatica
 
 ## TODO:
 - Add setup for tsx/jsx commenting
-  - [nvim-ts-context-commentstring](https://github.com/JoosepAlviste/nvim-ts-context-commentstring) may do the trick
+    - [nvim-ts-context-commentstring](https://github.com/JoosepAlviste/nvim-ts-context-commentstring) may do the trick
 - Update lsp.lua keymaps and section LSP/Bindings section in README.md
 - Set default spaces/tabs for correct file types per the _backup/vimrc.symlink
-  - as well as some missing bindings
+    - as well as some missing bindings
+- Rewrite alacritty.yml in toml
+    - source: https://github.com/alacritty/alacritty/issues/6592
+    - use official rose-pine theme: https://github.com/rose-pine/alacritty
 
 ## Contribution:
 
