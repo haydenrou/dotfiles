@@ -47,6 +47,8 @@ local plugins = {
     { 'numToStr/Comment.nvim' },
 
     { "kylechui/nvim-surround", version = "*", event = "VeryLazy" },
+
+    { 'goolord/alpha-nvim', dependencies = { "nvim-tree/nvim-web-devicons" }, event = "VimEnter", }
 }
 
 require("lazy").setup(plugins, opts)

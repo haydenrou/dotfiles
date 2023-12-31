@@ -168,6 +168,9 @@ Additionally, use `<C-Space>` to open the completion menu if it's not automatica
 - Rewrite alacritty.yml in toml
     - source: https://github.com/alacritty/alacritty/issues/6592
     - use official rose-pine theme: https://github.com/rose-pine/alacritty
+- Add telescope projects
+    - https://github.com/nvim-telescope/telescope-project.nvim
+    - `dashboard.button("p", "Projects", ":Telescope projects<CR>")` for alpha
 
 ## Contribution:
 
