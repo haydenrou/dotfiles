@@ -6,7 +6,9 @@ font:
   glyph_offset:
     y: 9
   normal:
-    family: "Roboto Mono Light for Powerline"
+    family: "CommitMono Nerd Font"
+    style: "Regular"
+
 window:
   padding:
     x: 5
@@ -412,11 +414,10 @@ schemes:
       magenta: '0xd75f00'
       cyan:    '0x005faf'
       white:   '0x005f87'
-colors: *moonfly
 
 
 ######################################################################
-## SET THEME: Choose ONE color scheme from those in the above list. ##
+## SET THEME: Choose ONE color scheme from those in the below list. ##
 ## ###################################################################
 # Available themes are:
 # *doom-one
@@ -428,10 +429,11 @@ colors: *moonfly
 # *solarized-light
 # *solarized-dark
 # *tomorrow-night
+# *moonfly
+# *papercolor
 
-colors: *dracula
+colors: *monokai-pro
 
 #######################################
 ##       END OF COLOR SCHEMES        ##
 #######################################
-

@@ -1,1 +1,3 @@
-vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
+local nmap = require("talakhadze.utils.nmap")
+
+nmap("<leader>gs", vim.cmd.Git)

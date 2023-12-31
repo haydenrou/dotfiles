@@ -1,8 +1,9 @@
+local nmap = require("talakhadze.utils.nmap")
+
 vim.opt.backspace = "indent,eol,start"
 vim.opt.backup = false
 vim.opt.swapfile = false
 
-vim.opt.cursorline = true
 vim.opt.smartindent = true
 
 vim.opt.wrap = false
@@ -47,5 +48,5 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
     command = [[%s/\s\+$//e]],
 })
 
-vim.keymap.set("n", "<Leader>r", "<cmd>set relativenumber!<cr>")
+nmap("<Leader>r", "<cmd>set relativenumber!<cr>")
 

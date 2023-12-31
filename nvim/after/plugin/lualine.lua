@@ -1,42 +1,28 @@
-require('lualine').setup {
-  options = {
-    icons_enabled = true,
-    theme = 'seoul256',
-    component_separators = { left = '', right = ''},
-    section_separators = { left = '', right = ''},
-    disabled_filetypes = {
-      statusline = {},
-      winbar = {},
-    },
-    ignore_focus = {},
-    always_divide_middle = true,
-    globalstatus = false,
-    refresh = {
-      statusline = 1000,
-      tabline = 1000,
-      winbar = 1000,
-    }
-  },
-  sections = {
-    lualine_a = {'mode'},
-    lualine_b = {'branch', 'diff', 'diagnostics'},
-    lualine_c = {'filename'},
-    lualine_x = {'encoding', 'fileformat', 'filetype'},
-    lualine_y = {'progress'},
-    lualine_z = {'location'}
-  },
-  inactive_sections = {
-    lualine_a = {},
-    lualine_b = {},
-    lualine_c = {'filename'},
-    lualine_x = {'location'},
-    lualine_y = {},
-    lualine_z = {}
-  },
-  tabline = {},
-  winbar = {},
-  inactive_winbar = {},
-  extensions = {}
+local rose_palette = require('rose-pine.palette')
+
+local transparent_rose = {
+	normal = {
+		a = { bg = nil, fg = rose_palette.rose, gui = 'bold' },
+		b = { bg = nil, fg = rose_palette.text },
+		c = { bg = nil, fg = rose_palette.subtle, gui = 'italic' },
+	},
+	insert = {
+		a = { bg = rose_palette.surface, fg = rose_palette.foam, gui = 'bold' },
+	},
+	visual = {
+		a = { bg = rose_palette.surface, fg = rose_palette.iris, gui = 'bold' },
+	},
+	replace = {
+		a = { bg = rose_palette.surface, fg = rose_palette.pine, gui = 'bold' },
+	},
+	command = {
+		a = { bg = rose_palette.surface, fg = rose_palette.love, gui = 'bold' },
+	},
+	inactive = {
+		a = { bg = rose_palette.base, fg = rose_palette.subtle, gui = 'bold' },
+		b = { bg = rose_palette.base, fg = rose_palette.subtle },
+		c = { bg = rose_palette.base, fg = rose_palette.subtle, gui = 'italic' },
+	},
 }
 
-require('lualine').setup()
+require("lualine").setup({options = { theme = transparent_rose }})

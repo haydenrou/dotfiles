@@ -14,13 +14,13 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
-    { 'nvim-telescope/telescope.nvim', tag = '0.1.5', dependencies = { 'nvim-lua/plenary.nvim' } },
     { 'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' },
+    { 'nvim-telescope/telescope.nvim', tag = '0.1.5', dependencies = { 'nvim-lua/plenary.nvim' } },
 
     { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
 
-    -- Colorscheme
-    { "savq/melange-nvim" },
+    -- Colour scheme
+    { "rose-pine/neovim", lazy = false, priority = 1000 },
 
     -- lsp-zero
     { 'williamboman/mason.nvim' },
@@ -41,11 +41,14 @@ local plugins = {
     { 'github/copilot.vim' },
 
     { 'nvim-tree/nvim-tree.lua' },
+    { 'nvim-tree/nvim-web-devicons' },
 
     { 'nvim-lualine/lualine.nvim' },
     { 'numToStr/Comment.nvim' },
 
     { "kylechui/nvim-surround", version = "*", event = "VeryLazy" },
+
+    { 'goolord/alpha-nvim', dependencies = { "nvim-tree/nvim-web-devicons" }, event = "VimEnter" }
 }
 
 require("lazy").setup(plugins, opts)

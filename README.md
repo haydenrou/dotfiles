@@ -4,7 +4,7 @@
 </div>
 <br>
 
-![Dotfiles Demo](https://i.imgur.com/lCmkMfR.png)
+![Dotfiles Demo](https://i.imgur.com/qVCCpbT.jpeg)
 
 To prevent myself from going down wild Linux rabbit holes and trying every distribution I can get my hands on, I've transitioned to the world of Apple. Therefore, this configuration may require changes to work in a Linux environment.
 
@@ -25,9 +25,10 @@ Most files in this repo are structured so that you can symlink the directory dir
 
 Using [lazy.nvim](https://github.com/folke/lazy.nvim) as a plugin manager, here are the plugins used:
 
+- [goolord/alpha-nvim](https://github.com/goolord/alpha-nvim) for the dashboard (see the asciis in utils)
 - [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) for fuzzy finding
 - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) for code parsing etc
-- [melange-nvim](https://github.com/savq/melange-nvim) as a color scheme
+- [rose-pine/neovim](https://github.com/rose-pine/neovim) as a colour scheme. an equivalent is used for tmux and alacritty themes too
 - [mason.nvim](https://github.com/williamboman/mason.nvim) is used in conjunction with lsp-zero to manage your different LSPs
 - [lsp-zero.nvim](https://github.com/VonHeikemen/lsp-zero.nvim) to use NeoVim's LSP client
 - [harpoon](https://github.com/ThePrimeagen/harpoon) is used for silky smooth file movement
@@ -36,6 +37,7 @@ Using [lazy.nvim](https://github.com/folke/lazy.nvim) as a plugin manager, here 
 - [vim-rhubarb](https://github.com/tpope/vim-rhubarb) primarily just for `:GBrowse` - going to the file you're in, in your browser
 - [copilot.vim](https://github.com/github/copilot.vim) to let robots do our work for us
 - [nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua) for a better than nerdtree experience
+- [nvim-tree/nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons) for icons
 - [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim) a good looking statusline
 - [Comment.nvim](https://github.com/numToStr/Comment.nvim) to comment out your broken code
 - [nvim-surround](https://github.com/kylechui/nvim-surround) to surround whatever you want, with whatever you want
@@ -116,6 +118,7 @@ By default, the following LSPs will be installed:
 
 - Pressing `Tab` (or `Shift-Tab`) completes your LSP suggestions.
 - Pressing `<Enter>` populates the currently selected tab.
+- `[g` and `]g` will go to the previous and next diagnostics error respectively.
 
 Additionally, use `<C-Space>` to open the completion menu if it's not automatically open.
 
@@ -143,24 +146,35 @@ Additionally, use `<C-Space>` to open the completion menu if it's not automatica
 - Open vi mode with `<prefix>[` within tmux
 
 ## Suggested Software:
+
 - [alacritty terminal](https://alacritty.org/)
 - [zoxide](https://github.com/ajeetdsouza/zoxide)
+- [nerd fonts](https://www.nerdfonts.com/font-downloads) for devicons to display in nvim-tree
+    - for instance, `brew tap homebrew/cask-fonts && brew install --cask font-commit-mono-nerd-font`, and added to your terminal (see `alacrity/config.yml`)
+- [cmake](https://cmake.org/) `brew install cmake` or else the installation of telescopes fzf plugin will fail
+- [fd](https://github.com/sharkdp/fd) as an optional dependency of telescope, used in telescope.lua
 
 ## Debugging:
 
 - Check `:checkhealth` to ensure all plugins are working correctly.
-- Use `:map` or `:verbose map <leader>nn` (for instance) to...
+- Use `:map` or `:verbose map <leader>nn` (for instance) to check keybinds are being set correctly.
+- `:lua print(vim.inspect(vim.lsp.buf_get_clients()[1].resolved_capabilities))` to see what the LSP can do
 
-## TODO
+## TODO:
 - Add setup for tsx/jsx commenting
-  - [nvim-ts-context-commentstring](https://github.com/JoosepAlviste/nvim-ts-context-commentstring) may do the trick
-- Add setup for icons in nvim-tree
-  - see docs [nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua)
+    - [nvim-ts-context-commentstring](https://github.com/JoosepAlviste/nvim-ts-context-commentstring) may do the trick
 - Update lsp.lua keymaps and section LSP/Bindings section in README.md
 - Set default spaces/tabs for correct file types per the _backup/vimrc.symlink
-  - as well as some missing bindings
+    - as well as some missing bindings
+- Rewrite alacritty.yml in toml
+    - source: https://github.com/alacritty/alacritty/issues/6592
+    - use official rose-pine theme: https://github.com/rose-pine/alacritty
+- Add telescope projects
+    - https://github.com/nvim-telescope/telescope-project.nvim
+    - `dashboard.button("p", "Projects", ":Telescope projects<CR>")` for alpha
 
-## Contribution
+## Contribution:
+
 You're more than welcome to submit an issue or PR with any bugs or feature suggestions.
 
 If you want to pair up on a project or build out any of the above, pop me an email at <hayden@rouille.dev>.

@@ -1,5 +1,5 @@
-personal.bashrc
-personal.zshrc
+bash/.personal.bashrc
+zsh/.personal.zshrc
 .DS_Store
 .hg
 .svn

@@ -38,8 +38,8 @@ function randomize_background () {
 
 alias chbg=randomize_background
 
-if [[ -f $HOME/projects/dotfiles/zsh/zsh.personal.rc ]] ; then
-  source $HOME/projects/dotfiles/zsh/zsh.personal.rc
+if [[ -f $HOME/projects/dotfiles/zsh/.personal.zshrc ]] ; then
+  source $HOME/projects/dotfiles/zsh/.personal.zshrc
 fi
 
 source $HOME/projects/dotfiles/zsh/aliases.zsh
