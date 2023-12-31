@@ -27,7 +27,7 @@ Using [lazy.nvim](https://github.com/folke/lazy.nvim) as a plugin manager, here 
 
 - [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) for fuzzy finding
 - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) for code parsing etc
-- [shaunsingh/nord.nvim](https://github.com/shaunsingh/nord.nvim) as a colour scheme
+- [rose-pine/neovim](https://github.com/rose-pine/neovim) as a colour scheme. an equivalent is used for tmux and alacritty themes too
 - [mason.nvim](https://github.com/williamboman/mason.nvim) is used in conjunction with lsp-zero to manage your different LSPs
 - [lsp-zero.nvim](https://github.com/VonHeikemen/lsp-zero.nvim) to use NeoVim's LSP client
 - [harpoon](https://github.com/ThePrimeagen/harpoon) is used for silky smooth file movement
@@ -36,6 +36,7 @@ Using [lazy.nvim](https://github.com/folke/lazy.nvim) as a plugin manager, here 
 - [vim-rhubarb](https://github.com/tpope/vim-rhubarb) primarily just for `:GBrowse` - going to the file you're in, in your browser
 - [copilot.vim](https://github.com/github/copilot.vim) to let robots do our work for us
 - [nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua) for a better than nerdtree experience
+- [nvim-tree/nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons) for icons
 - [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim) a good looking statusline
 - [Comment.nvim](https://github.com/numToStr/Comment.nvim) to comment out your broken code
 - [nvim-surround](https://github.com/kylechui/nvim-surround) to surround whatever you want, with whatever you want

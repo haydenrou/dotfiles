@@ -20,7 +20,7 @@ local plugins = {
     { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
 
     -- Colour scheme
-    { "shaunsingh/nord.nvim" },
+    { "rose-pine/neovim", lazy = false, priority = 1000 },
 
     -- lsp-zero
     { 'williamboman/mason.nvim' },
