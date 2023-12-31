@@ -160,21 +160,8 @@ Additionally, use `<C-Space>` to open the completion menu if it's not automatica
 - Use `:map` or `:verbose map <leader>nn` (for instance) to check keybinds are being set correctly.
 - `:lua print(vim.inspect(vim.lsp.buf_get_clients()[1].resolved_capabilities))` to see what the LSP can do
 
-## TODO:
-- Add setup for tsx/jsx commenting
-    - [nvim-ts-context-commentstring](https://github.com/JoosepAlviste/nvim-ts-context-commentstring) may do the trick
-- Update lsp.lua keymaps and section LSP/Bindings section in README.md
-- Set default spaces/tabs for correct file types per the _backup/vimrc.symlink
-    - as well as some missing bindings
-- Rewrite alacritty.yml in toml
-    - source: https://github.com/alacritty/alacritty/issues/6592
-    - use official rose-pine theme: https://github.com/rose-pine/alacritty
-- Add telescope projects
-    - https://github.com/nvim-telescope/telescope-project.nvim
-    - `dashboard.button("p", "Projects", ":Telescope projects<CR>")` for alpha
-
 ## Contribution:
 
-You're more than welcome to submit an issue or PR with any bugs or feature suggestions.
+You're more than welcome to submit an issue or PR with any bugs or feature suggestions. See issues for current feature requests/bugs.
 
 If you want to pair up on a project or build out any of the above, pop me an email at <hayden@rouille.dev>.
