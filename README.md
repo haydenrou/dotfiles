@@ -63,7 +63,8 @@ Using [lazy.nvim](https://github.com/folke/lazy.nvim) as a plugin manager, here 
 - `<leader>y` and `<leader>Y` yank the current line (`<leader>y`) or from the cursor to the end of the line (`<leader>Y`) to the system clipboard.
 - `<leader>p` and `<leader>d` paste (`<leader>p`) or delete (`<leader>d`) without copying to the buffer.
 - `<leader>f` formats the current buffer using the LSP (Language Server Protocol).
-- `<C-k>`, `<C-j>`, `<leader>k`, and `<leader>j` navigate through quickfix and location lists, ensuring the cursor position is centered.
+- `<C-k>` and `<C-j>` navigate through the quickfix list, ensuring the cursor position is centered.
+- `<leader>` + `h,j,k,l` move your cursor to different windows.
 - `<leader>s` performs a case-insensitive search and replace across the entire buffer, prompting for confirmation.
 - `<Leader>r` toggles relative line numbers.
 
