@@ -139,7 +139,7 @@ Additionally, use `<C-Space>` to open the completion menu if it's not automatica
 - `rc` opens the Rails console.
 - `rdm` and `rdmd` execute Rails database migration commands.
 - `cdd` changes the directory to the dotfiles project.
-- `it` is bound to `git` because ¯\_(ツ)_/¯
+- `it` is bound to `git` because ¯\\_(ツ)_/¯
 - `egst` shows modified files with `git status` and opens them in Neovim.
 - `CTRL-T` will search for files from the command line with fzf
 - `ESC-C` (`ALT-C` on Linux) will search for directories from the command line, and selecting one will place you in the directory
