@@ -6,7 +6,7 @@
 
 ![Dotfiles Demo](https://i.imgur.com/qVCCpbT.jpeg)
 
-To prevent myself from going down wild Linux rabbit holes and trying every distribution I can get my hands on, I've transitioned to the world of Apple. Therefore, this configuration may require changes to work in a Linux environment.
+To prevent myself from going down wild Linux rabbit holes and trying every distribution I can get my hands on, I've transcended into an Apple chad. Therefore, this configuration may require changes to work in a Linux environment.
 
 ## Installed Software for IDE Purposes:
 
