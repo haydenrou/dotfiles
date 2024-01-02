@@ -1,0 +1,60 @@
+[colors.bright]
+black = "#727072"
+blue = "#FC9867"
+cyan = "#78DCE8"
+green = "#A9DC76"
+magenta = "#AB9DF2"
+red = "#FF6188"
+white = "#FCFCFA"
+yellow = "#FFD866"
+
+[colors.normal]
+black = "#403E41"
+blue = "#FC9867"
+cyan = "#78DCE8"
+green = "#A9DC76"
+magenta = "#AB9DF2"
+red = "#FF6188"
+white = "#FCFCFA"
+yellow = "#FFD866"
+
+[colors.primary]
+background = "#2D2A2E"
+foreground = "#FCFCFA"
+
+[cursor]
+unfocused_hollow = true
+
+[cursor.style]
+blinking = "Never"
+
+[env]
+TERM = "screen-256color"
+
+[font]
+size = 16
+
+[font.glyph_offset]
+y = 9
+
+[font.normal]
+family = "CommitMono Nerd Font"
+style = "Regular"
+
+[font.offset]
+y = 16
+
+[scrolling]
+history = 100000
+
+[window]
+decorations = "buttonless"
+opacity = 0.95
+
+[window.dimensions]
+columns = 120
+lines = 40
+
+[window.padding]
+x = 5
+y = 0
