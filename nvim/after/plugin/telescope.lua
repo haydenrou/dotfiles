@@ -1,4 +1,4 @@
-local nmap = require("talakhadze.utils.nmap")
+local nmap = require("talakhadze.utils.maps").nmap
 
 local builtin = require('telescope.builtin')
 local telescope = require('telescope')

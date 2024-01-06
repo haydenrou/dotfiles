@@ -1,4 +1,4 @@
-local nmap = require("talakhadze.utils.nmap")
+local nmap = require("talakhadze.utils.maps").nmap
 
 -- disable netrw
 vim.g.loaded_netrw = 1

@@ -1,4 +1,4 @@
-local imap = require("talakhadze.utils.imap")
+local imap = require("talakhadze.utils.maps").imap
 
 imap('<C-L>', 'copilot#Accept("<CR>")', {
     expr = true,

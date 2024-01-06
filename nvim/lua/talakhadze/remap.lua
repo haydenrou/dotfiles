@@ -1,5 +1,5 @@
-local nmap = require("talakhadze.utils.nmap")
-local vmap = require("talakhadze.utils.vmap")
+local nmap = require("talakhadze.utils.maps").nmap
+local vmap = require("talakhadze.utils.maps").vmap
 
 nmap("<leader>sp", ":norm mm[s1z=`m<cr>", opts)
 

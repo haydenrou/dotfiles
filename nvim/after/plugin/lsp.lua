@@ -1,7 +1,7 @@
 local lsp_zero = require('lsp-zero')
 local lspconfig = require('lspconfig')
-local nmap = require('talakhadze.utils.nmap')
-local imap = require('talakhadze.utils.imap')
+local nmap = require('talakhadze.utils.maps').nmap
+local imap = require('talakhadze.utils.maps').imap
 
 require('mason').setup({})
 require('mason-lspconfig').setup({

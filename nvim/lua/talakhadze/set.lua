@@ -1,4 +1,4 @@
-local nmap = require("talakhadze.utils.nmap")
+local nmap = require("talakhadze.utils.maps").nmap
 
 vim.opt.backspace = "indent,eol,start"
 vim.opt.backup = false
