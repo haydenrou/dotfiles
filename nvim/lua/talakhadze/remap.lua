@@ -36,3 +36,5 @@ nmap("<leader>k", "<C-w>k")
 nmap("<leader>l", "<C-w>l")
 
 nmap("<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
+nmap("<leader><leader>s", ":source %<CR>")
