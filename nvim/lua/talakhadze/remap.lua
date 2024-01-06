@@ -38,3 +38,7 @@ nmap("<leader>l", "<C-w>l")
 nmap("<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 nmap("<leader><leader>s", ":source %<CR>")
+
+nmap("<leader>+", ":vertical resize +5<CR>", { silent = true })
+nmap("<leader>-", ":vertical resize -5<CR>", { silent = true })
+

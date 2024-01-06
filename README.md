@@ -66,7 +66,9 @@ Using [lazy.nvim](https://github.com/folke/lazy.nvim) as a plugin manager, here 
 - `<C-k>` and `<C-j>` navigate through the quickfix list, ensuring the cursor position is centered.
 - `<leader>` + `h,j,k,l` move your cursor to different windows.
 - `<leader>s` performs a case-insensitive search and replace across the entire buffer, prompting for confirmation.
-- `<Leader>r` toggles relative line numbers.
+- `<leader>r` toggles relative line numbers.
+- `K` (Normal Mode) to show documentation.
+- `<leader>+` and `<leader>-` vertically enlarge or reduce a pane.
 
 [A random list of handy vim commands](./docs/vimbits.md)
 
@@ -77,6 +79,7 @@ Using [lazy.nvim](https://github.com/folke/lazy.nvim) as a plugin manager, here 
 
 - **Fugitive:**
   - `<leader>gs` will open git in nvim.
+  - `<leader>gdf` will open a git diff of the current file.
 
 - **Harpoon:**
   - `<leader>a` will add to the list.
@@ -120,6 +123,11 @@ By default, the following LSPs will be installed:
 - Pressing `Tab` (or `Shift-Tab`) completes your LSP suggestions.
 - Pressing `<Enter>` populates the currently selected tab.
 - `[g` and `]g` will go to the previous and next diagnostics error respectively.
+- `gd` will go to definition.
+- `<leader>gr` will go to references.
+- `<leader>cr` will rename the currently highlighted variable.
+- `<leader>vca` will display code actions.
+- `<leader>cf` will apply the quickfix code action.
 
 Additionally, use `<C-Space>` to open the completion menu if it's not automatically open.
 
