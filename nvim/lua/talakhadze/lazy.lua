@@ -48,9 +48,7 @@ local plugins = {
 
     { "kylechui/nvim-surround", version = "*", event = "VeryLazy" },
 
-    { 'goolord/alpha-nvim', dependencies = { "nvim-tree/nvim-web-devicons" }, event = "VimEnter" },
-
-    { dir = "~/projects/bomberman.nvim" }
+    { 'goolord/alpha-nvim', dependencies = { "nvim-tree/nvim-web-devicons" }, event = "VimEnter" }
 }
 
 require("lazy").setup(plugins, opts)
