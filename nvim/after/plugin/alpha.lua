@@ -8,7 +8,7 @@ dashboard.section.header.opts.hl = "String"
 dashboard.section.buttons.val = {
     dashboard.button("<C-t>", "find file", ":Telescope find_files<CR>"),
     dashboard.button("t", "tree", ":NvimTreeToggle<CR>"),
-    dashboard.button("\\", "rg", ":Telescope oldfiles<CR>"),
+    dashboard.button("\\", "rg", ":lua require'telescope.builtin'.live_grep()<CR>"),
     dashboard.button("u", "brew update", ":! brew update && brew upgrade<CR>"),
     dashboard.button("q", "quit", ":qa<CR>"),
 }
