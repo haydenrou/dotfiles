@@ -6,7 +6,7 @@
 
 ![Dotfiles Demo](https://i.imgur.com/qVCCpbT.jpeg)
 
-To prevent myself from going down wild Linux rabbit holes and trying every distribution I can get my hands on, I've transitioned to the world of Apple. Therefore, this configuration may require changes to work in a Linux environment.
+To prevent myself from going down wild Linux rabbit holes and trying every distribution I can get my hands on, I've transcended into an Apple chad. Therefore, this configuration may require changes to work in a Linux environment.
 
 ## Installed Software for IDE Purposes:
 
@@ -63,9 +63,12 @@ Using [lazy.nvim](https://github.com/folke/lazy.nvim) as a plugin manager, here 
 - `<leader>y` and `<leader>Y` yank the current line (`<leader>y`) or from the cursor to the end of the line (`<leader>Y`) to the system clipboard.
 - `<leader>p` and `<leader>d` paste (`<leader>p`) or delete (`<leader>d`) without copying to the buffer.
 - `<leader>f` formats the current buffer using the LSP (Language Server Protocol).
-- `<C-k>`, `<C-j>`, `<leader>k`, and `<leader>j` navigate through quickfix and location lists, ensuring the cursor position is centered.
+- `<C-k>` and `<C-j>` navigate through the quickfix list, ensuring the cursor position is centered.
+- `<leader>` + `h,j,k,l` move your cursor to different windows.
 - `<leader>s` performs a case-insensitive search and replace across the entire buffer, prompting for confirmation.
-- `<Leader>r` toggles relative line numbers.
+- `<leader>r` toggles relative line numbers.
+- `K` (Normal Mode) to show documentation.
+- `<leader>+` and `<leader>-` vertically enlarge or reduce a pane.
 
 [A random list of handy vim commands](./docs/vimbits.md)
 
@@ -76,6 +79,7 @@ Using [lazy.nvim](https://github.com/folke/lazy.nvim) as a plugin manager, here 
 
 - **Fugitive:**
   - `<leader>gs` will open git in nvim.
+  - `<leader>gdf` will open a git diff of the current file.
 
 - **Harpoon:**
   - `<leader>a` will add to the list.
@@ -119,6 +123,11 @@ By default, the following LSPs will be installed:
 - Pressing `Tab` (or `Shift-Tab`) completes your LSP suggestions.
 - Pressing `<Enter>` populates the currently selected tab.
 - `[g` and `]g` will go to the previous and next diagnostics error respectively.
+- `gd` will go to definition.
+- `<leader>gr` will go to references.
+- `<leader>cr` will rename the currently highlighted variable.
+- `<leader>vca` will display code actions.
+- `<leader>cf` will apply the quickfix code action.
 
 Additionally, use `<C-Space>` to open the completion menu if it's not automatically open.
 
@@ -138,7 +147,7 @@ Additionally, use `<C-Space>` to open the completion menu if it's not automatica
 - `rc` opens the Rails console.
 - `rdm` and `rdmd` execute Rails database migration commands.
 - `cdd` changes the directory to the dotfiles project.
-- `it` is bound to `git` because ¯\_(ツ)_/¯
+- `it` is bound to `git` because ¯\\_(ツ)_/¯
 - `egst` shows modified files with `git status` and opens them in Neovim.
 - `CTRL-T` will search for files from the command line with fzf
 - `ESC-C` (`ALT-C` on Linux) will search for directories from the command line, and selecting one will place you in the directory

@@ -1,5 +1,5 @@
-local nmap = require("talakhadze.utils.nmap")
-local vmap = require("talakhadze.utils.vmap")
+local nmap = require("talakhadze.utils.maps").nmap
+local vmap = require("talakhadze.utils.maps").vmap
 
 nmap("<leader>sp", ":norm mm[s1z=`m<cr>", opts)
 
@@ -29,7 +29,16 @@ nmap("<leader>f", function() vim.lsp.buf.format() end)
 
 nmap("<C-k>", "<cmd>cnext<CR>zz")
 nmap("<C-j>", "<cmd>cprev<CR>zz")
-nmap("<leader>k", "<cmd>lnext<CR>zz")
-nmap("<leader>j", "<cmd>lprev<CR>zz")
+
+nmap("<leader>h", "<C-w>h")
+nmap("<leader>j", "<C-w>j")
+nmap("<leader>k", "<C-w>k")
+nmap("<leader>l", "<C-w>l")
 
 nmap("<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
+nmap("<leader><leader>s", ":source %<CR>")
+
+nmap("<leader>+", ":vertical resize +5<CR>", { silent = true })
+nmap("<leader>-", ":vertical resize -5<CR>", { silent = true })
+

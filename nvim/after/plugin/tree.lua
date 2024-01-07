@@ -1,4 +1,4 @@
-local nmap = require("talakhadze.utils.nmap")
+local nmap = require("talakhadze.utils.maps").nmap
 
 -- disable netrw
 vim.g.loaded_netrw = 1
@@ -7,6 +7,11 @@ vim.g.loaded_netrwPlugin = 1
 vim.opt.termguicolors = true
 
 require("nvim-tree").setup({
+    actions = {
+        open_file = {
+            quit_on_open = true,
+        },
+    },
     sort = {
         sorter = "case_sensitive",
     },
@@ -26,4 +31,3 @@ local api = require("nvim-tree.api")
 
 nmap('<leader>nn', api.tree.toggle)
 nmap('<leader>nf', function() api.tree.toggle({ find_file = true, focus = true }) end)
-

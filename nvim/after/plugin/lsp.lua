@@ -1,7 +1,7 @@
 local lsp_zero = require('lsp-zero')
 local lspconfig = require('lspconfig')
-local nmap = require('talakhadze.utils.nmap')
-local imap = require('talakhadze.utils.imap')
+local nmap = require('talakhadze.utils.maps').nmap
+local imap = require('talakhadze.utils.maps').imap
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
@@ -94,10 +94,9 @@ lsp_zero.on_attach(function(client, bufnr)
     nmap("[g", function() vim.diagnostic.goto_prev() end, opts)
     nmap("]g", function() vim.diagnostic.goto_next() end, opts)
     nmap("<leader>vca", function() vim.lsp.buf.code_action() end, opts)
-    nmap("<leader>vrr", function() vim.lsp.buf.references() end, opts)
-    nmap("<leader>vrn", function() vim.lsp.buf.rename() end, opts)
+    nmap("<leader>gr", function() vim.lsp.buf.references() end, opts)
+    nmap("<leader>cr", function() vim.lsp.buf.rename() end, opts)
     nmap("<leader>cf", function() vim.lsp.buf.code_action({ "quickfix", apply = true }) end, opts)
-    imap("<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end)
 
 lsp_zero.setup()

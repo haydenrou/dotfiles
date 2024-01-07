@@ -1,4 +1,4 @@
-local nmap = require("talakhadze.utils.nmap")
+local nmap = require("talakhadze.utils.maps").nmap
 
 local harpoon = require("harpoon")
 

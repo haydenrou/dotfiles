@@ -1,4 +1,5 @@
-local nmap = require("talakhadze.utils.nmap")
+local nmap = require("talakhadze.utils.maps").nmap
+
 -- disable netrw, but enable a Browse function using macs `open` so that rhubarb works
 -- see below article:
 -- https://www.reddit.com/r/neovim/comments/olq8dw/defining_the_browse_command_for_use_with/
