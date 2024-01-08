@@ -56,8 +56,10 @@ telescope.setup({
 })
 
 telescope.load_extension('fzf')
+telescope.load_extension('project')
 
 nmap('\\', builtin.live_grep, {})
 nmap('<C-t>', builtin.find_files, {})
 nmap('<leader>b', builtin.buffers, {})
+nmap('<C-p>', ":lua require'telescope'.extensions.project.project{}<CR>", {})
 nmap('<leader>fh', ":Telescope help_tags<CR>", {})
