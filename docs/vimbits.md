@@ -20,4 +20,4 @@
 - `ctrl-w r` to swap pane positions
 - `:cdo g/word/norm! D` to action on a quickfix list
 - `%` to go from beginning to the end of wrappers
-
+- `:%s/findand/replace/g`
