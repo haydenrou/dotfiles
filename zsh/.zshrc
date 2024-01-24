@@ -77,3 +77,6 @@ export FZF_ALT_C_COMMAND="rg --hidden --sort-files --files --null 2> /dev/null |
 export EYAML_CONFIG="./eyaml_config.yaml"
 
 . "$HOME/.env"
+
+# Run on every new terminal
+neofetch
