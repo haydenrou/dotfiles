@@ -8,7 +8,7 @@
 
 To prevent myself from going down wild Linux rabbit holes and trying every distribution I can get my hands on, I've transcended into an Apple chad. Therefore, this configuration may require changes to work in a Linux environment.
 
-## Installed Software for IDE Purposes:
+## Mandatory Software:
 
 - [neovim](https://github.com/neovim/neovim)
 - [tmux](https://github.com/tmux/tmux)
@@ -16,6 +16,14 @@ To prevent myself from going down wild Linux rabbit holes and trying every distr
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
 - [fzf](https://github.com/junegunn/fzf)
 - [zsh](https://www.zsh.org/)
+
+### Optional Software: (Warning: you may have to remove some alises / plugins if these are not installed)
+- [bat](https://github.com/sharkdp/bat)
+- [exa](https://github.com/ogham/exa)
+- [zoxide](https://github.com/ajeetdsouza/zoxide)
+- [todoist_helper](https://github.com/haydenrou/todoist_helper)
+- [neofetch](https://github.com/dylanaraps/neofetch)
+- [tmate](https://tmate.io/)
 
 ## File Structure:
 
