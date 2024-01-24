@@ -17,6 +17,8 @@ local plugins = {
     { 'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' },
     { 'nvim-telescope/telescope.nvim', tag = '0.1.5', dependencies = { 'nvim-lua/plenary.nvim' } },
 
+    { "JoosepAlviste/nvim-ts-context-commentstring" },
+
     { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate", dependencies = { "JoosepAlviste/nvim-ts-context-commentstring" } },
 
     -- Colour scheme
@@ -44,7 +46,7 @@ local plugins = {
     { 'nvim-tree/nvim-web-devicons' },
 
     { 'nvim-lualine/lualine.nvim' },
-    { 'numToStr/Comment.nvim' },
+    { 'numToStr/Comment.nvim', dependencies = { "JoosepAlviste/nvim-ts-context-commentstring" } },
 
     { "kylechui/nvim-surround", version = "*", event = "VeryLazy" },
 
