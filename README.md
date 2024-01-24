@@ -19,7 +19,7 @@ To prevent myself from going down wild Linux rabbit holes and trying every distr
 
 ### Optional Software: (Warning: you may have to remove some alises / plugins if these are not installed)
 - [bat](https://github.com/sharkdp/bat)
-- [exa](https://github.com/ogham/exa)
+- [eza](https://github.com/eza-community/eza)
 - [zoxide](https://github.com/ajeetdsouza/zoxide)
 - [todoist_helper](https://github.com/haydenrou/todoist_helper)
 - [neofetch](https://github.com/dylanaraps/neofetch)
