@@ -27,7 +27,7 @@ To prevent myself from going down wild Linux rabbit holes and trying every distr
 
 ## File Structure:
 
-Most files in this repo are structured so that you can symlink the directory directly into `~/.config`, except for a few such as `zshrc` etc.
+Most files in this repo are structured so that you can symlink the directory directly into `~/.config`, except for a few that need to live in different places such as `zshrc`.
 
 ## Neovim Plugins:
 
@@ -139,7 +139,11 @@ By default, the following LSPs will be installed:
 
 Additionally, use `<C-Space>` to open the completion menu if it's not automatically open.
 
-## Zsh Aliases:
+## Aliases:
+
+### Zsh
+
+A full list of zsh aliases live under [./zsh/aliases.zsh](./zsh/aliases.zsh), but here are a few:
 
 - `vi` and `vim` are aliased to `nvim`.
 - `ga` and `gaa` alias git add for staging changes for either a specified file or all unstaged files.
@@ -152,22 +156,27 @@ Additionally, use `<C-Space>` to open the completion menu if it's not automatica
 - `gp` simplifies the Git push command.
 - `gf` and `gfa` alias Git fetch commands.
 - `gst` provides a concise Git status with untracked files.
-- `rc` opens the Rails console.
-- `rdm` and `rdmd` execute Rails database migration commands.
-- `cdd` changes the directory to the dotfiles project.
-- `it` is bound to `git` because ¯\\_(ツ)_/¯
 - `egst` shows modified files with `git status` and opens them in Neovim.
 - `CTRL-T` will search for files from the command line with fzf
 - `ESC-C` (`ALT-C` on Linux) will search for directories from the command line, and selecting one will place you in the directory
-- tmux prefix is set to `<C-b>`
-- Open vi mode with `<prefix>[` within tmux
+
+### Tmux
+
+See the tmux config in [./tmux/.tmux.conf](./tmux/.tmux.conf), here are a few helpful aliases:
+
+- `<C-b>` is the prefix
+- `<prefix>[` to open vi mode within tmux
+- `<prefix>f` to use the `tmux-sessionizer` script, which will open a project in a new session
+- `<prefix>f` to use the `tmux-sessionizer` script, which will open a project in a new session
+- `<prefix>|` to split vertically
+- `<prefix>-` to split horizontally
 
 ## Suggested Software:
 
 - [alacritty terminal](https://alacritty.org/)
 - [zoxide](https://github.com/ajeetdsouza/zoxide)
 - [nerd fonts](https://www.nerdfonts.com/font-downloads) for devicons to display in nvim-tree
-    - for instance, `brew tap homebrew/cask-fonts && brew install --cask font-commit-mono-nerd-font`, and added to your terminal (see `alacrity/config.yml`)
+    - for instance, `brew tap homebrew/cask-fonts && brew install --cask font-commit-mono-nerd-font`, and added to your terminal (see [./alacrity/config.yml](./alacrity/config.yml))
 - [cmake](https://cmake.org/) `brew install cmake` or else the installation of telescopes fzf plugin will fail
 - [fd](https://github.com/sharkdp/fd) as an optional dependency of telescope, used in telescope.lua
 
