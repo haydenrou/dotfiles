@@ -1,7 +1,6 @@
 local lsp_zero = require('lsp-zero')
 local lspconfig = require('lspconfig')
 local nmap = require('talakhadze.utils.maps').nmap
-local imap = require('talakhadze.utils.maps').imap
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
@@ -11,10 +10,10 @@ require('mason-lspconfig').setup({
     },
 })
 
--- Formatting for GO Templ files
-vim.api.nvim_create_autocmd({ "BufWritePre" }, { pattern = { "*.templ" }, callback = function() vim.lsp.buf.format() end, })
+-- Auto formatting for GO & Templ files
+vim.api.nvim_create_autocmd({ "BufWritePre" }, { pattern = { "*.templ", "*.go" }, callback = function() vim.lsp.buf.format() end, })
 
-require("lspconfig").tailwindcss.setup({
+lspconfig.tailwindcss.setup({
     filetypes = {
         'templ'
         -- include any other filetypes where you need tailwindcss
