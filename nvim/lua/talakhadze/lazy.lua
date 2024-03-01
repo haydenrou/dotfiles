@@ -37,6 +37,8 @@ local plugins = {
 
     { 'mbbill/undotree' },
 
+    { 'stevearc/conform.nvim' },
+
     { 'tpope/vim-fugitive' },
     { 'tpope/vim-rhubarb' },
 
