@@ -34,3 +34,4 @@ alias grep='rg'
 alias ls='eza -la --icons --group-directories-first'
 alias l='eza -la --icons --group-directories-first'
 alias cat="bat"
+alias htop="btop"

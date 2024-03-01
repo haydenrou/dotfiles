@@ -24,6 +24,7 @@ To prevent myself from going down wild Linux rabbit holes and trying every distr
 - [todoist_helper](https://github.com/haydenrou/todoist_helper)
 - [neofetch](https://github.com/dylanaraps/neofetch)
 - [tmate](https://tmate.io/)
+- [btop](https://github.com/aristocratos/btop)
 
 ## File Structure:
 
