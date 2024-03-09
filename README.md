@@ -50,6 +50,7 @@ Using [lazy.nvim](https://github.com/folke/lazy.nvim) as a plugin manager, here 
 - [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim) a good looking statusline
 - [Comment.nvim](https://github.com/numToStr/Comment.nvim) to comment out your broken code
 - [nvim-surround](https://github.com/kylechui/nvim-surround) to surround whatever you want, with whatever you want
+- [conform.nvim](https://github.com/stevearc/conform.nvim) to enable formatters such as eslint
 
 ## Notable Settings:
 
