@@ -7,6 +7,7 @@ conform.setup({
         templ = { "rustywind", "templ" },
         javascript = { "eslint", { "prettierd", "prettier" } },
         typescript = { { "eslint" }, { "prettierd", "prettier" } },
+        ruby = { "standardrb" },
         ["_"] = { "trim_whitespace" },
     },
     format_on_save = {
