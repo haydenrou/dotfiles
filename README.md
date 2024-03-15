@@ -24,6 +24,13 @@ To prevent myself from going down wild Linux rabbit holes and trying every distr
 - [todoist_helper](https://github.com/haydenrou/todoist_helper)
 - [neofetch](https://github.com/dylanaraps/neofetch)
 - [tmate](https://tmate.io/)
+- [alacritty terminal](https://alacritty.org/)
+- [zoxide](https://github.com/ajeetdsouza/zoxide)
+- [nerd fonts](https://www.nerdfonts.com/font-downloads) for devicons to display in nvim-tree
+    - for instance, `brew tap homebrew/cask-fonts && brew install --cask font-commit-mono-nerd-font`, and added to your terminal (see [./alacrity/config.yml](./alacrity/config.yml))
+- [cmake](https://cmake.org/) `brew install cmake` or else the installation of telescopes fzf plugin will fail
+- [fd](https://github.com/sharkdp/fd) as an optional dependency of telescope, used in telescope.lua
+- [gpgtools](https://gpgtools.org/) for signing commits. (Note: instead of symlinking `git/.gitconfig`, copy it instead as you'll need to add a signingkey)
 
 ## File Structure:
 
@@ -170,15 +177,6 @@ See the tmux config in [./tmux/.tmux.conf](./tmux/.tmux.conf), here are a few he
 - `<prefix>f` to use the `tmux-sessionizer` script, which will open a project in a new session
 - `<prefix>|` to split vertically
 - `<prefix>-` to split horizontally
-
-## Suggested Software:
-
-- [alacritty terminal](https://alacritty.org/)
-- [zoxide](https://github.com/ajeetdsouza/zoxide)
-- [nerd fonts](https://www.nerdfonts.com/font-downloads) for devicons to display in nvim-tree
-    - for instance, `brew tap homebrew/cask-fonts && brew install --cask font-commit-mono-nerd-font`, and added to your terminal (see [./alacrity/config.yml](./alacrity/config.yml))
-- [cmake](https://cmake.org/) `brew install cmake` or else the installation of telescopes fzf plugin will fail
-- [fd](https://github.com/sharkdp/fd) as an optional dependency of telescope, used in telescope.lua
 
 ## Debugging:
 
