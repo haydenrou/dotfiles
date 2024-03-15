@@ -30,7 +30,7 @@ To prevent myself from going down wild Linux rabbit holes and trying every distr
     - for instance, `brew tap homebrew/cask-fonts && brew install --cask font-commit-mono-nerd-font`, and added to your terminal (see [./alacrity/config.yml](./alacrity/config.yml))
 - [cmake](https://cmake.org/) `brew install cmake` or else the installation of telescopes fzf plugin will fail
 - [fd](https://github.com/sharkdp/fd) as an optional dependency of telescope, used in telescope.lua
-- [gpgtools](https://gpgtools.org/) for signing commits
+- [gpgtools](https://gpgtools.org/) for signing commits. (Note: instead of symlinking `git/.gitconfig`, copy it instead as you'll need to add a signingkey)
 
 ## File Structure:
 
