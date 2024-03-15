@@ -1,12 +1,12 @@
 [user]
-	email = hayden@rouille.dev
-	name = Hayden Rouille
+    email = hayden@rouille.dev
+    name = Hayden Rouille
 [core]
     editor = nvim
 [color]
     status = auto
     diff = auto
 [commit]
-	gpgsign = true
+    gpgsign = true
 [gpg]
-	program = gpg
+    program = gpg
