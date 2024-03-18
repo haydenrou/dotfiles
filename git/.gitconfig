@@ -6,7 +6,11 @@
 [color]
     status = auto
     diff = auto
+[fetch]
+    prune = true
 [commit]
     gpgsign = true
 [gpg]
     program = gpg
+[alias]
+    empty = "git commit --allow-empty"
