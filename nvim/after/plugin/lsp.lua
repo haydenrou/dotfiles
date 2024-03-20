@@ -10,9 +10,6 @@ require('mason-lspconfig').setup({
     },
 })
 
--- Auto formatting for GO & Templ files
-vim.api.nvim_create_autocmd({ "BufWritePre" }, { pattern = { "*.templ", "*.go" }, callback = function() vim.lsp.buf.format() end, })
-
 lspconfig.tailwindcss.setup({
     filetypes = {
         'templ'

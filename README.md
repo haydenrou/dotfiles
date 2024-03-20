@@ -24,6 +24,7 @@ To prevent myself from going down wild Linux rabbit holes and trying every distr
 - [todoist_helper](https://github.com/haydenrou/todoist_helper)
 - [neofetch](https://github.com/dylanaraps/neofetch)
 - [tmate](https://tmate.io/)
+- [btop](https://github.com/aristocratos/btop)
 - [alacritty terminal](https://alacritty.org/)
 - [zoxide](https://github.com/ajeetdsouza/zoxide)
 - [nerd fonts](https://www.nerdfonts.com/font-downloads) for devicons to display in nvim-tree
@@ -56,6 +57,7 @@ Using [lazy.nvim](https://github.com/folke/lazy.nvim) as a plugin manager, here 
 - [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim) a good looking statusline
 - [Comment.nvim](https://github.com/numToStr/Comment.nvim) to comment out your broken code
 - [nvim-surround](https://github.com/kylechui/nvim-surround) to surround whatever you want, with whatever you want
+- [conform.nvim](https://github.com/stevearc/conform.nvim) to enable formatters such as eslint
 
 ## Notable Settings:
 
