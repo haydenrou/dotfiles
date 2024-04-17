@@ -40,13 +40,4 @@ vim.opt.undofile = true
 
 vim.opt.grepprg = "rg --vimgrep --no-heading --smart-case"
 
-local Talakhadze = vim.api.nvim_create_augroup('Talakhadze', {})
-
-vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-    group = Talakhadze,
-    pattern = { "*" },
-    command = [[%s/\s\+$//e]],
-})
-
 nmap("<Leader>r", "<cmd>set relativenumber!<cr>")
-

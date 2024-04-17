@@ -3,10 +3,15 @@
     name = Hayden Rouille
 [core]
     editor = nvim
+    autocrlf = input
 [color]
     status = auto
     diff = auto
+[fetch]
+    prune = true
 [commit]
     gpgsign = true
 [gpg]
     program = gpg
+[alias]
+    empty = "git commit --allow-empty"

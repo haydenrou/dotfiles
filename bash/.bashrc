@@ -125,6 +125,5 @@ export FZF_ALT_C_COMMAND="rg --hidden --sort-files --files --null 2> /dev/null |
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 export EYAML_CONFIG="./eyaml_config.yaml"
-. "$HOME/.cargo/env"
 
 . "$HOME/.env"
