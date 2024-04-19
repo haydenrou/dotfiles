@@ -3,7 +3,7 @@
     name = Hayden Rouille
 [core]
     editor = nvim
-    autocrlf = input
+    autocrlf = false
 [color]
     status = auto
     diff = auto
