@@ -58,6 +58,7 @@ Using [lazy.nvim](https://github.com/folke/lazy.nvim) as a plugin manager, here 
 - [Comment.nvim](https://github.com/numToStr/Comment.nvim) to comment out your broken code
 - [nvim-surround](https://github.com/kylechui/nvim-surround) to surround whatever you want, with whatever you want
 - [conform.nvim](https://github.com/stevearc/conform.nvim) to enable formatters such as eslint
+- [vim-dadbod](https://github.com/tpope/vim-dadbod/) for mysql connections and queries in vim
 
 ## Notable Settings:
 
@@ -121,6 +122,9 @@ Using [lazy.nvim](https://github.com/folke/lazy.nvim) as a plugin manager, here 
 
 - **Undotree:**
   - `<leader>u` to open undotree.
+
+- **Dadbod:**
+  - `<leader>db` to open the database UI.
 
 ## LSPs (Language Server Protocols):
 
