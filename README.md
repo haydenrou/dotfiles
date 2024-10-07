@@ -13,6 +13,7 @@ To prevent myself from going down wild Linux rabbit holes and trying every distr
 - [neovim](https://github.com/neovim/neovim)
 - [tmux](https://github.com/tmux/tmux)
 - [yabai](https://github.com/koekeishiya/yabai) & [skhd](https://github.com/koekeishiya/skhd)
+  - As part of the [yabairc](./yabai/yabairc), we use [jankyborders](https://github.com/FelixKratz/JankyBorders)
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
 - [fzf](https://github.com/junegunn/fzf)
 - [zsh](https://www.zsh.org/)
