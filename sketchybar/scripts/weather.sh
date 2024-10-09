@@ -133,11 +133,4 @@ humidity=$(echo "$weather" | jq -r ".current.humidity")
 wind_speed=$(echo "$weather" | jq -r ".current.wind_kph")
 wind_direction=$(echo "$weather" | jq -r ".current.wind_dir")
 
-sketchybar --set $NAME drawing=on icon=$icon label="${temp%%.*}°C" # \
-        #    --set weather.location label="Location: $city" \
-        #    --set weather.condition label="Condition: $condition" \
-        #    --set weather.feels_like label="Feels Like: $feelslike°F" \
-        #    --set weather.uv label="UV Index: $uv" \
-        #    --set weather.humidity label="Humidity: $humidity%" \
-        #    --set weather.wind label="Wind: $wind_speed km/h $wind_direction" \
-        #    --set weather.lastupdated label="Last Updated: $(gdate +%T)"
+sketchybar --set $NAME drawing=on icon=$icon label="${temp%%.*}°C"
