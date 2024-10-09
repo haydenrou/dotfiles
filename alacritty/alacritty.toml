@@ -49,7 +49,7 @@ history = 100000
 
 [window]
 decorations = "buttonless"
-opacity = 0.95
+opacity = 1
 
 [window.dimensions]
 columns = 120

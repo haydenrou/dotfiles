@@ -13,9 +13,13 @@ To prevent myself from going down wild Linux rabbit holes and trying every distr
 - [neovim](https://github.com/neovim/neovim)
 - [tmux](https://github.com/tmux/tmux)
 - [yabai](https://github.com/koekeishiya/yabai) & [skhd](https://github.com/koekeishiya/skhd)
+  - As part of the [yabairc](./yabai/yabairc), we use [jankyborders](https://github.com/FelixKratz/JankyBorders)
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
 - [fzf](https://github.com/junegunn/fzf)
 - [zsh](https://www.zsh.org/)
+- [sketchybar](https://felixkratz.github.io/SketchyBar/setup)
+  - As part of the scripts (see [here for example](./sketchybar/scripts/highlight_space.sh)) we need [jq](https://github.com/jqlang/jq)
+  - Make sure you create a `sketchybar/scripts/weather.env.sh` file containing the values for `WEATHER_KEY=123` and `WEATHER_CITY=London`
 
 ### Optional Software: (Warning: you may have to remove some alises / plugins if these are not installed)
 - [bat](https://github.com/sharkdp/bat)
@@ -129,7 +133,7 @@ Using [lazy.nvim](https://github.com/folke/lazy.nvim) as a plugin manager, here 
 ## LSPs (Language Server Protocols):
 
 By default, the following LSPs will be installed:
-- `tsserver` for typescript.
+- `ts_ls` for typescript. (old: `tsserver`)
 - `eslint` for eslint.
 - `solargraph` for ruby.
 - `lua_ls` for lua.
@@ -189,6 +193,8 @@ See the tmux config in [./tmux/.tmux.conf](./tmux/.tmux.conf), here are a few he
 - Check `:checkhealth` to ensure all plugins are working correctly.
 - Use `:map` or `:verbose map <leader>nn` (for instance) to check keybinds are being set correctly.
 - `:lua print(vim.inspect(vim.lsp.buf_get_clients()[1].resolved_capabilities))` to see what the LSP can do
+- If seeing errors using flags such as `error parsing flag -E` - remember that this could be because it's aliased. In the instance of `grep`, you may need to use `/usr/bin/grep` to use grep intead of `rg`
+- When starting `yabai`, you may need to run `yabai --start-service` instead of `brew services start yabai` per [this issue](https://github.com/koekeishiya/yabai/issues/1738#issuecomment-1541596750)
 
 ## Contribution:
 

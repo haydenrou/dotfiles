@@ -1,0 +1,142 @@
+PURPLE=0xFFC4A7E7
+
+sketchybar --bar height=54        \
+                 margin=12        \
+                 y_offset=0       \
+                 padding_left=0   \
+                 padding_right=0  \
+                 color=0x00000000
+
+sketchybar --default updates=when_shown                             \
+                     icon.font="CommitMono Nerd Font:Regular:16"  \
+                     icon.color=0xFFFFFFFF                          \
+                     label.font="CommitMono Nerd Font:Regular:16" \
+                     background.color=0x00000000                    \
+                     y_offset=0
+
+SPACE_ICONS=("1" "2" "3" "4" "5" "6" "7" "8" "9" "10")
+SPACES=()
+
+for i in "${!SPACE_ICONS[@]}"
+do
+  sid=$(($i+1))
+  SPACES+=(space.$sid)
+  sketchybar --add space space.$sid left \
+             --set space.$sid associated_space=$sid \
+                              icon=${SPACE_ICONS[i]} \
+                              icon.highlight_color=0xFFFFFFFF \
+                              icon.align=center \
+                              icon.width=30 \
+                              label.drawing=off \
+                              click_script="yabai -m space --focus $sid"
+done
+
+sketchybar --add item new_space left                        \
+           --set      new_space icon.width=24               \
+                                label.padding_right=2       \
+                                icon.align=center           \
+                                icon.padding_right=2        \
+                                icon=+                      \
+                                click_script='./scripts/new_space.sh'
+
+sketchybar --add bracket spaces '/space\..*/' new_space                \
+           --set         spaces background.color=0xEB1e1e2e            \
+                                background.border_width=1              \
+                                background.border_color=$PURPLE          \
+                                blur_radius=2                          \
+                                background.height=30
+
+sketchybar --add item highlight_space left                      \
+           --set      highlight_space width=22                  \
+                                      background.color=$PURPLE    \
+                                      background.height=22      \
+                                      script='./scripts/highlight_space.sh'
+
+sketchybar --subscribe highlight_space space_change
+
+for i in "${!SPACE_ICONS[@]}"
+do
+  sid=$(($i+1))
+  SPACES+=(space.$sid)
+  sketchybar --add space space_ex.$sid left \
+             --set space_ex.$sid associated_space=$sid \
+                              icon=${SPACE_ICONS[i]} \
+                              icon.highlight_color=0xFFFFFFFF \
+                              icon.align=center \
+                              icon.width=30 \
+                              label.drawing=off \
+                              click_script="yabai -m space --focus $sid"
+done
+
+sketchybar --set space_ex.1 padding_left=-999999
+
+sketchybar --default                                                \
+                     background.color=0xEB1e1e2e                    \
+                     blur_radius=2                                  \
+                     background.height=30                           \
+                     icon.padding_left=12                           \
+                     icon.padding_right=4                           \
+                     label.padding_left=4                           \
+                     label.padding_right=12                         \
+                     background.padding_left=18                     \
+                     background.border_width=1
+
+
+sketchybar --add item spotify q                                  \
+           --set      spotify label.padding_left=12                 \
+                            icon=♫                                  \
+                            background.padding_left=0               \
+                            icon.padding_left=12                     \
+                            icon.padding_right=0                    \
+                            script='./scripts/spotify_info.sh'      \
+                            background.border_color=0x77ADADAD      \
+                            label.max_chars=54                      \
+                            update_freq=5                           \
+                            icon.color=$PURPLE                      \
+                            background.border_color=$PURPLE         \
+
+sketchybar --add item settings e                                  \
+           --set      settings                                      \
+                            icon=⛭                                  \
+                            label="Settings"                      \
+                            label.padding_left=0                    \
+                            icon.padding_right=10                    \
+                            background.padding_left=0               \
+                            click_script='./scripts/system_settings.sh'      \
+                            icon.color=$PURPLE                    \
+                            background.border_color=$PURPLE       \
+
+sketchybar --add item time right                                    \
+           --set      time icon=󱑎                                   \
+                           icon.color=$PURPLE                       \
+                           background.border_color=$PURPLE          \
+                           label="$(date '+%I:%M %p')"              \
+                           script='./scripts/time.sh'               \
+                           update_freq=1
+
+sketchybar --add item date right                                    \
+           --set      date icon=󱨰                                   \
+                           icon.color=$PURPLE                          \
+                           background.border_color=$PURPLE             \
+                           label="$(date '+%a %b %d')"              \
+                           script='./scripts/date.sh'               \
+                           update_freq=10
+
+sketchybar --add item weather right                                 \
+           --set      weather icon=A                                \
+                              icon.color=$PURPLE                      \
+                              background.border_color=$PURPLE         \
+                              label="--°F"                          \
+                              script='./scripts/weather.sh'         \
+                              update_freq=60
+
+sketchybar --add item battery right                                 \
+           --set      battery icon=                                \
+                              icon.color=$PURPLE                    \
+                              background.border_color=$PURPLE       \
+                              label="--%"                           \
+                              script='./scripts/battery.sh'         \
+                              update_freq=20
+
+sketchybar --hotload on
+sketchybar --update
