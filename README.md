@@ -17,6 +17,9 @@ To prevent myself from going down wild Linux rabbit holes and trying every distr
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
 - [fzf](https://github.com/junegunn/fzf)
 - [zsh](https://www.zsh.org/)
+- [sketchybar](https://felixkratz.github.io/SketchyBar/setup)
+  - As part of the scripts (see [here for example](./sketchybar/scripts/highlight_space.sh)) we need [jq](https://github.com/jqlang/jq)
+  - Make sure you create a `sketchybar/scripts/weather.env.sh` file containing the values for `WEATHER_KEY=123` and `WEATHER_CITY=London`
 
 ### Optional Software: (Warning: you may have to remove some alises / plugins if these are not installed)
 - [bat](https://github.com/sharkdp/bat)
