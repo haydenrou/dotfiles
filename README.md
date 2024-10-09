@@ -130,7 +130,7 @@ Using [lazy.nvim](https://github.com/folke/lazy.nvim) as a plugin manager, here 
 ## LSPs (Language Server Protocols):
 
 By default, the following LSPs will be installed:
-- `tsserver` for typescript.
+- `ts_ls` for typescript. (old: `tsserver`)
 - `eslint` for eslint.
 - `solargraph` for ruby.
 - `lua_ls` for lua.
