@@ -29,7 +29,7 @@ unfocused_hollow = true
 blinking = "Never"
 
 [env]
-TERM = "screen-256color"
+TERM = "alacritty"
 
 [font]
 size = 12
