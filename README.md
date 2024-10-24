@@ -4,7 +4,7 @@
 </div>
 <br>
 
-![Dotfiles Demo](https://i.imgur.com/qVCCpbT.jpeg)
+![Dotfiles Demo](https://i.imgur.com/2omyhaX.jpeg)
 
 To prevent myself from going down wild Linux rabbit holes and trying every distribution I can get my hands on, I've transcended into an Apple chad. Therefore, this configuration may require changes to work in a Linux environment.
 
@@ -85,12 +85,13 @@ Using [lazy.nvim](https://github.com/folke/lazy.nvim) as a plugin manager, here 
 - `<leader>y` and `<leader>Y` yank the current line (`<leader>y`) or from the cursor to the end of the line (`<leader>Y`) to the system clipboard.
 - `<leader>p` and `<leader>d` paste (`<leader>p`) or delete (`<leader>d`) without copying to the buffer.
 - `<leader>f` formats the current buffer using the LSP (Language Server Protocol).
-- `<C-k>` and `<C-j>` navigate through the quickfix list, ensuring the cursor position is centered.
+- `<C-j>` and `<C-k>` navigate through the quickfix list, ensuring the cursor position is centered.
 - `<leader>` + `h,j,k,l` move your cursor to different windows.
 - `<leader>s` performs a case-insensitive search and replace across the entire buffer, prompting for confirmation.
 - `<leader>r` toggles relative line numbers.
 - `K` (Normal Mode) to show documentation.
 - `<leader>+` and `<leader>-` vertically enlarge or reduce a pane.
+- `<leader>co` and `<leader>cc` open and close the quickfix list.
 
 [A random list of handy vim commands](./docs/vimbits.md)
 
