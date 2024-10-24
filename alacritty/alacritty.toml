@@ -32,7 +32,7 @@ blinking = "Never"
 TERM = "screen-256color"
 
 [font]
-size = 16
+size = 12
 
 [font.glyph_offset]
 y = 9
