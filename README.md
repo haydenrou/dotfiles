@@ -4,7 +4,7 @@
 </div>
 <br>
 
-![Dotfiles Demo](https://i.imgur.com/2omyhaX.jpeg)
+![Dotfiles Demo](https://i.imgur.com/F3wxfe1.jpeg)
 
 To prevent myself from going down wild Linux rabbit holes and trying every distribution I can get my hands on, I've transcended into an Apple chad. Therefore, this configuration may require changes to work in a Linux environment.
 
