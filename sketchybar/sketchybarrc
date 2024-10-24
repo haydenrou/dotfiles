@@ -1,4 +1,4 @@
-PURPLE=0xFFC4A7E7
+COLOR=0xFFd7827e
 
 sketchybar --bar height=54        \
                  margin=12        \
@@ -8,9 +8,9 @@ sketchybar --bar height=54        \
                  color=0x00000000
 
 sketchybar --default updates=when_shown                             \
-                     icon.font="CommitMono Nerd Font:Regular:16"  \
+                     icon.font="CommitMono Nerd Font:Regular:12"  \
                      icon.color=0xFFFFFFFF                          \
-                     label.font="CommitMono Nerd Font:Regular:16" \
+                     label.font="CommitMono Nerd Font:Regular:12" \
                      background.color=0x00000000                    \
                      y_offset=0
 
@@ -42,13 +42,13 @@ sketchybar --add item new_space left                        \
 sketchybar --add bracket spaces '/space\..*/' new_space                \
            --set         spaces background.color=0xEB1e1e2e            \
                                 background.border_width=1              \
-                                background.border_color=$PURPLE          \
+                                background.border_color=$COLOR          \
                                 blur_radius=2                          \
                                 background.height=30
 
 sketchybar --add item highlight_space left                      \
            --set      highlight_space width=22                  \
-                                      background.color=$PURPLE    \
+                                      background.color=$COLOR    \
                                       background.height=22      \
                                       script='./scripts/highlight_space.sh'
 
@@ -92,8 +92,8 @@ sketchybar --add item spotify q                                  \
                             background.border_color=0x77ADADAD      \
                             label.max_chars=54                      \
                             update_freq=5                           \
-                            icon.color=$PURPLE                      \
-                            background.border_color=$PURPLE         \
+                            icon.color=$COLOR                      \
+                            background.border_color=$COLOR         \
 
 sketchybar --add item settings e                                  \
            --set      settings                                      \
@@ -103,37 +103,37 @@ sketchybar --add item settings e                                  \
                             icon.padding_right=10                    \
                             background.padding_left=0               \
                             click_script='./scripts/system_settings.sh'      \
-                            icon.color=$PURPLE                    \
-                            background.border_color=$PURPLE       \
+                            icon.color=$COLOR                    \
+                            background.border_color=$COLOR       \
 
 sketchybar --add item time right                                    \
            --set      time icon=󱑎                                   \
-                           icon.color=$PURPLE                       \
-                           background.border_color=$PURPLE          \
+                           icon.color=$COLOR                       \
+                           background.border_color=$COLOR          \
                            label="$(date '+%I:%M %p')"              \
                            script='./scripts/time.sh'               \
                            update_freq=1
 
 sketchybar --add item date right                                    \
            --set      date icon=󱨰                                   \
-                           icon.color=$PURPLE                          \
-                           background.border_color=$PURPLE             \
+                           icon.color=$COLOR                          \
+                           background.border_color=$COLOR             \
                            label="$(date '+%a %b %d')"              \
                            script='./scripts/date.sh'               \
                            update_freq=10
 
 sketchybar --add item weather right                                 \
            --set      weather icon=A                                \
-                              icon.color=$PURPLE                      \
-                              background.border_color=$PURPLE         \
+                              icon.color=$COLOR                      \
+                              background.border_color=$COLOR         \
                               label="--°F"                          \
                               script='./scripts/weather.sh'         \
                               update_freq=60
 
 sketchybar --add item battery right                                 \
            --set      battery icon=                                \
-                              icon.color=$PURPLE                    \
-                              background.border_color=$PURPLE       \
+                              icon.color=$COLOR                    \
+                              background.border_color=$COLOR       \
                               label="--%"                           \
                               script='./scripts/battery.sh'         \
                               update_freq=20

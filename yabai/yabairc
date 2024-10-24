@@ -41,4 +41,4 @@ yabai -m rule --add app="^zoom.us$" manage=off
 # thanks to @aSapien!!!
 # skhd -c $HOME/.config/skhd/skhdrc
 
-borders active_color=0xFFC4A7E7 inactive_color=0xFFC4A7E7 width=3.0 &
+borders active_color=0xFFd7827e inactive_color=0xFFd7827e width=3.0 &
