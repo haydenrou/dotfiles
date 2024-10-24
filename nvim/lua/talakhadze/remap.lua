@@ -23,6 +23,7 @@ vmap("<leader>p", "\"_dP", opts)
 vmap("<leader>d", "\"_d", opts)
 nmap("<leader>d", "\"_d", opts)
 
+-- Unbind Q
 nmap("Q", "<nop")
 
 nmap("<leader>f", function() vim.lsp.buf.format() end)
@@ -41,3 +42,6 @@ nmap("<leader><leader>s", ":source %<CR>")
 
 nmap("<leader>+", ":vertical resize +5<CR>", { silent = true })
 nmap("<leader>-", ":vertical resize -5<CR>", { silent = true })
+
+nmap("<leader>cc", ":cclose<CR>")
+nmap("<leader>co", ":copen<CR>")
