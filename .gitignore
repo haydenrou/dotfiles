@@ -1,5 +1,6 @@
 bash/.personal.bashrc
 zsh/.personal.zshrc
+sketchybar/scripts/weather.env.sh
 .DS_Store
 .hg
 .svn
