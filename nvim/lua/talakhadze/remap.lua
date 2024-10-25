@@ -23,12 +23,13 @@ vmap("<leader>p", "\"_dP", opts)
 vmap("<leader>d", "\"_d", opts)
 nmap("<leader>d", "\"_d", opts)
 
+-- Unbind Q
 nmap("Q", "<nop")
 
 nmap("<leader>f", function() vim.lsp.buf.format() end)
 
-nmap("<C-k>", "<cmd>cnext<CR>zz")
-nmap("<C-j>", "<cmd>cprev<CR>zz")
+nmap("<C-j>", "<cmd>cnext<CR>zz")
+nmap("<C-k>", "<cmd>cprev<CR>zz")
 
 nmap("<leader>h", "<C-w>h")
 nmap("<leader>j", "<C-w>j")
@@ -42,3 +43,5 @@ nmap("<leader><leader>s", ":source %<CR>")
 nmap("<leader>+", ":vertical resize +5<CR>", { silent = true })
 nmap("<leader>-", ":vertical resize -5<CR>", { silent = true })
 
+nmap("<leader>cc", ":cclose<CR>")
+nmap("<leader>co", ":copen<CR>")

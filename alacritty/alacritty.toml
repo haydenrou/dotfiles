@@ -29,10 +29,10 @@ unfocused_hollow = true
 blinking = "Never"
 
 [env]
-TERM = "screen-256color"
+TERM = "alacritty"
 
 [font]
-size = 16
+size = 12
 
 [font.glyph_offset]
 y = 9
@@ -49,7 +49,7 @@ history = 100000
 
 [window]
 decorations = "buttonless"
-opacity = 0.95
+opacity = 1
 
 [window.dimensions]
 columns = 120
