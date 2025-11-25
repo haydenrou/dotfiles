@@ -84,4 +84,4 @@ export EYAML_CONFIG="./eyaml_config.yaml"
 . "$HOME/.env"
 
 # Run on every new terminal
-neofetch
+fastfetch

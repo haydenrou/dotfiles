@@ -26,7 +26,7 @@ To prevent myself from going down wild Linux rabbit holes and trying every distr
 - [eza](https://github.com/eza-community/eza)
 - [zoxide](https://github.com/ajeetdsouza/zoxide)
 - [todoist_helper](https://github.com/haydenrou/todoist_helper)
-- [neofetch](https://github.com/dylanaraps/neofetch)
+- [fastfetch](https://github.com/fastfetch-cli/fastfetch)
 - [tmate](https://tmate.io/)
 - [btop](https://github.com/aristocratos/btop)
 - [alacritty terminal](https://alacritty.org/)
@@ -92,6 +92,7 @@ Using [lazy.nvim](https://github.com/folke/lazy.nvim) as a plugin manager, here 
 - `K` (Normal Mode) to show documentation.
 - `<leader>+` and `<leader>-` vertically enlarge or reduce a pane.
 - `<leader>co` and `<leader>cc` open and close the quickfix list.
+- `<leader>fg` for file grep. Use `ctrl-g` after selecting folder tree to swap between regex and fuzzy search.
 
 [A random list of handy vim commands](./docs/vimbits.md)
 

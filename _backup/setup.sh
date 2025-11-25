@@ -20,7 +20,7 @@ sudo apt-get install -y \
   ruby \
   rubygems \
   vim-nox \
-  neofetch \
+  fastfetch \
   ripgrep \
   powerline \
   libc6 \
