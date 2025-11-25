@@ -92,6 +92,7 @@ Using [lazy.nvim](https://github.com/folke/lazy.nvim) as a plugin manager, here 
 - `K` (Normal Mode) to show documentation.
 - `<leader>+` and `<leader>-` vertically enlarge or reduce a pane.
 - `<leader>co` and `<leader>cc` open and close the quickfix list.
+- `<leader>fg` for file grep. Use `ctrl-g` after selecting folder tree to swap between regex and fuzzy search.
 
 [A random list of handy vim commands](./docs/vimbits.md)
 

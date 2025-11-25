@@ -1,4 +1,5 @@
 local nmap = require("talakhadze.utils.maps").nmap
+local ff = require('talakhadze.utils.ff')
 
 vim.opt.backspace = "indent,eol,start"
 vim.opt.backup = false
@@ -41,3 +42,5 @@ vim.opt.undofile = true
 vim.opt.grepprg = "rg --vimgrep --no-heading --smart-case"
 
 nmap("<Leader>r", "<cmd>set relativenumber!<cr>")
+
+nmap('<leader>fg', ff.folder_grep, { desc = 'Grep in folder' })
