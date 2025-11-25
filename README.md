@@ -26,7 +26,7 @@ To prevent myself from going down wild Linux rabbit holes and trying every distr
 - [eza](https://github.com/eza-community/eza)
 - [zoxide](https://github.com/ajeetdsouza/zoxide)
 - [todoist_helper](https://github.com/haydenrou/todoist_helper)
-- [neofetch](https://github.com/dylanaraps/neofetch)
+- [fastfetch](https://github.com/fastfetch-cli/fastfetch)
 - [tmate](https://tmate.io/)
 - [btop](https://github.com/aristocratos/btop)
 - [alacritty terminal](https://alacritty.org/)
