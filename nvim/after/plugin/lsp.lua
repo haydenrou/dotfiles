@@ -63,26 +63,18 @@ cmp.setup({
   mapping = cmp.mapping.preset.insert({
     ['<Tab>'] = cmp_action.luasnip_supertab(),
     ['<S-Tab>'] = cmp_action.luasnip_shift_supertab(),
-
-    -- `Enter` key to confirm completion
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
-
-    -- Ctrl+Space to trigger completion menu
     ['<C-Space>'] = cmp.mapping.complete(),
-
-    -- Navigate between snippet placeholder
     ['<C-f>'] = cmp_action.luasnip_jump_forward(),
     ['<C-b>'] = cmp_action.luasnip_jump_backward(),
-
-    -- Scroll up and down in the completion documentation
     ['<C-u>'] = cmp.mapping.scroll_docs(-4),
     ['<C-d>'] = cmp.mapping.scroll_docs(4),
-  })
+  }),
 })
 
+-- LSP keybindings
 lsp_zero.on_attach(function(client, bufnr)
   local opts = { buffer = bufnr, remap = false }
-
   nmap("gd", function() vim.lsp.buf.definition() end, opts)
   nmap("K", function() vim.lsp.buf.hover() end, opts)
   nmap("<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
@@ -95,4 +87,5 @@ lsp_zero.on_attach(function(client, bufnr)
   nmap("<leader>cf", function() vim.lsp.buf.code_action({ "quickfix", apply = true }) end, opts)
 end)
 
+-- Finalize lsp-zero setup
 lsp_zero.setup()

@@ -14,9 +14,9 @@ vim.opt.smartcase = true
 
 vim.opt.scrolloff = 6
 
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 
 vim.opt.number = true
@@ -43,4 +43,5 @@ vim.opt.grepprg = "rg --vimgrep --no-heading --smart-case"
 
 nmap("<Leader>r", "<cmd>set relativenumber!<cr>")
 
+nmap('<leader>lc', ff.inspect_lsp_client, { desc = 'Inspect LSP client' })
 nmap('<leader>fg', ff.folder_grep, { desc = 'Grep in folder' })
