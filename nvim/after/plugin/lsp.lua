@@ -1,25 +1,22 @@
 local lsp_zero = require('lsp-zero')
-local lspconfig = require('lspconfig')
 local nmap = require('talakhadze.utils.maps').nmap
 
 require('mason').setup({})
-require('mason-lspconfig').setup({
-  ensure_installed = { "ts_ls", "eslint", "solargraph", "lua_ls", "tailwindcss", "rust_analyzer", "gopls", "templ", "cmake", "jsonls", "emmet_ls" },
-  handlers = {
-    lsp_zero.default_setup,
-  },
-})
 
-lspconfig.tailwindcss.setup({
-  filetypes = {
-    'templ'
-    -- include any other filetypes where you need tailwindcss
+require('mason-lspconfig').setup({
+  ensure_installed = {
+    "ts_ls",
+    "eslint",
+    "solargraph",
+    "lua_ls",
+    "tailwindcss",
+    "rust_analyzer",
+    "gopls",
+    "templ",
+    "cmake",
+    "jsonls",
+    "emmet_ls",
   },
-  init_options = {
-    userLanguages = {
-      templ = "html"
-    }
-  }
 })
 
 vim.filetype.add({
@@ -28,19 +25,30 @@ vim.filetype.add({
   },
 })
 
-lspconfig.lua_ls.setup {
+vim.lsp.config('tailwindcss', {
+  filetypes = {
+    'templ',
+  },
+  init_options = {
+    userLanguages = {
+      templ = "html",
+    },
+  },
+})
+
+vim.lsp.config('lua_ls', {
   settings = {
     Lua = {
       diagnostics = {
-        globals = { 'vim', 'opts' }
-      }
-    }
-  }
-}
+        globals = { 'vim', 'opts' },
+      },
+    },
+  },
+})
 
-lspconfig.solargraph.setup {
+vim.lsp.config('solargraph', {
   filetypes = { "ruby", "rakefile" },
-  root_dir = lspconfig.util.root_pattern("Gemfile", ".git", "."),
+  root_markers = { "Gemfile", ".git" },
   settings = {
     solargraph = {
       autoformat = true,
@@ -51,10 +59,10 @@ lspconfig.solargraph.setup {
       folding = true,
       references = true,
       rename = true,
-      symbols = true
-    }
-  }
-}
+      symbols = true,
+    },
+  },
+})
 
 local cmp = require('cmp')
 local cmp_action = require('lsp-zero').cmp_action()
@@ -72,9 +80,9 @@ cmp.setup({
   }),
 })
 
--- LSP keybindings
 lsp_zero.on_attach(function(client, bufnr)
   local opts = { buffer = bufnr, remap = false }
+
   nmap("gd", function() vim.lsp.buf.definition() end, opts)
   nmap("K", function() vim.lsp.buf.hover() end, opts)
   nmap("<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
@@ -84,8 +92,12 @@ lsp_zero.on_attach(function(client, bufnr)
   nmap("<leader>vca", function() vim.lsp.buf.code_action() end, opts)
   nmap("<leader>gr", function() vim.lsp.buf.references() end, opts)
   nmap("<leader>cr", function() vim.lsp.buf.rename() end, opts)
-  nmap("<leader>cf", function() vim.lsp.buf.code_action({ "quickfix", apply = true }) end, opts)
+  nmap("<leader>cf", function()
+    vim.lsp.buf.code_action({
+      context = { only = { "quickfix" } },
+      apply = true,
+    })
+  end, opts)
 end)
 
--- Finalize lsp-zero setup
 lsp_zero.setup()

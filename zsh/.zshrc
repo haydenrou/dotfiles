@@ -44,7 +44,7 @@ fi
 
 source $HOME/projects/dotfiles/zsh/aliases.zsh
 
-source $HOME/.asdf/asdf.sh
+. ${ASDF_DATA_DIR:-$HOME/.asdf}/plugins/golang/set-env.zsh
 
 # Stop <c-d> exiting
 set -o ignoreeof
