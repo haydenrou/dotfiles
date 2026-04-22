@@ -48,13 +48,16 @@ y = 16
 history = 100000
 
 [window]
-decorations = "buttonless"
-opacity = 1
+decorations = "transparent"
+opacity = 0.9
+blur = true
+dynamic_padding = true
+startup_mode = "Maximized"
 
 [window.dimensions]
 columns = 120
 lines = 40
 
 [window.padding]
-x = 5
-y = 0
+x = 10
+y = 5
