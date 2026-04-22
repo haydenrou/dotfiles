@@ -74,12 +74,13 @@ end
 -- Allows selecting a folder and running grep in it
 function M.folder_grep()
   local fzf = require("fzf-lua")
+  local dirs = vim.fn.systemlist('find . -type d')
 
-  fzf.fzf_exec("find . -type d", {
+  fzf.fzf_exec(dirs, {
     prompt = "Folder: ",
     actions = {
       ["default"] = function(selected)
-        if selected and #selected > 0 then
+        if selected and selected[1] then
           fzf.live_grep({ cwd = selected[1] })
         end
       end,
