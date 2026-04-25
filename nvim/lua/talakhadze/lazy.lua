@@ -44,7 +44,7 @@ local plugins = {
     event = { "BufReadPost", "BufNewFile" },
     dependencies = { "JoosepAlviste/nvim-ts-context-commentstring" },
     config = function()
-      require("nvim-treesitter.configs").setup({
+      require("nvim-treesitter.config").setup({
         ensure_installed = { "lua", "python", "javascript" },
         auto_install = false,
         highlight = { enable = true },

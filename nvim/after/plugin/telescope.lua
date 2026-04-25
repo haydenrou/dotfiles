@@ -19,6 +19,7 @@ end
 
 require("telescope").setup {
   defaults = {
+    preview = { treesitter = false },
     mappings = {
       i = {
         ["<tab>"] = actions.toggle_selection + actions.move_selection_previous,
