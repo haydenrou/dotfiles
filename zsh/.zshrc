@@ -60,7 +60,8 @@ eval "$(zoxide init zsh)"
 export GOPATH=$(asdf where golang)/packages
 export GOROOT=$(asdf where golang)/go
 
-export PATH=$PATH:$(go env GOPATH)/bin
+export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:$GOPATH/bin
 
 # Allow history to be recorded in tmux sessions
 # https://askubuntu.com/questions/339546/how-do-i-see-the-history-of-the-commands-i-have-run-in-tmux
@@ -85,3 +86,6 @@ export EYAML_CONFIG="./eyaml_config.yaml"
 
 # Run on every new terminal
 fastfetch
+
+export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
