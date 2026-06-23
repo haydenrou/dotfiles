@@ -6,11 +6,8 @@ local nmap = require("talakhadze.utils.maps").nmap
 vim.g.nvim_tree_disable_netrw = 0
 vim.api.nvim_create_user_command(
   'Browse',
-  function (opts)
+  function(opts)
     vim.fn.system { 'open', opts.fargs[1] }
   end,
   { nargs = 1 }
 )
-
-
-nmap("<leader>gb", ":GBrowse<cr>", opts)
