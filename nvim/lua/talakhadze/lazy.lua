@@ -88,7 +88,7 @@ local plugins = {
   { 'stevearc/conform.nvim', event = { "BufWritePre" } },
 
   { 'tpope/vim-fugitive',    cmd = { "Git", "G" } },
-  { 'tpope/vim-rhubarb',     lazy = true },
+  { 'tpope/vim-rhubarb' },
 
   -- Copilot setup
   {
